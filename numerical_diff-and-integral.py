@@ -1,3 +1,6 @@
+import numpy as np
+import math as m
+
 # f = lambda x: -0.02 * x
 
 def doNumericalDiff(f, x1, deltaX):
@@ -48,13 +51,33 @@ def doNumericalIntegration(f, x1, x2, deltaX):
 
     return x
 
-f = lambda x: x
+# The idea of tangent space of manifold is impled to think what is tangent space
+# and manifold.
+# debug
+# The following may has numerical bug. Debug later on
+# end of debug
+def doCalcFormedTangentLine(f, x1, x2, deltaX, p1, p2):
+    tangentLineCoeff = doNumericalDiff(f, x1, deltaX)
+    tangentVector = np.array([x1, x1 + deltaX])
+    originalVector = np.array([p1 - x1, p2 - x2])
+
+    cosTheta = m.cos(np.dot(tangentVector, originalVector))
+    formedTangentLine = np.array([x1 * cosTheta, (x1 + deltaX) * cosTheta])
+
+    return formedTangentLine
+
+# main
+
+f = lambda x: x * x
 
 diff = doNumericalDiff(f, 2.0, 0.001)
-#print(diff)
+print(diff)
 
 lineIntegral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
-#print(lineIntegral)
+print(lineIntegral)
 
 integral = doNumericalIntegration(f, 2, 3, 0.001)
 print(integral)
+
+formedTangentLine = doCalcFormedTangentLine(f, 1.0, 2.0, 0.001, 3.0, 4.0)
+print(formedTangentLine)
