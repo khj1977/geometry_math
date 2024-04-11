@@ -24,10 +24,31 @@ def doNumericalLineIntegral(f, x1, x2, deltaX, deltaL):
     
     return sum
 
+def doNumericalIntegration(f, x1, x2, deltaX):
+    sum = 0.0
+    x = x1
+    while True:
+        if (x > x2):
+            break
+
+        f1 = f(x1)
+        f2 = f(x1 + deltaX)
+
+        square = (f1 + f2) * deltaX / 2.0
+
+        sum = sum + square
+
+        x = x + deltaX
+
+    return x
+
 f = lambda x: x
 
 diff = doNumericalDiff(f, 2.0, 0.001)
-print(diff)
+#print(diff)
 
-integral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
+lineIntegral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
+#print(lineIntegral)
+
+integral = doNumericalIntegration(f, 2, 3, 0.001)
 print(integral)
