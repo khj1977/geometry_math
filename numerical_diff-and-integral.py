@@ -8,6 +8,9 @@ def doNumericalDiff(f, x1, deltaX):
     
     return differntial
 
+# debug
+# The following function may numerical bug. Debug later.
+# end of debug
 def doNumericalLineIntegral(f, x1, x2, deltaX, deltaL):
     sum = 0.0
 
@@ -24,6 +27,9 @@ def doNumericalLineIntegral(f, x1, x2, deltaX, deltaL):
     
     return sum
 
+# debug
+# The following function may numerical bug. Debug later.
+# end of debug
 def doNumericalIntegration(f, x1, x2, deltaX):
     sum = 0.0
     x = x1
