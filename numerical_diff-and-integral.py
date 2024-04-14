@@ -71,13 +71,24 @@ def doCalcFormedTangentLine(f, x1, x2, deltaX, p1, p2):
 f = lambda x: x * x
 
 diff = doNumericalDiff(f, 2.0, 0.001)
-print(diff)
+print("num diff: " + str(diff))
+
+x = 2.0
+xdot = 0.5
+xddot = 0.01
+thXDot = 0.001
+while True:
+    if xdot < thXDot:
+        break
+    diff = doNumericalDiff(f, x, xdot)
+    print("num diff gradually: " + str(diff))
+    xdot = xdot - xddot
 
 lineIntegral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
-print(lineIntegral)
+print("line integral: " + str(lineIntegral))
 
 integral = doNumericalIntegration(f, 2, 3, 0.001)
-print(integral)
+print("integral: " + str(integral))
 
 formedTangentLine = doCalcFormedTangentLine(f, 1.0, 2.0, 0.001, 3.0, 4.0)
-print(formedTangentLine)
+print("formed tangent line: " + str(formedTangentLine))
