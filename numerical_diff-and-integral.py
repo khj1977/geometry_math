@@ -74,15 +74,15 @@ diff = doNumericalDiff(f, 2.0, 0.001)
 print("num diff: " + str(diff))
 
 x = 2.0
-xdot = 0.5
-xddot = 0.01
-thXDot = 0.001
+deltaX = 0.5
+ddeltaX = 0.01
+thDX = 0.001
 while True:
-    if xdot < thXDot:
+    if deltaX < thDX:
         break
-    diff = doNumericalDiff(f, x, xdot)
+    diff = doNumericalDiff(f, x, deltaX)
     print("num diff gradually: " + str(diff))
-    xdot = xdot - xddot
+    deltaX = deltaX - ddeltaX
 
 lineIntegral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
 print("line integral: " + str(lineIntegral))
