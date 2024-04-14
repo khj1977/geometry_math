@@ -8,4 +8,4 @@ Line integral is interesting math expression for me. As symbol, it is easy to un
 
 For me, conbination of geometry and manifold seems close to albegra-geometry in old high school text.
 
-Applications areas are assumed to be analysis of ODE esp, smart material systems, robotics, automatic controlled vehicle and so on.
+Applications areas are assumed to be analysis of ODE esp, smart material systems, robotics, automatic controlled vehicle, fluid dynamics, electro-magnetic dynamics and so on.
