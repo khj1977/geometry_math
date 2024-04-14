@@ -22,4 +22,4 @@ All in all, the author recommend to study real math and physics as I shown in th
 
 # Math is dry?
 
-There are arguments such that math is dry and just calculation. I don't think so. Math can expresses how vehicle moves. Using math, aeroplane flys. iPad text? Moving objects? Gaming? Partially agree. I think point is Squeak, processing or Swift Playground. Think math critically, make it as program, visualize, think and analyze. Using iPad may makes student passive, though I think what maker think is correct. Then, you may understand and feel what is math. Can you enjoy music? The author thinks that's the same.
+There are arguments such that math is dry and just calculation. I don't think so. Math can expresses how vehicle moves. Using math, aeroplane flys. iPad text? Moving objects? Gaming? Partially agree. I think point is Squeak, processing or Swift Playground. Think math critically, make it as program, visualize, think and analyze. Using iPad may makes student passive, though I think what maker think is correct. Then, you may understand and could feel what is math. Can you enjoy music? The author thinks that's the same.
