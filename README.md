@@ -10,7 +10,7 @@ For me, conbination of geometry and manifold seems close to albegra-geometry in 
 
 Applications areas are assumed to be analysis of ODE esp, smart material systems, robotics, automatic controlled vehicle, fluid dynamics, electro-magnetic dynamics and so on.
 
-# note on numerical differentiation and education esp. Japanese high school
+# Note on numerical differentiation and education esp. Japanese high school
 
 loop with decreasement of xdot for numerical diff has been impled. In high school analytical diff, it would be ordinary to express diff with line to understand what is differentiation. This is numerical version of that. If a user is not familiar with differentiation, it would be good idea to play with numerical differentiation.
 
