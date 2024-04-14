@@ -19,3 +19,7 @@ The author thinks that Japanese high school student think too much about techniq
 Several years before, suddenly, I read past exam of Univ Tokyo. It seems it is not so difficult. If author is serious about that book, it would be possible to obtain 60% by study from 2nd year of high school. Actually, when I was high school student, I didn't but past exam book of red-book for centre exam only. It is recommended to go to middle range national university and then, go to Titech or Tsukuba by master. The author is First Class (over 70% is A grade) B.Eng and skipped British M.Phil. I think have right to say about education.
 
 All in all, the author recommend to study real math and physics as I shown in this rep. PC would be expensive for high school student. Do part time job, buy functional calculator and graph-paper. And then, play with algebra, geometry, differeitiation and integration. Physics and ordinary differential equation is plus.
+
+# Math is dry?
+
+There are arguments such that math is dry and just calculation. I don't think so. Math can expresses how vehicle moves. Using math, aeroplane flys. iPad text? Moving objects? Gaming? Partially agree. I think point is Squeak, processing or swift playground. Think math critically, make it as program, visualize, think and analyze. Using iPad may makes student passive, though I think what maker think is correct. Then, you may understand and feel what is math. Can you enjoy music? The author thinks that's the same.
