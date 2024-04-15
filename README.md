@@ -2,13 +2,17 @@
 
 In this repository, several numerical simulation for geometry and manifold will be impled. matplot lib will be used for visualization. Why not C++ and OpenGL? It is because it is not required to massive number of calculation and REPL cycle would be important compared with particle simulation.
 
-Differential and integral? For me, it seems it have relation ship to geometry especially, if it were visualized. Moreover, for advanced topic, ODE could be expressed by matrix and vector. They may have geometrically meaning.
+Differential and integral? For me, it seems it have relationship to geometry especially, if it were visualized. Moreover, for advanced topic, ODE could be expressed by matrix and vector. They may have geometrically meaning.
 
 Line integral is interesting math expression for me. As symbol, it is easy to understand raw meaning, it is difficult to understand numerically and programmary.
 
 For me, combination of geometry and manifold seems close to albegra-geometry in old Japanese high school text.
 
 Applications areas are assumed to be analysis of ODE esp, smart material systems, robotics, automatic controlled vehicle, fluid dynamics, electro-magnetic dynamics and so on.
+
+# Relation of math, physics and computer science
+
+What's line integral? What is vector field analysis? It has relation with fluid dynamics and possibly with electro-magnetic dynamics. Actually, ODE was made with classical mechanics. Without having physical insight, it would not be possible to make ODE and no analysis could not be made. Computer science, esp, search engine and recommendation engine have strong relationship with matematics. Why not education in high school math with example of physics and computer science? OK, no education in high school. But students can study by oneselves with some easy to read text book. The authour is relatively well at physics but mainly, applied mathematician. One could be physics person but mathe could be done. Whichever, the author recommend to study both.
 
 # Note on numerical differentiation and education esp. Japanese high school
 
