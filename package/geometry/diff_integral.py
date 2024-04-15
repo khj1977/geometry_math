@@ -18,6 +18,7 @@ def doNumericalLineIntegral(f, x1, x2, deltaX, deltaL):
     sum = 0.0
 
     # for x in range(x1, x2, deltaX):
+    # f is assumed to be the same direction with deltaL
     x = 0.0
     while(True):
         if (x > x2):
