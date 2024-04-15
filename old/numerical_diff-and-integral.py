@@ -30,18 +30,16 @@ def doNumericalLineIntegral(f, x1, x2, deltaX, deltaL):
     
     return sum
 
-# debug
-# The following function may numerical bug. Debug later.
-# end of debug
 def doNumericalIntegration(f, x1, x2, deltaX):
     sum = 0.0
     x = x1
+
     while True:
         if (x > x2):
             break
 
-        f1 = f(x1)
-        f2 = f(x1 + deltaX)
+        f1 = f(x)
+        f2 = f(x + deltaX)
 
         square = (f1 + f2) * deltaX / 2.0
 
@@ -49,7 +47,7 @@ def doNumericalIntegration(f, x1, x2, deltaX):
 
         x = x + deltaX
 
-    return x
+    return sum
 
 # The idea of tangent space of manifold is impled to think what is tangent space
 # and manifold.
@@ -68,7 +66,7 @@ def doCalcFormedTangentLine(f, x1, x2, deltaX, p1, p2):
 
 # main
 
-f = lambda x: x * x
+f = lambda z: z * z
 
 diff = doNumericalDiff(f, 2.0, 0.001)
 print("num diff: " + str(diff))
@@ -84,10 +82,10 @@ while True:
     print("num diff gradually: " + str(diff))
     deltaX = deltaX - ddeltaX
 
-lineIntegral = doNumericalLineIntegral(f, 1, 2, 0.001, 0.001)
+lineIntegral = doNumericalLineIntegral(f, 2, 3, 0.001, 0.001)
 print("line integral: " + str(lineIntegral))
 
-integral = doNumericalIntegration(f, 2, 3, 0.001)
+integral = doNumericalIntegration(f, 3.0, 4.0, 0.001)
 print("integral: " + str(integral))
 
 formedTangentLine = doCalcFormedTangentLine(f, 1.0, 2.0, 0.001, 3.0, 4.0)
