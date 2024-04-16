@@ -1,4 +1,4 @@
-from package.geometry import diff_integral as d
+from com_gmail_eulerbonjour.geometry import diff_integral as d
 import numpy as np
 import math as m
 

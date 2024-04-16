@@ -1,9 +1,9 @@
 import sys
-sys.path.append("../")
+sys.path.append("../package/")
 
-from package.geometry import diff_integral
+from com_gmail_eulerbonjour.geometry import diff_integral as d
 
 f = lambda z: z * z
 
-diff = diff_integral.doNumericalDiff(f, 2.0, 0.001)
+diff = d.doNumericalDiff(f, 2.0, 0.001)
 print("num diff: " + str(diff))

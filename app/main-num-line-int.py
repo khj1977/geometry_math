@@ -1,7 +1,7 @@
 import sys
-sys.path.append("../")
+sys.path.append("../package/")
 
-from package.geometry import diff_integral as d
+from com_gmail_eulerbonjour.geometry import diff_integral as d
 
 f = lambda z: z * z
 
