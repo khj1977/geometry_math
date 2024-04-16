@@ -8,7 +8,6 @@ As you can see, in this rep, python is used to program idea of math. However, ev
 Remark:
 I am new undergrad univ student. I want to be marketer. So, I don't need to study differential and integral calculus. I want to be psychologist. So, I don't need matrix and calculus. Is it trueth? The author thinks it isn't. Both of professisions use several multivariable analysis which is kind of statics, and it uses calculus and linear algebra as bases. Actually, it is possible to claculate using software package such R such a statical values. But without having knowledge of math used on bases, deep understanding of analysis would no be made. Thus, the author recommend to study linear albegra and calculus even one's major is not science or engineering.
 
-
 Differential and integral? For me, it seems it have relationship to geometry especially, if it were visualized. Moreover, for advanced topic, ODE could be expressed by matrix and vector. They may have geometrically meaning.
 
 Line integral is interesting math expression for me. As symbol, it is easy to understand raw meaning, it is difficult to understand numerically and programmary.
