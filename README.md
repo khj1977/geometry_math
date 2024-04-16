@@ -3,7 +3,7 @@
 In this repository, several numerical simulation for geometry and manifold will be impled. matplot lib will be used for visualization. Why not C++ and OpenGL? It is because it is not required to massive number of calculation and REPL cycle would be important compared with particle simulation.
 
 Remark:
-As you can see, in this rep, python is used to program idea of math. However, even calculation order and speed with enough for modern CPU, I recommend univ students to use C or C++ for their simulation. C++ might be obvious if one checked my rep of particle simulation of fluid dynamics. Why C as well? For control of robotics or vehicle, C may be used to calc control input and emit signal via DA converter or even digital control is utilized. It is realtime computing. C may be faster than C++ even C++ is fast enough. Considering ultimate situation, the author recommend to study C++ and C. And use it as training.
+As you can see, in this rep, python is used to program idea of math. However, even calculation order and speed with enough for modern CPU, I recommend univ students to use C or C++ for their calculation. C++ might be obvious if one checked my rep of particle simulation of fluid dynamics. Why C as well? For control of robotics or vehicle, C may be used to calc control input and emit signal via DA converter or even digital control is utilized. It is realtime computing. C may be faster than C++ even C++ is fast enough. Considering ultimate situation, the author recommend to study C++ and C. And use it as training.
 
 Differential and integral? For me, it seems it have relationship to geometry especially, if it were visualized. Moreover, for advanced topic, ODE could be expressed by matrix and vector. They may have geometrically meaning.
 
