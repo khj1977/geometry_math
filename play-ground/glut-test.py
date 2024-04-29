@@ -1,4 +1,4 @@
-# The basics of glut is mainly from: https://zenn.dev/zgw426/articles/2619722626bf23
+# The basics of glut for python is mainly from: https://zenn.dev/zgw426/articles/2619722626bf23
 
 import sys
 from OpenGL.GLUT import *
