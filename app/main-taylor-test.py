@@ -6,7 +6,6 @@ import math as m
 
 # settings
 x0 = 0.0
-x = x0
 
 # def doCalcTaylorSeries(f, fDot, x0, x):
 f = lambda x0, x: m.sin(x)
