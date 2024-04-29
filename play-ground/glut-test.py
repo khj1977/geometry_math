@@ -35,6 +35,8 @@ def display():
     # static deltaTheta = 0.01
     # static xx = 0.0
     # static yy = 0.0
+
+    # dirty hack
     global theta
     global deltaTheta
     global xx
