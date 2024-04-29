@@ -86,6 +86,9 @@ def doNumericalIntegration(f, x1, x2, deltaX):
 
     return sum
 
+# debug
+# There could be bug in the following function. It would be fixed later on.
+# end of debug
 def calcTaylorSeries(f, fDot, x0, x):
     # f = x0, x:
     y0 = f(x0, x)
