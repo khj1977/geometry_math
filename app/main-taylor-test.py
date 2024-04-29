@@ -20,7 +20,7 @@ while True:
         break
 
     y = di.calcTaylorSeries(f, fDot, x0, x)
-    y1 = m.sin(x)
+    y1 = f(x0, x)
 
     print(str(y) + "\t" + str(y1) + "\n")
 
