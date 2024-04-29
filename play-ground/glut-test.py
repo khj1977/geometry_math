@@ -7,12 +7,6 @@ from OpenGL.GLU import *
 
 import math as m
 
-# dirty but test.
-theta = 0.0
-deltaTheta = 0.01
-xx = 0.0
-yy = 0.0
-
 def idle():
     glutPostRedisplay()
 
@@ -26,7 +20,7 @@ def mouse(button, state, x, y):
     if state == GLUT_DOWN:
         glutPostRedisplay()
 
-def display():
+def displayOld():
     glClear(GL_COLOR_BUFFER_BIT)
     glColor3f(0.0, 0.0, 1.0)
     glBegin(GL_POLYGON)
@@ -36,11 +30,22 @@ def display():
     glEnd()
     glFlush()
 
-def displayCircle():
+def display():
     # static theta = 0.0
     # static deltaTheta = 0.01
     # static xx = 0.0
     # static yy = 0.0
+    global theta
+    global deltaTheta
+    global xx
+    global yy
+
+    theta = theta + deltaTheta
+    if (theta > 2.0 * 3.14):
+        theta = 0.0
+
+    xx = m.cos(theta)
+    yy = m.sin(theta)
 
     glClear(GL_COLOR_BUFFER_BIT)
     glBegin(GL_POINTS)
@@ -50,13 +55,6 @@ def displayCircle():
     glEnd()
     glFlush()
 
-    xx = m.cos(theta)
-    yy = m.sin(theta)
-
-    theta = theta + deltaTheta
-    if (theta > 2.0 * 3.14):
-        theta = 0.0
-
 def init():
     glClearColor(0.0, 0.0, 0.0, 0.0)
     glMatrixMode(GL_PROJECTION)
@@ -64,6 +62,10 @@ def init():
     glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
 
 
+theta = 0.0
+deltaTheta = 0.01
+xx = 0.0
+yy = 0.0
 glutInit(sys.argv)
 glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
 glutInitWindowSize(300, 300)
