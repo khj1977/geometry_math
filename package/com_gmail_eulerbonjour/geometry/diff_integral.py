@@ -85,3 +85,12 @@ def doNumericalIntegration(f, x1, x2, deltaX):
         x = x + deltaX
 
     return sum
+
+def calcTaylorSeries(f, fDot, x0, x):
+    # f = x0, x:
+    y0 = f(x0, x)
+    y1 = fDot(x0, x) * (x - x0)
+
+    y = y0 + y1
+    
+    return y
