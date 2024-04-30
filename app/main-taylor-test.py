@@ -12,8 +12,8 @@ f = lambda x0, x: m.sin(x)
 fDot = lambda x0, x: m.cos(x)
 
 x = x0
-deltaX = 0.001
-endX = 10.0
+deltaX = 0.0001
+endX = 10.0 / 180 * 3.14
 while True:
     if (x > endX):
         break
@@ -21,7 +21,9 @@ while True:
     y = di.calcTaylorSeries(f, fDot, x0, x)
     y1 = f(x0, x)
 
-    print(str(y) + "\t" + str(y1) + "\n")
+    diff = y - y1
+
+    deg = x / 3.14 * 180.0
+    print(str(deg) + "\t" + str(y) + "\t" + str(y1) + "\t" + str(diff))
 
     x = x + deltaX
-
