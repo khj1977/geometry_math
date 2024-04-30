@@ -13,7 +13,7 @@ fDot = lambda x0, x: m.cos(x)
 
 x = x0
 deltaX = 0.0001
-endX = 10.0 / 180 * 3.14
+endX = 10.0 / 180.0 * 3.14
 while True:
     if (x > endX):
         break
