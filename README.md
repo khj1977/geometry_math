@@ -20,6 +20,10 @@ Applications areas are assumed to be analysis of ODE esp, smart material systems
 
 What's line integral? What is vector field analysis? It has relation with fluid dynamics and possibly with electro-magnetic dynamics. Actually, ODE was made with classical mechanics. Without having physical insight, it would not be possible to make ODE and no analysis could not be made. Computer science, esp, search engine and recommendation engine have strong relationship with matematics. Why not education in high school math with example of physics and computer science? OK, no education in high school. But students can study by oneselves with some easy to read text book. The authour is relatively well at physics but mainly, applied mathematician. One could be physics person but math could be done. Whichever, the author recommend to study both.
 
+# Why simple math model especially pendulum for complex applications such as bicyle, vehicle and Smart Material Systems?
+
+Essence is simple. If it were not simple, it is not essence. The major topic or interest of the author is mathematical property or description of nonlinear systems especially smart material systems. It is complex application. However, ultimately, it would goes close to combination of nolinear pendulum and dumper or nonlienar elasticity. This is not application development but study and research of ODE or manifold for Smart Material Systems. To disclose essencial property of nonlienear systems, relatively simple model is utlized. If one have interest for development of application itself, it would be better to go to development of equation for complex systems. But it isn't at this time. The author takes position as applied mathematician without super computer.
+
 # Note on numerical differentiation and education esp. Japanese high school
 
 loop with decreasement of xdot for numerical diff has been impled. In high school analytical diff, it would be ordinary to express diff with line to understand what is differentiation. This is numerical version of that. If a user is not familiar with differentiation, it would be good idea to play with numerical differentiation.
