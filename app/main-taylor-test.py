@@ -1,6 +1,3 @@
-import sys
-sys.path.append("../package/")
-
 from com_gmail_eulerbonjour.geometry import diff_integral as di
 import math as m
 
