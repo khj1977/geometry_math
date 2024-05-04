@@ -1,6 +1,4 @@
-import sys
-sys.path.append("../package/")
-
+# set PYTHONPATH for search path of from.
 from com_gmail_eulerbonjour.geometry import diff_integral as d
 
 f = lambda z: z * z
