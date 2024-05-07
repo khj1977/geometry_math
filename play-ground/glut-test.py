@@ -50,22 +50,33 @@ def display():
     yy = m.sin(theta)
 
     glClear(GL_COLOR_BUFFER_BIT)
-    glBegin(GL_POINTS)
+    # glBegin(GL_POINTS)
+    glBegin(GL_POLYGON)
 
-    glVertex3d(xx, yy, 0.0)
+    glColor3d(0.0, 0.0, 1.0)
+
+    glVertex3d(0.0, 0.0, 0.0)
+    glVertex3d(1.0, 0.0, 0.0)
+    glVertex3d(1.0, 1.0, 0.0)
+    glVertex3d(0.0, 1.0, 0.0)
+    glVertex3d(0.0, 0.0, 0.0)
 
     glEnd()
     glFlush()
 
 def init():
-    glClearColor(0.0, 0.0, 0.0, 0.0)
+    glClearColor(1.0, 1.0, 1.0, 0.0)
     glMatrixMode(GL_PROJECTION)
+    
+    # glViewport(0, 0, 300, 300);
+
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
     glOrtho(-2.0, 2.0, -2.0, 2.0, -1.0, 1.0)
 
-    gluPerspective(30.0, 1.0, -10.0, 100.0)
-    gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
+    # gluPerspective(30.0, 1.0, 1.0, 100.0)
+    # glTranslated(0.0, 0.0, -5.0);
+    # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
 
 
 theta = 0.0
