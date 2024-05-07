@@ -61,7 +61,8 @@ def init():
     glClearColor(0.0, 0.0, 0.0, 0.0)
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
+    # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
+    glOrtho(-2.0, 2.0, -2.0, 2.0, -1.0, 1.0)
 
 
 theta = 0.0
