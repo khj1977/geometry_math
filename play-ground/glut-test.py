@@ -55,11 +55,11 @@ def display():
 
     glColor3d(0.0, 0.0, 1.0)
 
-    glVertex3d(0.0, 0.0, 0.0)
-    glVertex3d(1.0, 0.0, 0.0)
-    glVertex3d(1.0, 1.0, 0.0)
-    glVertex3d(0.0, 1.0, 0.0)
-    glVertex3d(0.0, 0.0, 0.0)
+    glVertex3d(0.0, 0.0, 2.0)
+    glVertex3d(1.0, 0.0, 2.0)
+    glVertex3d(1.0, 1.0, 2.0)
+    glVertex3d(0.0, 1.0, 2.0)
+    glVertex3d(0.0, 0.0, 2.0)
 
     glEnd()
     glFlush()
@@ -72,11 +72,11 @@ def init():
 
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
-    glOrtho(-2.0, 2.0, -2.0, 2.0, -1.0, 1.0)
+    glOrtho(-2.0, 2.0, -2.0, 2.0, -10.0, 10.0)
 
-    # gluPerspective(30.0, 1.0, 1.0, 100.0)
+    gluPerspective(30.0, 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
-    # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
+    gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
 
 
 theta = 0.0
