@@ -52,7 +52,7 @@ def display():
     glClear(GL_COLOR_BUFFER_BIT)
     glBegin(GL_POINTS)
 
-    glVertex2d(xx, yy)
+    glVertex3d(xx, yy, 00)
 
     glEnd()
     glFlush()
@@ -63,6 +63,9 @@ def init():
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
     glOrtho(-2.0, 2.0, -2.0, 2.0, -1.0, 1.0)
+
+    gluPerspective(30.0, 1.0, -10.0, 100.0)
+    gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
 
 
 theta = 0.0
