@@ -52,7 +52,7 @@ def display():
     glClear(GL_COLOR_BUFFER_BIT)
     glBegin(GL_POINTS)
 
-    glVertex3d(xx, yy, 00)
+    glVertex3d(xx, yy, 0.0)
 
     glEnd()
     glFlush()
