@@ -53,7 +53,7 @@ def display():
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
     glOrtho(-2.0, 2.0, -2.0, 2.0, -10.0, 10.0)
 
-    gluPerspective(30.0, 1.0, 1.0, 100.0)
+    gluPerspective(30.0 * m.cos(theta), 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
     # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
     gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, xx, yy, 0.0)
