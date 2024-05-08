@@ -42,8 +42,6 @@ def display():
     global xx
     global yy
 
-    global theta2
-
     theta = theta + deltaTheta
     if (theta > 2.0 * 3.14):
         theta = 0.0
@@ -114,7 +112,6 @@ def init():
 
 
 theta = 0.0
-theta2 = 0.0
 deltaTheta = 0.01
 xx = 0.0
 yy = 0.0
