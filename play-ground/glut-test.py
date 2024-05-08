@@ -42,6 +42,8 @@ def display():
     global xx
     global yy
 
+    global theta2
+
     theta = theta + deltaTheta
     if (theta > 2.0 * 3.14):
         theta = 0.0
@@ -54,7 +56,7 @@ def display():
     glOrtho(-2.0, 2.0, -2.0, 2.0, -10.0, 10.0)
 
     gluPerspective(30.0 * m.cos(theta), 1.0, 1.0, 100.0)
-    # glTranslated(0.0, 0.0, -5.0);
+    # glTranslated(0.0, 0.0, -5.0);q
     # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
     gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, xx, yy, 0.0)
 
@@ -76,7 +78,22 @@ def display():
 
     glColor3d(1.0, 0.0, 0.0)
     glVertex3d(0.0, 0.0, -2.0)
+    glEnd()
 
+    theta2 = 0.0
+    r = 0.3
+    cx = 1.5
+    cy = 1.5
+
+    glBegin(GL_POLYGON)
+    glColor3d(0.0, 0.0, 1.0)
+    while True:
+       if theta2 > 3.14 * 2.0:
+        break
+       
+       glVertex3d(r * m.cos(theta2) + cx, r * m.sin(theta2) + cy, -2.0)
+
+       theta2 = theta2 + deltaTheta
     glEnd()
     glFlush()
 
@@ -97,6 +114,7 @@ def init():
 
 
 theta = 0.0
+theta2 = 0.0
 deltaTheta = 0.01
 xx = 0.0
 yy = 0.0
