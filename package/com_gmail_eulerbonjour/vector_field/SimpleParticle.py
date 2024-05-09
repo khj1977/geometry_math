@@ -28,6 +28,7 @@ class SimpleParticle:
         self.odeEngine = odeEngine
 
         self.forceInput = pi.ProgrammableInput()
+        self.odeEngine.setControlInput(self.forceInput)
 
     def render(self):
         glBegin(GL_POLYGON)
