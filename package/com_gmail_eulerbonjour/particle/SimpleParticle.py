@@ -35,3 +35,30 @@ class SimpleParticle:
         self.cy = cy
 
         return self
+    
+    def getCentreX(self):
+        return self.cx
+    
+    def getCentreY(self):
+        return self.cy
+    
+    def calcGravity(self, anotherParticle):
+        norm = self.get2Norm(anotherParticle)
+        k = 1.0
+        force = k / norm*norm
+
+        return force
+    
+    def get2Norm(self, anotherParticle):
+        x1 = self.getCentreX()
+        x2 = anotherParticle.getCentreX()
+
+        y1 = self.getCentreY()
+        y2 = anotherParticle.getCentreY()
+
+        xx = x2 - x1
+        yy = y2 - y1
+
+        norm = m.sqrt(xx * xx + yy * yy)
+
+        return norm
