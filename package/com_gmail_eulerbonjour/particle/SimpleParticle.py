@@ -23,7 +23,7 @@ class SimpleParticle:
             if self.theta > 3.14 * 2.0:
                 break
        
-            glVertex3d(r * m.cos(theta2) + cx, r * m.sin(theta2) + cy, -2.0)
+            glVertex3d(self.r * m.cos(self.theta) + self.cx, self.r * m.sin(self.theta) + self.cy, -2.0)
 
             self.theta = self.theta + self.deltaTheta
         glEnd()
