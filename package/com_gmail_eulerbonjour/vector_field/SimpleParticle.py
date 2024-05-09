@@ -19,6 +19,8 @@ class SimpleParticle:
         self.theta = 0
         self.deltaTheta = 0.1
 
+        self.thNorm = 0.01
+
         # or even obtain env via engine?
         self.oenv = self.odeEngine.getEnv()
 
@@ -54,7 +56,13 @@ class SimpleParticle:
         # debug
         # impl interaction between paricles such as apply force or resistance.
         # Using odeEnv, set x and xdot to reverse direction.
-        pass
+        env = self.oenv
+        norm = self.get2Norm(anotherParticle)
+        if (norm < self.thNorm):
+            env.setX(-1.0 * env.getX())
+            env.setXDot(-1.0 * env.getXDot())
+
+        # add how to apply force. It might be via disturbance of ODE engine.
         # end of debug
 
     def calcGravity(self, anotherParticle):
