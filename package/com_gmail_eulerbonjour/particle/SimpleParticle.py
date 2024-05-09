@@ -49,7 +49,10 @@ class SimpleParticle:
     def calcGravity(self, anotherParticle):
         norm = self.get2Norm(anotherParticle)
         k = 1.0
+        # debug
+        # force as scalar or vector?
         force = k / norm*norm
+        # end of debug
 
         return force
     
