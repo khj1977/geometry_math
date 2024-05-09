@@ -7,6 +7,7 @@ import math as m
 
 from com_gmail_eulerbonjour.ode_solver import ode_euler as euler
 from com_gmail_eulerbonjour.ode_solver import ode_env as oenv
+from com_gmail_eulerbonjour.ode_solver import ode_programmable_input as pi
 
 class SimpleParticle:
 
@@ -25,6 +26,8 @@ class SimpleParticle:
         self.oenv = self.odeEngine.getEnv()
 
         self.odeEngine = odeEngine
+
+        self.forceInput = pi.ProgrammableInput()
 
     def render(self):
         glBegin(GL_POLYGON)
@@ -63,6 +66,9 @@ class SimpleParticle:
             env.setXDot(-1.0 * env.getXDot())
 
         # add how to apply force. It might be via disturbance of ODE engine.
+        gravity = self.calcGravity(anotherParticle)
+        # ignore mass
+        self.forceInput.setNumericInput(gravity)
         # end of debug
 
     def calcGravity(self, anotherParticle):
