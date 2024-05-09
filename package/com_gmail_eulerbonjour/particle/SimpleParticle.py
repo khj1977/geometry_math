@@ -5,9 +5,11 @@ from OpenGL.GLU import *
 
 import math as m
 
+from com_gmail_eulerbonjour.ode_solver import ode_euler as euler
+
 class SimpleParticle:
 
-    def __init__(self, r, cx0, cy1):
+    def __init__(self, r, cx0, cy1, odeEngine):
         self.r = r
 
         self.cx = cx0
@@ -15,6 +17,8 @@ class SimpleParticle:
         
         self.theta = 0
         self.deltaTheta = 0.1
+
+        self.odeEngine = odeEngine
 
     def render(self):
         glBegin(GL_POLYGON)
@@ -62,3 +66,9 @@ class SimpleParticle:
         norm = m.sqrt(xx * xx + yy * yy)
 
         return norm
+    
+    # debug
+    # use to calc next (cx, cy) by euler solver with gravity of each particle.
+    # end of debug
+    def inc(self):
+        pass
