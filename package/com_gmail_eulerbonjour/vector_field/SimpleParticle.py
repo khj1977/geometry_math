@@ -19,6 +19,7 @@ class SimpleParticle:
         self.theta = 0
         self.deltaTheta = 0.1
 
+        # or even obtain env via engine?
         self.oenv = odeEnv
 
         self.odeEngine = odeEngine
