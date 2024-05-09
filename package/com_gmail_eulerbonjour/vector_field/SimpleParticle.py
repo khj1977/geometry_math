@@ -6,10 +6,11 @@ from OpenGL.GLU import *
 import math as m
 
 from com_gmail_eulerbonjour.ode_solver import ode_euler as euler
+from com_gmail_eulerbonjour.ode_solver import ode_env as oenv
 
 class SimpleParticle:
 
-    def __init__(self, r, cx0, cy1, odeEngine):
+    def __init__(self, r, cx0, cy1, odeEngine, odeEnv):
         self.r = r
 
         self.cx = cx0
@@ -17,6 +18,8 @@ class SimpleParticle:
         
         self.theta = 0
         self.deltaTheta = 0.1
+
+        self.oenv = odeEnv
 
         self.odeEngine = odeEngine
 
@@ -49,6 +52,7 @@ class SimpleParticle:
     def interact(self, anotherParticle):
         # debug
         # impl interaction between paricles such as apply force or resistance.
+        # Using odeEnv, set x and xdot to reverse direction.
         pass
         # end of debug
 
