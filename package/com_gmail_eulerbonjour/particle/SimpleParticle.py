@@ -46,6 +46,12 @@ class SimpleParticle:
     def getCentreY(self):
         return self.cy
     
+    def interact(self, anotherParticle):
+        # debug
+        # impl interaction between paricles such as apply force or resistance.
+        pass
+        # end of debug
+
     def calcGravity(self, anotherParticle):
         norm = self.get2Norm(anotherParticle)
         k = 1.0
