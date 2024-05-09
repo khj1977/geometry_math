@@ -10,7 +10,7 @@ from com_gmail_eulerbonjour.ode_solver import ode_env as oenv
 
 class SimpleParticle:
 
-    def __init__(self, r, cx0, cy1, odeEngine, odeEnv):
+    def __init__(self, r, cx0, cy1, odeEngine):
         self.r = r
 
         self.cx = cx0
@@ -20,7 +20,7 @@ class SimpleParticle:
         self.deltaTheta = 0.1
 
         # or even obtain env via engine?
-        self.oenv = odeEnv
+        self.oenv = self.odeEngine.getEnv()
 
         self.odeEngine = odeEngine
 
