@@ -63,7 +63,9 @@ class SimpleParticle:
         env = self.oenv
         norm = self.get2Norm(anotherParticle)
         if (norm < self.thNorm):
-            env.setX(-1.0 * env.getX())
+            # not required since making direction of x could be OK but not negative position.
+            # direction would be changed only by speed or xdot.
+            # env.setX(-1.0 * env.getX())
             env.setXDot(-1.0 * env.getXDot())
 
         # add how to apply force. It might be via disturbance of ODE engine.
