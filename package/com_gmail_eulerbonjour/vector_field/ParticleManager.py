@@ -38,3 +38,6 @@ class ParticleManager:
                 p1.interact(p2)
         
         return self
+    
+    def incAll(self):
+        pass
