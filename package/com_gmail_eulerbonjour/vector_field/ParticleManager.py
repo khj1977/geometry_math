@@ -15,7 +15,10 @@ class ParticleManager:
         pass
 
     def renderAll(self):
+        # debug
+        # put OpenGL related func call should be here?
         for p in self.innerList:
             p.render()
+        # end of debug
 
         return self
