@@ -1,3 +1,8 @@
+import sys
+from OpenGL.GLUT import *
+from OpenGL.GL import *
+from OpenGL.GLU import *
+
 class ParticleManager:
     
     def __init__(self):
@@ -9,17 +14,22 @@ class ParticleManager:
         return self
 
     def getParticles(self):
-        pass
+        return self.innerList
 
     def getParticle(self, id):
-        pass
+        return self.innerList[id]
 
     def renderAll(self):
         # debug
         # put OpenGL related func call should be here?
+        glClear(GL_COLOR_BUFFER_BIT)
+
         for p in self.innerList:
             p.render()
         # end of debug
+
+        glFlush()
+
 
         return self
 
