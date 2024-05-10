@@ -22,3 +22,19 @@ class ParticleManager:
         # end of debug
 
         return self
+
+    # it is supposed that this similator is small/mid size only
+    # and thus, it would be OK to interact to all particles each other
+    # considering order of calculation.
+    def interactAll(self):
+        for p1 in self.innerList:
+            for p2 in self.innerList:
+                # debug
+                # another way of comparison of object?
+                # end of debug
+                if p1 == p2:
+                    continue
+
+                p1.interact(p2)
+        
+        return self
