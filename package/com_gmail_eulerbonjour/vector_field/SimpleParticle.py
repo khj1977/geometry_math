@@ -62,6 +62,8 @@ class SimpleParticle:
         # Using odeEnv, set x and xdot to reverse direction.
         env = self.oenv
         norm = self.get2Norm(anotherParticle)
+
+        # thNorm could be r of paricle.
         if (norm < self.thNorm):
             # not required since making direction of x could be OK but not negative position.
             # direction would be changed only by speed or xdot.
