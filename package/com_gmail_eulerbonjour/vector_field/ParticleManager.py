@@ -37,6 +37,7 @@ class ParticleManager:
     # and thus, it would be OK to interact to all particles each other
     # considering order of calculation.
     def interactAll(self):
+        # skip if pki but pik is executed. It is symmetry.
         for p1 in self.innerList:
             for p2 in self.innerList:
                 # debug
