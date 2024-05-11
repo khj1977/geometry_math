@@ -38,6 +38,7 @@ class ParticleManager:
     # considering order of calculation.
     def interactAll(self):
         # skip if pki but pik is executed. It is symmetry.
+        # The above assumption may be incorrect considering definition of interact().
         for p1 in self.innerList:
             for p2 in self.innerList:
                 # debug
