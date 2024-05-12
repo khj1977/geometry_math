@@ -3,10 +3,13 @@ from OpenGL.GLUT import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
+from com_gmail_eulerbonjour.ode_solver import ode_time as time
+
 class ParticleManager:
     
     def __init__(self):
         self.innerList = []
+        self.envT = time.ODETime()
 
     def addParticle(self, aParticle):
         self.innerList.append(aParticle)
@@ -52,4 +55,8 @@ class ParticleManager:
         return self
     
     def incAll(self):
-        pass
+        for t in self.envT.startClock():
+            for p in self.innerList:
+                p.inc()
+
+        return self
