@@ -34,6 +34,14 @@ Several years before, suddenly, I read past exam of Univ. Tokyo. It seems it is 
 
 All in all, the author recommend to study real math and physics as I shown in this rep. PC would be expensive for high school student. Do part time job, buy functional calculator and graph-paper. And then, play with algebra, geometry, differeitiation and integration. Physics and ordinary differential equation is plus.
 
+# Ordinary Differential Equation, Partial Differential Equation, FEM, Digital Lagrangian and Micro Mechanics -Mathe, Physics and Computer Science-
+
+For preparation of study of vector field, numerical simulation of micro-mechanics for fluid dynamics with simple prototype is deployed. It is multiple particle and fluid not material or solid state physics. Historically, micro mechanics is used for material engineering but the author thinks that it is also appropriate to model fluid dynamics considering meaning of micro-mechanics. 
+
+Mori-Tanaka's micro mechanics is basically based on disturbance observer. This micro mechanics is based on particle and multiple ODE-solver with pythos or C++. The difference would be come from the power of programming. For old ages, computer simulation or experiment is not popular and long queue for CPU cluster is required. Thanks to Apple Mx series SoC, now we can calcualte physics phenomia by very fast speed. Metal for GPU or Posix Threads for multi-CPU core would be plus.
+
+Author investigated about material mechanics and thus, some time duration, investigation of fluid would be done by some chunk of times.
+
 # Math is dry?
 
 There are arguments such that math is dry and just calculation. I don't think so. Math can expresses how vehicle moves. Using math, aeroplane flys. iPad text? Moving objects? Gaming? Partially agree. I think point is Squeak, processing or Swift Playground. Think math critically, make it as program, visualize, think and analyze. Using iPad may makes student passive, though I think what maker think is correct. Then, you may understand and could feel what is math. Can you enjoy music? The author thinks that's the same.
