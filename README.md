@@ -36,7 +36,7 @@ All in all, the author recommend to study real math and physics as I shown in th
 
 # Ordinary Differential Equation, Partial Differential Equation, FEM, Digital Lagrangian and Micro Mechanics -Mathe, Physics and Computer Science-
 
-For preparation of study of vector field, numerical simulation of micro-mechanics for fluid dynamics with simple prototype is deployed. It is multiple particle and fluid not material or solid state physics. Historically, micro mechanics is used for material engineering but the author thinks that it is also appropriate to model fluid dynamics considering meaning of micro-mechanics. 
+For preparation of study of vector field, numerical simulation of micro-mechanics for fluid dynamics with simple particle prototype is deployed. It is multiple particle and fluid not material or solid state physics. Historically, micro mechanics is used for material engineering but the author thinks that it is also appropriate to model fluid dynamics considering meaning of micro-mechanics. 
 
 Mori-Tanaka's micro mechanics is basically based on disturbance observer. This micro mechanics is based on particle and multiple ODE-solver with pythos or C++. The difference would be come from the power of programming. For old ages, computer simulation or experiment is not popular and long queue for CPU cluster is required. Thanks to Apple Mx series SoC, now we can calcualte physics phenomia by very fast speed. Metal for GPU or Posix Threads for multi-CPU core would be plus.
 
