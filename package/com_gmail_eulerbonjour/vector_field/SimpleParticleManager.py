@@ -5,7 +5,7 @@ from OpenGL.GLU import *
 
 from com_gmail_eulerbonjour.ode_solver import ode_time as time
 
-class ParticleManager:
+class SimpleParticleManager:
     
     def __init__(self, startT, endT, deltaT):
         self.innerList = []
