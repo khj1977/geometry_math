@@ -34,7 +34,7 @@ Several years before, suddenly, I read past exam of Univ. Tokyo. It seems it is 
 
 All in all, the author recommend to study real math and physics as I shown in this rep. PC would be expensive for high school student. Do part time job, buy functional calculator and graph-paper. And then, play with algebra, geometry, differeitiation and integration. Physics and ordinary differential equation is plus.
 
-# Ordinary Differential Equation, Partial Differential Equation, FEM, Digital Lagrangian and Micro Mechanics -Mathe, Physics and Computer Science-
+# Ordinary Differential Equation, Partial Differential Equation, FEM, Digital Lagrangian and Micro Mechanics -Math, Physics and Computer Science-
 
 For preparation of study of vector field, numerical simulation of micro-mechanics for fluid dynamics with simple particle prototype is deployed. It is multiple particle and fluid not material or solid state physics. Historically, micro mechanics is used for material engineering but the author thinks that it is also appropriate to model fluid dynamics considering meaning of micro-mechanics. 
 
