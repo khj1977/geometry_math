@@ -104,4 +104,11 @@ class SimpleParticle:
     # use to calc next (cx, cy) by euler solver with gravity of each particle.
     # end of debug
     def inc(self):
-        pass
+        self.odeEngine.inc()
+
+        cx = self.oenv.getX()
+        cy = self.oenv.getXDot()
+
+        self.setCentre(cx, cy)
+
+        return self
