@@ -20,7 +20,8 @@ class SimpleParticle:
         self.theta = 0
         self.deltaTheta = 0.1
 
-        self.thNorm = 0.01
+        # self.thNorm = 0.01
+        self.theNorm = self.r
 
         # or even obtain env via engine?
         self.oenv = self.odeEngine.getEnv()
