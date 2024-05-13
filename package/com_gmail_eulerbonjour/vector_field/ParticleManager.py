@@ -7,9 +7,10 @@ from com_gmail_eulerbonjour.ode_solver import ode_time as time
 
 class ParticleManager:
     
-    def __init__(self):
+    def __init__(self, startT, endT, deltaT):
         self.innerList = []
-        self.envT = time.ODETime(0.0, 1000.0, 0.01)
+        # self.envT = time.ODETime(0.0, 1000.0, 0.01)
+        self.envT = time.ODETime(startT, endT, deltaT)
 
     def addParticle(self, aParticle):
         self.innerList.append(aParticle)
