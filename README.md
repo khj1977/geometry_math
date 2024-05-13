@@ -38,7 +38,7 @@ All in all, the author recommend to study real math and physics as I shown in th
 
 For preparation of study of vector field, numerical simulation of micro-mechanics for fluid dynamics with simple particle prototype is deployed. It is multiple particle and fluid not material or solid state physics. Historically, micro mechanics is used for material engineering but the author thinks that it is also appropriate to model fluid dynamics considering meaning of micro-mechanics. 
 
-Mori-Tanaka's micro mechanics is basically based on disturbance observer. This micro mechanics is based on particle and multiple ODE-solver with python or C++. The difference would be come from the power of programming. For old ages, computer simulation or experiment is not popular and long queue for CPU cluster is required. Thanks to Apple Mx series SoC, now we can calcualte physical phenomia by very fast speed. Metal for GPU or Posix Threads for multi-CPU core would be plus.
+Mori-Tanaka's micro mechanics is basically based on disturbance observer. This micro mechanics is based on particle and multiple ODE-solver with python or C++. The difference would be come from the power of programming. It was PDE and analysis. Or even with Hibert Space. For old ages, computer simulation or experiment is not popular and long queue for CPU cluster is required. Thanks to Apple Mx series SoC, now we can calcualte physical phenomia by very fast speed. Metal for GPU or Posix Threads for multi-CPU core would be plus.
 
 Author investigated about material mechanics and thus, some time duration, investigation of fluid would be done by some chunk of times.
 
