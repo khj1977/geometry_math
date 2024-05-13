@@ -9,7 +9,7 @@ class ParticleManager:
     
     def __init__(self):
         self.innerList = []
-        self.envT = time.ODETime()
+        self.envT = time.ODETime(0.0, 1000.0, 0.01)
 
     def addParticle(self, aParticle):
         self.innerList.append(aParticle)
