@@ -105,4 +105,4 @@ class ParticleWorld:
 
 # Although it is not static, it is treated as singleton. Thus, it is
 # OK to init world at this scope. This could be refered by another module.
-w = ParticleWorld()
+world = ParticleWorld()
