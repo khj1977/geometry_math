@@ -44,7 +44,7 @@ Author investigated about material mechanics and thus, some time duration, inves
 
 # Modelling and mesoscopic physics
 
-We have paticle. We have high speed CPU/GPU. Just implement particle. We don't need physics then? No. Actually, particle is not atom but virtual particle which express some set of molecule of parter, air or other fluid. This is assumed to be some mesoscopic physics and virtual physical particle. The author thinks that this is some kind of hypothesis and physical modelling. Although it would be different from ordinary physics, it would be some kind of physics. Hypothesis. The author thinks that is a core of physics.
+We have paticle. We have high speed CPU/GPU. Just implement particle. We don't need physics then? No. Actually, particle is not atom but virtual particle which express some set of molecule of water, air or other fluid. This is assumed to be some mesoscopic physics and virtual physical particle. The author thinks that this is some kind of hypothesis and physical modelling. Although it would be different from ordinary physics, it would be some kind of physics. Hypothesis. The author thinks that is a core of physics.
 
 # Math is dry?
 
