@@ -5,6 +5,7 @@ from com_gmail_eulerbonjour.ode_solver import ode_control_input as ci
 from com_gmail_eulerbonjour.ode_solver import ode_coefs as ce
 from com_gmail_eulerbonjour.ode_solver import ode_time as time
 from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
+from com_gmail_eulerbonjour.vector_field import SimpleParticle as particle
 
 class ParticleWorld:
 
@@ -37,6 +38,10 @@ class ParticleWorld:
             odeEngine = euler.ODEOneDimEulerMethod(self.deltaT, self.startT, self.endT,
                                                    startX, startXDot, f, 
                                                    env, self.envT, forceControlInput, nullControlInput, disturbance)
+            
+            # def __init__(self, r, cx0, cy1, odeEngine, controlInput):
+            p = particle.SimpleParticle(0.2, 0.1 * i, 0.5, odeEngine, forceControlInput)
+            self.manager.addParticle(p)
             
             return self
     
