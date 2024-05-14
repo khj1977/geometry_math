@@ -100,3 +100,7 @@ class ParticleWorld:
        my_glut_init()
        glutDisplayFunc(my_glut_display)
        glutMainLoop()
+
+# Although it is not static, it is treated as singleton. Thus, it is
+# OK to init world at this scope. This could be refered by another module.
+w = ParticleWorld()
