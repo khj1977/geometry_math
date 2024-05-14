@@ -11,8 +11,6 @@ from OpenGL.GLUT import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-import math as m
-
 def my_glut_idle():
     glutPostRedisplay()
 
