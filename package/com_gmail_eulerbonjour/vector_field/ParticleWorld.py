@@ -43,7 +43,7 @@ class ParticleWorld:
             p = particle.SimpleParticle(0.2, 0.1 * i, 0.5, odeEngine, forceControlInput)
             self.manager.addParticle(p)
             
-            return self
+        return self
     
     def inc(self):
         self.manager.interactAll()
