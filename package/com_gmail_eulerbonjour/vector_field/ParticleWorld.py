@@ -41,5 +41,4 @@ class ParticleWorld:
         self.manager.interactAll()
         self.manager.incAll()
 
-
         return self
