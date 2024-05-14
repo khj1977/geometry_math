@@ -8,12 +8,16 @@ from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 class ParticleWorld:
 
     def __init__(self):
-        self.manager = manager.SimpleParticleManager(0.0, 10000.0, 0.01)
+        self.startT = 0.0
+        self.endT = 10000.0
+        self.deltaT = 0.01
         self.envT = self.manager.getEnvT()
+
+        self.manager = manager.SimpleParticleManager(self.startT, self.endT, self.deltaT)
 
     def initialize(self):     
         for i in range(2):
-            f = lambda t, x, xDot: -0.2 * i * x
+            f = lambda t, x, xDot: -0.2 * x
             disturbance = lambda t, x, xDot: 0.0
 
             startX = 0.0
@@ -29,7 +33,8 @@ class ParticleWorld:
             nullControlInput.setCoef(coefs)
 
             # def __init__(self, deltaT, startT, endT, startX, startXDot, f, env, envT, controlInput, controlInputNominal, disturbance):
-            odeEngine = euler.ODEOneDimEulerMethod(0.01, 0.0, 10000.0, startX, startXDot, f, 
+            odeEngine = euler.ODEOneDimEulerMethod(self.deltaT, self.startT, self.endT,
+                                                   startX, startXDot, f, 
                                                    env, self.envT, forceControlInput, nullControlInput, disturbance)
     
     def inc(self):
