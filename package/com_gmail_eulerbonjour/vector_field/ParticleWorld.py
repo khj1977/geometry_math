@@ -90,6 +90,8 @@ class ParticleWorld:
     def render(self):
        self.manager.renderAll()
 
+       return self
+
     def runGlut(self):
        glutInit(sys.argv)
        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
