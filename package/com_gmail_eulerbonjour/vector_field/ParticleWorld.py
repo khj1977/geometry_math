@@ -28,7 +28,6 @@ def my_glut_init():
     glClearColor(1.0, 1.0, 1.0, 0.0)
     glMatrixMode(GL_PROJECTION)
     
-
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
     glOrtho(-2.0, 2.0, -2.0, 2.0, -10.0, 10.0)
