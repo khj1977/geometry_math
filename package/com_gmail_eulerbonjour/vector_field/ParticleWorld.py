@@ -37,6 +37,8 @@ class ParticleWorld:
             odeEngine = euler.ODEOneDimEulerMethod(self.deltaT, self.startT, self.endT,
                                                    startX, startXDot, f, 
                                                    env, self.envT, forceControlInput, nullControlInput, disturbance)
+            
+            return self
     
     def inc(self):
         self.manager.interactAll()
