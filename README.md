@@ -1,6 +1,8 @@
 # Introduction
 
-Drone, robotics Automatic controlled vehicle, vehicle tranportation control system in road, weather prediction and control, missile automatic defense system. We need science and engineering for better life or industry. We have AI. AI can resolve everything, right? The answer is no. Combination of physics, math and computer science takes important role. In this rep, mainly, some kind of study and small research will be taken by numerical calculation bases. It is supposeod that geometry takes main role and partially, manifold, vector fied and physics own its role. Multi-core or GPU programming would be plus but it is not main argument.
+Drone, robotics, automatic controlled vehicle, vehicle tranportation control system in road, weather prediction and control, missile automatic defense system. We need science and engineering for better life or industry. 
+
+We have AI. AI can resolve everything, right? The answer is no. Combination of physics, math and computer science takes important role. In this rep, mainly, some kind of study and small research will be taken by numerical calculation bases. It is supposeod that geometry takes main role and partially, manifold, vector fied and physics own its role. Multi-core or GPU programming would be plus but it is not main argument.
 
 # geometry, manifold, differential and integral.
 
