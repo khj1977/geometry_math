@@ -42,6 +42,10 @@ Mori-Tanaka's micro mechanics is basically based on disturbance observer. This m
 
 Author investigated about material mechanics and thus, some time duration, investigation of fluid would be done by some chunk of times.
 
+# Modelling and mesoscopic physics
+
+We have paticle. We have high speed CPU/GPU. Just implement particle. We don't need physics then? No. Actually, particle is not atom but virtual particle which express some set of molecule of parter, air or other fluid. This is assumed to be some mesoscopic physics and virtual physical particle. The author thinks that this is some kind of hypothesis and physical modelling. Although it would be different from ordinary physics, it would be some kind of physics. Hypothesis. The author thinks that is a core of physics.
+
 # Math is dry?
 
 There are arguments such that math is dry and just calculation. I don't think so. Math can expresses how vehicle moves. Using math, aeroplane flys. iPad text? Moving objects? Gaming? Partially agree. I think point is Squeak, processing or Swift Playground. Think math critically, make it as program, visualize, think and analyze. Using iPad may makes student passive, though I think what maker think is correct. Then, you may understand and could feel what is math. Can you enjoy music? The author thinks that's the same.
