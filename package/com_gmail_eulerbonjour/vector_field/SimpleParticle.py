@@ -11,7 +11,7 @@ from com_gmail_eulerbonjour.ode_solver import ode_programmable_input as pi
 
 class SimpleParticle:
 
-    def __init__(self, r, cx0, cy1, odeEngine):
+    def __init__(self, r, cx0, cy1, odeEngine, controlInput):
         self.r = r
 
         self.cx = cx0
@@ -28,7 +28,8 @@ class SimpleParticle:
 
         self.odeEngine = odeEngine
 
-        self.forceInput = pi.ProgrammableInput()
+        # self.forceInput = pi.ProgrammableInput()
+        self.foreControlInput = controlInput
         self.odeEngine.setControlInput(self.forceInput)
 
     def render(self):
