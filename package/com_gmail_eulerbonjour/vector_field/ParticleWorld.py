@@ -3,6 +3,7 @@ from com_gmail_eulerbonjour.ode_solver import ode_env as env
 from com_gmail_eulerbonjour.ode_solver import ode_programmable_input as pi
 from com_gmail_eulerbonjour.ode_solver import ode_control_input as ci
 from com_gmail_eulerbonjour.ode_solver import ode_coefs as ce
+from com_gmail_eulerbonjour.ode_solver import ode_time as time
 from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 
 class ParticleWorld:
@@ -11,9 +12,9 @@ class ParticleWorld:
         self.startT = 0.0
         self.endT = 10000.0
         self.deltaT = 0.01
-        self.envT = self.manager.getEnvT()
+        self.envT = time.ODETime(self.startT, self.endT, self.deltaT)
 
-        self.manager = manager.SimpleParticleManager(self.startT, self.endT, self.deltaT)
+        self.manager = manager.SimpleParticleManager(self.envT)
 
     def initialize(self):     
         for i in range(2):
