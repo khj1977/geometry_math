@@ -36,6 +36,7 @@ class SimpleParticle:
         glColor3d(0.0, 0.0, 1.0)
         while True:
             if self.theta > 3.14 * 2.0:
+                self.theta = 0.0
                 break
        
             glVertex3d(self.r * m.cos(self.theta) + self.cx, self.r * m.sin(self.theta) + self.cy, 0.0)

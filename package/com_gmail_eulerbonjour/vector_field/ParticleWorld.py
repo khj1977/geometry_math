@@ -33,9 +33,9 @@ def my_glut_init():
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
     glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0)
 
-    gluPerspective(30.0, 1.0, 1.0, 100.0)
+    # gluPerspective(30.0, 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
-    gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
+    # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
 
 def my_glut_display():
     # dirty hack
