@@ -30,7 +30,7 @@ def my_glut_init():
     
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
-    glOrtho(-2.0, 2.0, -2.0, 2.0, -10.0, 10.0)
+    glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0)
 
     gluPerspective(30.0, 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
