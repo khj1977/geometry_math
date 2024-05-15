@@ -56,7 +56,7 @@ class ParticleWorld:
         self.initialize()
 
     def initialize(self):   
-        for i in range(2):
+        for i in range(3):
             f = lambda t, x, xDot: -0.2 * x
             disturbanceF = lambda t, x, xDot: 0.0
 
