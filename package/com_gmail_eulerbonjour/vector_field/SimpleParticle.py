@@ -21,16 +21,15 @@ class SimpleParticle:
         self.deltaTheta = 0.1
 
         # self.thNorm = 0.01
-        self.theNorm = self.r
+        self.thNorm = self.r
+
+        self.odeEngine = odeEngine
 
         # or even obtain env via engine?
         self.oenv = self.odeEngine.getEnv()
 
-        self.odeEngine = odeEngine
-
-        # self.forceInput = pi.ProgrammableInput()
-        self.foreControlInput = controlInput
-        self.odeEngine.setControlInput(self.forceInput)
+        self.forceControlInput = controlInput
+        self.odeEngine.setControlInput(self.forceControlInput)
 
     def render(self):
         glBegin(GL_POLYGON)
@@ -75,7 +74,7 @@ class SimpleParticle:
         # add how to apply force. It might be via disturbance of ODE engine.
         gravity = self.calcGravity(anotherParticle)
         # ignore mass
-        self.forceInput.setNumericInput(gravity)
+        self.forceControlInput.setNumericInput(gravity)
         # end of debug
 
     def calcGravity(self, anotherParticle):

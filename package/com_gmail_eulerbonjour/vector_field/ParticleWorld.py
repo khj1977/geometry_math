@@ -1,11 +1,12 @@
 from com_gmail_eulerbonjour.ode_solver import ode_euler as euler
-from com_gmail_eulerbonjour.ode_solver import ode_env as env
+from com_gmail_eulerbonjour.ode_solver import ode_env as e
 from com_gmail_eulerbonjour.ode_solver import ode_programmable_input as pi
 from com_gmail_eulerbonjour.ode_solver import ode_control_input as ci
 from com_gmail_eulerbonjour.ode_solver import ode_coefs as ce
 from com_gmail_eulerbonjour.ode_solver import ode_time as time
 from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 from com_gmail_eulerbonjour.vector_field import SimpleParticle as particle
+from com_gmail_eulerbonjour.ode_solver import ode_disturbance as d
 
 from OpenGL.GLUT import *
 from OpenGL.GL import *
@@ -52,15 +53,16 @@ class ParticleWorld:
         self.envT = time.ODETime(self.startT, self.endT, self.deltaT)
 
         self.manager = manager.SimpleParticleManager(self.envT)
+        self.initialize()
 
-    def initialize(self):     
+    def initialize(self):   
         for i in range(2):
             f = lambda t, x, xDot: -0.2 * x
-            disturbance = lambda t, x, xDot: 0.0
+            disturbanceF = lambda t, x, xDot: 0.0
 
-            startX = 0.0
+            startX = i
             startXDot = 0.1
-            env = env.ODEEnv().setX(startX).setXDot(startXDot)
+            env = e.ODEEnv().setX(startX).setXDot(startXDot)
 
             forceControlInput = pi.ProgrammableInput()
 
@@ -69,6 +71,8 @@ class ParticleWorld:
             coefs = ce.ODECoefs()
             coefs.setCoefs([0.0, 0.0])
             nullControlInput.setCoef(coefs)
+
+            disturbance = d.Disturbance(disturbanceF, env, self.envT)
 
             # def __init__(self, deltaT, startT, endT, startX, startXDot, f, env, envT, controlInput, controlInputNominal, disturbance):
             odeEngine = euler.ODEOneDimEulerMethod(self.deltaT, self.startT, self.endT,
@@ -88,6 +92,7 @@ class ParticleWorld:
         return self
     
     def render(self):
+
        self.manager.renderAll()
 
        return self

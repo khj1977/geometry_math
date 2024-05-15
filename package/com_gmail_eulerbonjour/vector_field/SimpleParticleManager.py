@@ -58,8 +58,8 @@ class SimpleParticleManager:
         return self
     
     def incAll(self):
-        for t in self.envT.startClock():
-            for p in self.innerList:
-                p.inc()
+        # for t in self.envT.startClock():
+        for p in self.innerList:
+            p.inc()
 
         return self
