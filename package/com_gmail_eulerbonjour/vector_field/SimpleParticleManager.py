@@ -58,7 +58,10 @@ class SimpleParticleManager:
         return self
     
     def incAll(self):
+        # debug
+        # impl startClock() which works with GLUT.
         # for t in self.envT.startClock():
+        # end of debug
         for p in self.innerList:
             p.inc()
 
