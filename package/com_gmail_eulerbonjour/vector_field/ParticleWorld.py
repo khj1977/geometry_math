@@ -31,7 +31,7 @@ def my_glut_init():
     
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
-    glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0)
+    glOrtho(-20.0, 20.0, -20.0, 20.0, -10.0, 10.0)
 
     # gluPerspective(30.0, 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
@@ -56,7 +56,7 @@ class ParticleWorld:
         self.initialize()
 
     def initialize(self):   
-        for i in range(11):
+        for i in range(101):
             # f = lambda t, x, xDot: -0.2 * x - 0.1 * xDot
             f = lambda t, x, xDot: -0.2 * x
             disturbanceF = lambda t, x, xDot: 0.0
