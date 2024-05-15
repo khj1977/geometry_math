@@ -17,7 +17,7 @@ class SimpleParticle:
         self.cx = cx0
         self.cy = cy1
         
-        self.theta = 0
+        self.theta = 0.0
         self.deltaTheta = 0.1
 
         # self.thNorm = 0.01
