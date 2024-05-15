@@ -64,7 +64,7 @@ class SimpleParticleManager:
         # end of debug
         for p in self.innerList:
             p.inc()
-            print(str(p.getCentreX()) + "\t" + str(p.getCentreY()))
+            # print(str(p.getCentreX()) + "\t" + str(p.getCentreY()))
 
-        print("");
+        # print("");
         return self
