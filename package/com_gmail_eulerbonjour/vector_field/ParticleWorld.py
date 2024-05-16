@@ -19,8 +19,8 @@ def my_glut_mouse(button, state, x, y):
   if button == GLUT_LEFT_BUTTON:
     if (state == GLUT_DOWN):
       glutIdleFunc(my_glut_idle)
-    else:
-      glutIdleFunc(0)
+    # else:
+      # glutIdleFunc(0)
   elif button == GLUT_RIGHT_BUTTON:
     if state == GLUT_DOWN:
         glutPostRedisplay()
