@@ -1,4 +1,4 @@
-# Micor mechanics approach to fluid dynamics. Simple to Complex
+# Micro mechanics approach to fluid dynamics. Simple to Complex
 
 When I was under grad student, I studied fluid dynamics and thermo dynamics. There were PDE. How does it analysed? Harmonic analysis? So what? I know about FEM but I thought it is just calculation. What can be known by just calculation? Then, I stopped to study fluid dynamics.
 
