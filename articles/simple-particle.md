@@ -8,6 +8,10 @@ In this report and repository, some kind of study and reserach will be taken. Th
 
 It could be said that C++ is faster than Python. However, considering educational effect and openness to every one, Python would be utilized.
 
+# Differential Equation and application
+
+Vehicle. Aeroplane. Drone. There are a log applications in industry which require fluid dynamics for research. In this rep, micro mechanical methodology is taken to modelling of fluid and mainly, vehicle or bycle as a application, simulation would be taken. Ultimately, it would be shown that air-flow with some shape of disk-wheel or composite-wheel, it would be make flow of air better for high performance of vehicle and bicycle. Drone dev could deploy this simulator to research/study their fluid.
+
 # Order of calculation. LL and C++
 
 It works. This OO simulator works. Lego-blocking approach of component is fun and high productivity. In this first version of simulator with Simple Particle, 100 or 200 particle are max and it is not possible to do real time rendering by 1000 particles. It is assumed to be 3 reasons.
