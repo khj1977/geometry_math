@@ -22,3 +22,13 @@ It works. This OO simulator works. Lego-blocking approach of component is fun an
 4. Cython? Final option.
 
 Someone could argue that MacBook Pro and M4Max would be better choice. It could be but I think it could be different. Ultimately, numerical calculation could be 1 week to calc. In that time, mac studio or server is better choice. If it were less than 5 min or real time, it is OK to use pro. However, I suppose to use combination of MacbookAir and studio or GPU cluster on AWS.
+
+# Research log
+
+It is interesting too see trajectory of particle with different class of differential equation. If there are dumper, it goes to origin.
+
+Setting of num calc has been changed. The more particle and the more far ortho, it gets close to particle. Around 200 particles may be limit by python. Is it should be C++ or split simulator and visualizer to different program? The author thinks several bottle neck of this simular is better to be resolved such as order of particle manager.
+
+It seems there are equibrium for enought number of particles and thus, not so much oscillation.
+
+
