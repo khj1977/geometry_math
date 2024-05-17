@@ -28,6 +28,9 @@ class SimpleParticle:
         # or even obtain env via engine?
         self.oenv = self.odeEngine.getEnv()
 
+        self.oenv.setX(self.cx)
+        self.oenv.setXDot(self.cy)
+
         self.forceControlInput = controlInput
         self.odeEngine.setControlInput(self.forceControlInput)
 

@@ -8,6 +8,8 @@ from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 from com_gmail_eulerbonjour.vector_field import SimpleParticle as particle
 from com_gmail_eulerbonjour.ode_solver import ode_disturbance as d
 
+import random as r
+
 from OpenGL.GLUT import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -81,7 +83,7 @@ class ParticleWorld:
                                                    env, self.envT, forceControlInput, nullControlInput, disturbance)
             
             # def __init__(self, r, cx0, cy1, odeEngine, controlInput):
-            p = particle.SimpleParticle(0.2, 0.1 * i, 0.5, odeEngine, forceControlInput)
+            p = particle.SimpleParticle(0.2, r.random() * 5.0, r.random() * 0.5, odeEngine, forceControlInput)
             self.manager.addParticle(p)
             
         return self
