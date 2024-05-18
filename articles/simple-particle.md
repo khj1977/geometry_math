@@ -38,6 +38,6 @@ It seems there are equibrium for enought number of particles and thus, not so mu
 
 In this figure, it is shown that if there are many particle, they are on equilibrium and not moved their relative position. It might be as a result of spring type ODE per particle and gravity with particle to particle.
 
-It would be said that it is close to real water since which has H-bonding with H2O melecular. The more particles, the more close to molecular and then, it make some of cells in micro mechanics or solid state physics and then, goes to equibrium.
+It would be said that it is close to real water since which has H-bonding with $H_2O$ melecular. The more particles, the more close to molecular and then, it make some of cells in micro mechanics or solid state physics and then, goes to equibrium.
 
 It might be interesting to see the effect of amplitude of gravity. If they goes to higher, it would be close to solid material. If not, it would be close to be liquid or air.
