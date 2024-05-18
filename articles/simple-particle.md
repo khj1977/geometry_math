@@ -1,5 +1,6 @@
 # Micro mechanics approach to fluid dynamics. Simple to Complex
 
+
 When I was under grad student, I studied fluid dynamics and thermo dynamics. There were PDE. How is it analysed? Harmonic analysis? So what? I know about FEM but I thought it is just calculation. What can be known by just calculation? Then, I stopped to study fluid dynamics.
 
 Now, I know the power of numerical calculation and hypotheis driven. I studied enough amount of control engineering and material mechanics. Then, I think it is good timing to study and reserch fluid dynamics.
@@ -34,8 +35,6 @@ It seems there are equibrium for enought number of particles and thus, not so mu
 ## Simple 100 Particles with reflection hypothesis
 
 ![100 particles with reflection](/articles/img/si-100.png "100 particles with reflection")
-
-*At this time, img cannot be shown. It would be fixed later.*
 
 In this figure, it is shown that if there are many particle, they are on equilibrium and not moved their relative position. It might be as a result of spring type ODE per particle and gravity with particle to particle.
 
