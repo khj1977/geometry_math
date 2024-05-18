@@ -31,7 +31,7 @@ Setting of num calc has been changed. The more particle and the more far ortho, 
 
 It seems there are equibrium for enought number of particles and thus, not so much oscillation.
 
-## Simple 100 Particle with reflection hypothesis
+## Simple 100 Particles with reflection hypothesis
 
 ![100 particles with reflection](/articles/img/si-100.png "100 particles with reflection")
 
