@@ -22,7 +22,7 @@ It works. This OO simulator works. Lego-blocking approach of component is fun an
 3. Multi core processing. It seems that python could be used by multi core processing by some method.
 4. Cython? Final option.
 
-Someone could argue that MacBook Pro and M4Max would be better choice. It could be but I think it could be different. Ultimately, numerical calculation could be more than 1 week to calc. In that time, mac studio or server is better choice. If it were less than 5 min or real time, it is OK to use pro. However, I suppose to use combination of MacbookAir and studio or GPU cluster on AWS.
+Someone could argue that MacBook Pro and M4Max would be better choice. It could be but I think it could be different. Ultimately, numerical calculation could be more than 1 week to calc. In that time, mac studio or server is better choice. If it were less than 5 min or real time, it is OK to use pro. However, I suppose to use combination of MacbookAir and studio or GPU cluster on AWS would be better choice.
 
 # Research log
 
