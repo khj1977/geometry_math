@@ -17,7 +17,7 @@ Vehicle. Aeroplane. Drone. There are many applications in industry which require
 
 It works. This OO simulator works. Lego-blocking approach of component is fun and high productivity. In this first version of simulator with Simple Particle, 100 or 200 particle are max and it is not possible to do real time rendering by 1000 particles. It is assumed to be 3 reasons.
 
-1. order of calc with simple particle manager. All particle has effect from all particles which is O(n^2).
+1. order of calc with simple particle manager. All particle has effect from all particles which is $O(n^2)$.
 2. Particles require many call of vertex which is open GL function to render circle. Polygon might be enough.
 3. Multi core processing. It seems that python could be used by multi core processing by some method.
 4. Cython? Final option.
