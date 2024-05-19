@@ -15,6 +15,12 @@ Vehicle. Aeroplane. Drone. There are many applications in industry which require
 
 # Order of calculation. LL and C++
 
+Numerical simulation environment:
+- CPU: Apple M1 2020
+- Memory: 16GB
+- Programming Language: Python 3.9.X
+- Graphic Library: OpenGL, GLUT and their Python binding
+
 It works. This OO simulator works. Lego-blocking approach of component is fun and high productivity. In this first version of simulator with Simple Particle, 100 or 200 particle are max and it is not possible to do real time rendering by 1000 particles. It is assumed to be 3 reasons.
 
 1. order of calc with simple particle manager. All particle has effect from all particles which is $O(n^2)$.
