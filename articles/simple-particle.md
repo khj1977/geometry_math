@@ -11,10 +11,10 @@ It could be said that C++ is faster than Python. However, considering educationa
 
 # Aim and Objective
 
-Aim
+## Aim
 - Understanding characteristics of fluid dynamics, better applications of fluid dynamics will be made;i.e. better vehicle, better drone, better aeroplane. They have impact to real life.
 
-Objective
+## Objective
 - To make an easy to use and implementable simulator;
 - To understand fluid dynamics with easy to use simulator;
 - To make method of control of fluid dynamics via micro mechanical method.
