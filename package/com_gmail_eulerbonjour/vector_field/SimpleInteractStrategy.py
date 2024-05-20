@@ -26,3 +26,5 @@ class SimpleParticleStrategy:
         # ignore mass
         self.that.forceControlInput.setNumericInput(gravity)
         # end of debug
+
+        return self
