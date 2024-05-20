@@ -117,3 +117,6 @@ class SimpleParticle:
         self.setCentre(cx, cy)
 
         return self
+    
+    def getEnv(self):
+        return self.oenv
