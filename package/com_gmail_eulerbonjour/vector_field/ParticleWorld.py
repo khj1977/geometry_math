@@ -85,7 +85,7 @@ class ParticleWorld:
             
             # def __init__(self, r, cx0, cy1, odeEngine, controlInput):
             p = particle.SimpleParticle(0.2, 5.0 * r.random(), 5.0 * r.random(), odeEngine, forceControlInput)
-            p.addStrategy(strategy.SimpleParticleStrategy(p))
+            p.addStrategy(strategy.SimpleInteractStrategy(p))
             self.manager.addParticle(p)
             
         return self

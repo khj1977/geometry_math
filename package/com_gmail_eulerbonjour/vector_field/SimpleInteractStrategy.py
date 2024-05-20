@@ -1,6 +1,6 @@
 from com_gmail_eulerbonjour.ode_solver import ode_env as oenv
 
-class SimpleParticleStrategy:
+class SimpleInteractStrategy:
 
     def __init__(self, that):
          self.that = that
