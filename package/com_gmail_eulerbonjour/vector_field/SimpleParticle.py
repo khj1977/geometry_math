@@ -62,6 +62,11 @@ class SimpleParticle:
         return self.cy
     
     def interact(self, anotherParticle):
+        self.strategy.do(anotherParticle)
+
+        return self
+
+    def old_interact(self, anotherParticle):
         # debug
         # impl interaction between paricles such as apply force or resistance.
         # Using odeEnv, set x and xdot to reverse direction.
@@ -123,3 +128,8 @@ class SimpleParticle:
     
     def getThNorm(self):
         return self.thNorm
+    
+    def addStrategy(self, st):
+        self.strategy = st
+
+        return self

@@ -6,6 +6,7 @@ from com_gmail_eulerbonjour.ode_solver import ode_coefs as ce
 from com_gmail_eulerbonjour.ode_solver import ode_time as time
 from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 from com_gmail_eulerbonjour.vector_field import SimpleParticle as particle
+from com_gmail_eulerbonjour.vector_field import SimpleInteractStrategy as strategy
 from com_gmail_eulerbonjour.ode_solver import ode_disturbance as d
 
 import random as r
@@ -84,6 +85,7 @@ class ParticleWorld:
             
             # def __init__(self, r, cx0, cy1, odeEngine, controlInput):
             p = particle.SimpleParticle(0.2, 5.0 * r.random(), 5.0 * r.random(), odeEngine, forceControlInput)
+            p.addStrategy(strategy.SimpleParticleStrategy(p))
             self.manager.addParticle(p)
             
         return self

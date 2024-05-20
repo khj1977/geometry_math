@@ -5,7 +5,7 @@ class SimpleParticleStrategy:
     def __init__(self, that):
          self.that = that
 
-    def interact(self, anotherParticle):
+    def do(self, anotherParticle):
         # debug
         # impl interaction between paricles such as apply force or resistance.
         # Using odeEnv, set x and xdot to reverse direction.
