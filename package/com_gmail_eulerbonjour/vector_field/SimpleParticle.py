@@ -120,3 +120,6 @@ class SimpleParticle:
     
     def getEnv(self):
         return self.oenv
+    
+    def getThNorm(self):
+        return self.thNorm

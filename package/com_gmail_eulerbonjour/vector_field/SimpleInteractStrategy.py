@@ -12,8 +12,10 @@ class SimpleParticleStrategy:
             env = self.that.getEnv()
             norm = self.that.get2Norm(anotherParticle)
 
+            thNorm = self.that.getThNorm()
+
             # thNorm could be r of paricle.
-            if (norm < self.thNorm):
+            if (norm < thNorm):
                 # not required since making direction of x could be OK but not negative position.
                 # direction would be changed only by speed or xdot.
                 # env.setX(-1.0 * env.getX())
