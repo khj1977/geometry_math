@@ -9,6 +9,16 @@ In this report and repository, some kind of study and reserach will be taken. Th
 
 It could be said that C++ is faster than Python. However, considering educational effect and openness to every one, Python would be utilized.
 
+# Aim and Objective
+
+Aim
+- Understanding characteristics of fluid dynamics, better applications of fluid dynamics will be made;i.e. better vehicle, better drone, better aeroplane. They have impact to real life.
+
+Objective
+- To make an easy to use and implementable simulator;
+- To understand fluid dynamics with easy to use simulator;
+- To make method of control of fluid dynamics via micro mechanical method.
+
 # Differential Equation and applications
 
 Vehicle. Aeroplane. Drone. There are many applications in industry which require fluid dynamics for research. In this rep, micro mechanical methodology is taken to modelling of fluid and mainly, vehicle or bycle as a application, simulation would be taken. Ultimately, it would be shown that air-flow with some shape of disk-wheel or composite-wheel, it would be make flow of air better for high performance of vehicle and bicycle. Drone dev could deploy this simulator to research/study their fluid.
