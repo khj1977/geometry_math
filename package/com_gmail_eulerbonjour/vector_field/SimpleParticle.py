@@ -53,13 +53,20 @@ class SimpleParticle:
         self.cx = cx
         self.cy = cy
 
+        # debug
+        self.cy = 0.0
+        # end of debug
+
         return self
     
     def getCentreX(self):
         return self.cx
     
     def getCentreY(self):
-        return self.cy
+        # debug
+        #return self.cy
+        return 0.0
+        # end of debug
     
     def interact(self, anotherParticle):
         self.strategy.do(anotherParticle)
