@@ -15,7 +15,8 @@ class SimpleParticle:
         self.r = r
 
         self.cx = cx0
-        self.cy = cy1
+        # self.cy = cy1
+        self.cy = 0.0
         
         self.theta = 0.0
         self.deltaTheta = 0.1
@@ -29,7 +30,7 @@ class SimpleParticle:
         self.oenv = self.odeEngine.getEnv()
 
         self.oenv.setX(self.cx)
-        self.oenv.setXDot(self.cy)
+        self.oenv.setXDot(cy1)
 
         self.forceControlInput = controlInput
         self.odeEngine.setControlInput(self.forceControlInput)
