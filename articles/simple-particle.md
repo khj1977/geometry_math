@@ -19,6 +19,9 @@ It could be said that C++ is faster than Python. However, considering educationa
 - To understand fluid dynamics with easy to use simulator;
 - To make method of control of fluid dynamics via micro mechanical method.
 
+## Methodology
+- Numerical simulation based visualization of partiles and trajectry analysis using frequency domain analysis, geometry and physics.
+
 # Differential Equation and applications
 
 Vehicle. Aeroplane. Drone. There are many applications in industry which require fluid dynamics for research. In this rep, micro mechanical methodology is taken to modelling of fluid and mainly, vehicle or bycle as a application, simulation would be taken. Ultimately, it would be shown that air-flow with some shape of disk-wheel or composite-wheel, it would be make flow of air better for high performance of vehicle and bicycle. Drone dev could deploy this simulator to research/study their fluid.
