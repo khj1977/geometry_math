@@ -9,7 +9,7 @@ In this report and repository, some kind of study and reserach will be taken. Th
 
 It could be said that C++ is faster than Python. However, considering educational effect and openness to every one, Python would be utilized.
 
-# Aim and Objective
+# Aim, Objective and Methodology
 
 ## Aim
 - Understanding characteristics of fluid dynamics, better applications of fluid dynamics will be made;i.e. better vehicle, better drone, better aeroplane. They have impact to real life.
