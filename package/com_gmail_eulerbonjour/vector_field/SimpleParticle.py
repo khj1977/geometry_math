@@ -21,7 +21,8 @@ class SimpleParticle:
         # end of debug
         
         self.theta = 0.0
-        self.deltaTheta = 0.1
+        # self.deltaTheta = 0.1
+        self.deltaTheta = 1.5
 
         # self.thNorm = 0.01
         self.thNorm = self.r
