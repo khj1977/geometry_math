@@ -22,7 +22,7 @@ class SimpleParticle:
         
         self.theta = 0.0
         # self.deltaTheta = 0.1
-        self.deltaTheta = 1.5
+        self.deltaTheta = 1.57
 
         # self.thNorm = 0.01
         self.thNorm = self.r
