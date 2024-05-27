@@ -24,7 +24,8 @@ class SimpleMesh:
         row = self.xScale * x
         col = self.yScale * y
 
-        self.internalMatrix[row][col] = particle
+        # self.internalMatrix[row][col] = particle
+        self.addParticle(row, col, particle)
 
         return self
     
