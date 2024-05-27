@@ -60,8 +60,6 @@ class SimpleParticleManager:
         return self
     
     def interactAll(self):
-        # skip if pki but pik is executed. It is symmetry.
-        # The above assumption may be incorrect considering definition of interact().
         for p1 in self.innerList:
             aroundParticles = self.world.getMesh().getParticlesAroundIt(p1.getCentreX(), p1.getCentreY(), 3)
 
