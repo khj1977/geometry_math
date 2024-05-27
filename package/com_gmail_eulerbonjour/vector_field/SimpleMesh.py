@@ -50,4 +50,28 @@ class SimpleMesh:
 
         return self
 
+    def getParticleAroundIt(self, x, y, th):
+        row = self.xScale * x
+        col = self.yScale * y
 
+        i = -1.0 * th
+        j = -1.0 * th
+
+        particles = []
+        while True:
+            if (i > th):
+                break
+
+            if (j > th):
+                break
+
+            crow = row + i
+            ccol = col + j
+
+            p = self.getParticle(crow, ccol)
+            particles.append(p)
+
+            i = i + 1
+            j = j + 1
+
+        return particles
