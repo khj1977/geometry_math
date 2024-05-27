@@ -7,9 +7,10 @@ from com_gmail_eulerbonjour.ode_solver import ode_time as time
 
 class SimpleParticleManager:
     
-    def __init__(self, envT):
+    def __init__(self, world, envT):
         self.innerList = []
 
+        self.world = world
         self.envT = envT
         # self.envT = time.ODETime(0.0, 1000.0, 0.01)
         # self.envT = time.ODETime(startT, endT, deltaT)
@@ -42,11 +43,12 @@ class SimpleParticleManager:
     # it is supposed that this similator is small/mid size only
     # and thus, it would be OK to interact to all particles each other
     # considering order of calculation.
-    def interactAll(self):
+    def old_interactAll(self):
         # skip if pki but pik is executed. It is symmetry.
         # The above assumption may be incorrect considering definition of interact().
         for p1 in self.innerList:
             for p2 in self.innerList:
+
                 # debug
                 # another way of comparison of object?
                 # end of debug
@@ -55,6 +57,19 @@ class SimpleParticleManager:
 
                 p1.interact(p2)
         
+        return self
+    
+    def interactAll(self):
+        # skip if pki but pik is executed. It is symmetry.
+        # The above assumption may be incorrect considering definition of interact().
+        for p1 in self.innerList:
+            aroundParticles = self.world.getMesh().getParticlesAroundIt(p1.getCentreX(), p1.getCentreY(), 3)
+
+            for p2 in aroundParticles:
+                if (p2 != False):
+                    p1.interact(p2)
+        
+        self.world.getMesh().fillInternalMatrixByZero()
         return self
     
     def incAll(self):

@@ -8,6 +8,7 @@ from com_gmail_eulerbonjour.vector_field import SimpleParticleManager as manager
 from com_gmail_eulerbonjour.vector_field import SimpleParticle as particle
 from com_gmail_eulerbonjour.vector_field import SimpleInteractStrategy as strategy
 from com_gmail_eulerbonjour.ode_solver import ode_disturbance as d
+from com_gmail_eulerbonjour.vector_field import SimpleMesh as smesh
 
 import random as r
 
@@ -28,13 +29,14 @@ def my_glut_mouse(button, state, x, y):
     if state == GLUT_DOWN:
         glutPostRedisplay()
 
-def my_glut_init():
+def my_glut_init(minX, maxX, minY, maxY, minZ, maxZ):
     glClearColor(1.0, 1.0, 1.0, 0.0)
     glMatrixMode(GL_PROJECTION)
     
     glLoadIdentity()
     # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
-    glOrtho(-20.0, 20.0, -20.0, 20.0, -10.0, 10.0)
+    # glOrtho(-20.0, 20.0, -20.0, 20.0, -10.0, 10.0)
+    glOrtho(minX, maxX, minY, maxY, minZ, maxZ)
 
     # gluPerspective(30.0, 1.0, 1.0, 100.0)
     # glTranslated(0.0, 0.0, -5.0);
@@ -55,7 +57,19 @@ class ParticleWorld:
         self.deltaT = 0.01
         self.envT = time.ODETime(self.startT, self.endT, self.deltaT)
 
-        self.manager = manager.SimpleParticleManager(self.envT)
+        self.minX = -20.0
+        self.maxX = 20.0
+        self.minY = -20.0
+        self.maxY = 20.0
+        self.minZ = -10.0
+        self.maxZ = 10.0
+
+        self.numParticle = 1000
+
+        self.mesh = smesh.SimpleMesh(self.numParticle, self.numParticle, self.minX, self.maxX, self.minY, self.maxY)
+        self.mesh.clearInternalMatrix(self.numParticle, self.numParticle)
+        self.manager = manager.SimpleParticleManager(self, self.envT)
+        # self.mesh = mesh
         self.initialize()
 
     def initialize(self):   
@@ -84,12 +98,19 @@ class ParticleWorld:
                                                    env, self.envT, forceControlInput, nullControlInput, disturbance)
             
             # def __init__(self, r, cx0, cy1, odeEngine, controlInput):
-            p = particle.SimpleParticle(0.2, 5.0 * r.random(), 5.0 * r.random(), odeEngine, forceControlInput)
+            x = 5.0 * r.random()
+            y = 5.0 * r.random()
+            p = particle.SimpleParticle(0.2, x, y, odeEngine, forceControlInput)
             p.addStrategy(strategy.SimpleInteractStrategy(p))
             self.manager.addParticle(p)
+            # self.mesh.addParticleByGlutPosition(x, y, p)
+            self.mesh.addParticle(i, i, p)
             
         return self
     
+    def getMesh(self):
+       return self.mesh
+
     def inc(self):
         self.manager.interactAll()
         self.manager.incAll()
@@ -109,7 +130,7 @@ class ParticleWorld:
        glutInitWindowPosition(200, 200)
        glutCreateWindow(b"Particle World")
        glutMouseFunc(my_glut_mouse)
-       my_glut_init()
+       my_glut_init(self.minX, self.maxX, self.minY, self.maxY, self.minZ, self.maxZ)
        glutDisplayFunc(my_glut_display)
        glutMainLoop()
 

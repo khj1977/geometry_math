@@ -104,7 +104,7 @@ class SimpleParticle:
         k = 1.0
         # debug
         # force as scalar or vector?
-        force = k / norm*norm
+        force = k / (norm*norm + 0.001)
         # end of debug
 
         return force
