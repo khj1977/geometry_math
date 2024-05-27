@@ -50,7 +50,7 @@ class SimpleMesh:
 
         return self
 
-    def getParticleAroundIt(self, x, y, th):
+    def getParticlesAroundIt(self, x, y, th):
         row = self.xScale * x
         col = self.yScale * y
 
