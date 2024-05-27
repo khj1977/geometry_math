@@ -1,5 +1,3 @@
-import numpy as np
-
 class SimpleMesh:
 
     def __init__(self, rows, cols, minX, maxX, minY, maxY):
