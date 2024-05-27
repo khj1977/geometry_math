@@ -26,7 +26,7 @@ class SimpleMesh:
 
         return self
 
-    def fillInternalMatrixByZero(self):
+    def fillInternalMatrixByFalse(self):
         i = 0
         j = 0
         while True:

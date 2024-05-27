@@ -67,7 +67,7 @@ class SimpleParticleManager:
                 if (p2 != False):
                     p1.interact(p2)
         
-        self.world.getMesh().fillInternalMatrixByZero()
+        self.world.getMesh().fillInternalMatrixByFalse()
         return self
     
     def incAll(self):
