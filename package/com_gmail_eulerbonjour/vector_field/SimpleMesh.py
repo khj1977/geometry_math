@@ -3,7 +3,8 @@ import numpy as np
 class SimpleMesh:
 
     def __init__(self, rows, cols, minX, minY, maxX, maxY):
-        self.internalMatrix = np.zeros((rows, cols))
+        # self.internalMatrix = np.zeros((rows, cols))
+        self.clearInternalMatrix(rows, cols)
 
         self.rows = rows
         self.cols = cols
@@ -14,6 +15,11 @@ class SimpleMesh:
         self.maxY = maxY
 
         self.calcScale()
+
+    def clearInternalMatrix(self, rows, cols):
+        self.internalMatrix = np.zeros((rows, cols))
+
+        return self
 
     def addParticle(self, row, col, particle):
         self.internalMatrix[row][col] = particle
