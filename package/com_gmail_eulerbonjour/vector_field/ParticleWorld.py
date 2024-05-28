@@ -64,7 +64,7 @@ class ParticleWorld:
         self.minZ = -10.0
         self.maxZ = 10.0
 
-        self.numParticle = 1000
+        self.numParticle = 30000
 
         self.mesh = smesh.SimpleMesh(self.numParticle, self.numParticle, self.minX, self.maxX, self.minY, self.maxY)
         self.mesh.clearInternalMatrix(self.numParticle, self.numParticle)
