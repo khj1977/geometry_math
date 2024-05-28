@@ -61,7 +61,7 @@ class SimpleParticleManager:
     
     def interactAll(self):
         for p1 in self.innerList:
-            aroundParticles = self.world.getMesh().getParticlesAroundIt(p1.getCentreX(), p1.getCentreY(), 3)
+            aroundParticles = self.world.getMesh().getParticlesAroundIt(p1.getCentreX(), p1.getCentreY(), 100)
 
             for p2 in aroundParticles:
                 if (p2 != False):
