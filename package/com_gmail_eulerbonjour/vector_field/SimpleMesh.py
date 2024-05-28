@@ -58,12 +58,17 @@ class SimpleMesh:
         return self
     
     def getParticle(self, row, col):
-        if (row > self.rows):
+        if (row >= self.rows):
             row = self.rows
         
-        if (col > self.cols):
+        if (col >= self.cols):
             col = self.cols
 
+        if (row < 0):
+            row = 0
+        if (col < 0):
+            col = 0
+            
         return self.internalMatrix[row][col]
     
     def getParticleByGlutPosition(self, x, y):

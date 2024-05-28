@@ -104,7 +104,7 @@ class SimpleParticle:
             return 0.0
         
         norm = self.get2Norm(anotherParticle)
-        k = 1.0
+        k = -1.0
         # debug
         # force as scalar or vector?
         force = k / (norm*norm + 0.001)
