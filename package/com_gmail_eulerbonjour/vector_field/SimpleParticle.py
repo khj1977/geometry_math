@@ -100,6 +100,9 @@ class SimpleParticle:
         # end of debug
 
     def calcGravity(self, anotherParticle):
+        if (self == anotherParticle):
+            return 0.0
+        
         norm = self.get2Norm(anotherParticle)
         k = 1.0
         # debug
