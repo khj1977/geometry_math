@@ -105,7 +105,7 @@ class SimpleParticle:
         
         sign = 1.0
         diffSign = self.getCentreX() - anotherParticle.getCentreX()
-        if (diffSign > 0):
+        if (diffSign > 0.0):
             sign = -1.0
         else:
             sign = 1.0
