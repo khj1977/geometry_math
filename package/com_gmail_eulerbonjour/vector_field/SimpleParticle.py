@@ -103,8 +103,15 @@ class SimpleParticle:
         if (self == anotherParticle):
             return 0.0
         
+        sign = 1.0
+        diffSign = self.getCentreX() - anotherParticle.getCentreX()
+        if (diffSign > 0):
+            sign = -1.0
+        else:
+            sign = 1.0
+
         norm = self.get2Norm(anotherParticle)
-        k = -1.0
+        k = sign * 1.0
         # debug
         # force as scalar or vector?
         force = k / (norm*norm + 0.001)
