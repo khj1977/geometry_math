@@ -64,7 +64,7 @@ class ParticleWorld:
         self.minZ = -10.0
         self.maxZ = 10.0
 
-        self.numParticle = 30000
+        self.numParticle = 5000
 
         self.mesh = smesh.SimpleMesh(self.numParticle, self.numParticle, self.minX, self.maxX, self.minY, self.maxY)
         self.mesh.clearInternalMatrix(self.numParticle, self.numParticle)
@@ -73,7 +73,7 @@ class ParticleWorld:
         self.initialize()
 
     def initialize(self):   
-        for i in range(1001):
+        for i in range(self.numParticle + 1):
             # f = lambda t, x, xDot: -0.2 * x - 0.1 * xDot
             f = lambda t, x, xDot: -0.2 * x
             disturbanceF = lambda t, x, xDot: 0.0
