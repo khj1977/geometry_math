@@ -13,6 +13,40 @@ from scipy.fft import fft, fftfreq
 
 import math as m
 
+from OpenGL.GLUT import *
+from OpenGL.GL import *
+from OpenGL.GLU import *
+
+def my_glut_idle():
+    glutPostRedisplay()
+
+def my_glut_mouse(button, state, x, y):
+  if button == GLUT_LEFT_BUTTON:
+    if (state == GLUT_DOWN):
+      glutIdleFunc(my_glut_idle)
+    # else:
+      # glutIdleFunc(0)
+  elif button == GLUT_RIGHT_BUTTON:
+    if state == GLUT_DOWN:
+        glutPostRedisplay()
+
+def my_glut_init(minX, maxX, minY, maxY, minZ, maxZ):
+    glClearColor(1.0, 1.0, 1.0, 0.0)
+    glMatrixMode(GL_PROJECTION)
+    
+    glLoadIdentity()
+    # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
+    # glOrtho(-20.0, 20.0, -20.0, 20.0, -10.0, 10.0)
+    glOrtho(minX, maxX, minY, maxY, minZ, maxZ)
+
+    # gluPerspective(30.0, 1.0, 1.0, 100.0)
+    # glTranslated(0.0, 0.0, -5.0);
+    # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
+
+def my_glut_display():
+    record_and_save()
+    
+    
 
 FORMAT        = pyaudio.paInt16
 TIME          = 10           # 録音時間[s]
@@ -24,43 +58,7 @@ NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 
 WAV_FILE = "./output.wav"
 
-pa = pyaudio.PyAudio()
-for i in range(pa.get_device_count()):
-    print(pa.get_device_info_by_index(i))
-    print()
-pa.terminate()
-
-def record_and_save():
-    """
-    デバイスから出力される音声の録音をする
-    """
-    pa = pyaudio.PyAudio()
-
-    stream = pa.open(format   = FORMAT,
-                     channels = CHANNELS,
-                     rate     = SAMPLE_RATE,
-                     input    = True,
-                     input_device_index = INPUT_DEVICE_INDEX,
-                     frames_per_buffer  = FRAME_SIZE)
-
-    print("RECORDING...")
-
-    list_frame = []
-
-
-    for i in range(NUM_OF_LOOP):
-        data = stream.read(FRAME_SIZE)
-        # print(data)
-        list_frame.append(data)
-
-    print("RECORDING DONE!")
-
-    # The following part is come from the follows:
-    # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
-    # %matplotlib inline
-
-    x = np.frombuffer(data, dtype="int16") / 32768.0
-
+def doFFT(x):
     yt = fft(x)
     yt2 = []
     for x in yt:
@@ -69,27 +67,72 @@ def record_and_save():
         power = m.sqrt(re*re + im*im)
         yt2.append(power)
 
-    plt.figure(figsize=(15,3))
-    plt.plot(yt2)
+    # plt.figure(figsize=(15,3))
+    # plt.plot(yt2)
     # plt.plot(x)
-    plt.show()
-
-    # cplt.figure(figsize=(15,3))
-
     # plt.show()
 
+    glClear(GL_COLOR_BUFFER_BIT)
+    # glBegin(GL_POINTS)
+    glBegin(GL_LINES)
+
+    x = 0
+    for power in yt2:
+        glVertex3d(x, power, -2.0)
+        x = x + 1
+    glEnd()
+    glFlush()
+
+   
+
+def record_and_save():
+    """
+    デバイスから出力される音声の録音をする
+    """
+    global pa
+
+    print("RECORDING...")
+
+    global stream
+    global list_frame
+
+    # for i in range(NUM_OF_LOOP):
+    data = stream.read(FRAME_SIZE)
+    # print(data)
+    list_frame.append(data)
+
+    print("RECORDING DONE!")
+
+    # The following part is come from the follows:
+    # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
+    # %matplotlib inline
+
+    x = np.frombuffer(data, dtype="int16") / 32768.0
+    doFFT(x)
 
     # close and terminate stream object "stream"
-    stream.stop_stream()
-    stream.close()
-    pa.terminate()
+    # stream.stop_stream()
+    # stream.close()
+    # pa.terminate()
 
+pa = pyaudio.PyAudio()
+# record_and_save()
 
-    wf = wave.open(WAV_FILE, 'wb')
-    wf.setnchannels(CHANNELS)
-    wf.setsampwidth(pa.get_sample_size(FORMAT))
-    wf.setframerate(SAMPLE_RATE)
-    wf.writeframes(b''.join(list_frame))
-    wf.close()
+stream = pa.open(format   = FORMAT,
+                     channels = CHANNELS,
+                     rate     = SAMPLE_RATE,
+                     input    = True,
+                     input_device_index = INPUT_DEVICE_INDEX,
+                     frames_per_buffer  = FRAME_SIZE)
 
-record_and_save()
+list_frame = []
+
+glutInit(sys.argv)
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
+glutInitWindowSize(600, 600)
+glutInitWindowPosition(200, 200)
+glutCreateWindow(b"FFT")
+glutMouseFunc(my_glut_mouse)
+my_glut_init(-20.0, 20.0, -20.0, 20.0, -5.0, 5.0)
+glutDisplayFunc(my_glut_display)
+glutMainLoop()
