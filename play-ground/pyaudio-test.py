@@ -17,6 +17,14 @@ from OpenGL.GLUT import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
+FORMAT        = pyaudio.paInt16
+TIME          = 10           # 録音時間[s]
+SAMPLE_RATE   = 44100        # サンプリングレート
+FRAME_SIZE    = 1024         # フレームサイズ
+CHANNELS      = 1            # モノラルかバイラルか
+INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
+NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
+
 def my_glut_idle():
     glutPostRedisplay()
 
@@ -45,18 +53,6 @@ def my_glut_init(minX, maxX, minY, maxY, minZ, maxZ):
 
 def my_glut_display():
     record_and_save()
-    
-    
-
-FORMAT        = pyaudio.paInt16
-TIME          = 10           # 録音時間[s]
-SAMPLE_RATE   = 44100        # サンプリングレート
-FRAME_SIZE    = 1024         # フレームサイズ
-CHANNELS      = 1            # モノラルかバイラルか
-INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
-NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
-
-WAV_FILE = "./output.wav"
 
 def doFFT(x):
     yt = fft(x)
