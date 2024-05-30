@@ -6,6 +6,9 @@ import time
 
 import pyaudio
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 FORMAT        = pyaudio.paInt16
 TIME          = 10           # 録音時間[s]
@@ -43,9 +46,21 @@ def record_and_save():
 
     for i in range(NUM_OF_LOOP):
         data = stream.read(FRAME_SIZE)
+        # print(data)
         list_frame.append(data)
 
     print("RECORDING DONE!")
+
+    # The following part is come from the follows:
+    # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
+    # %matplotlib inline
+
+    x = np.frombuffer(data, dtype="int16") / 32768.0
+
+    plt.figure(figsize=(15,3))
+    plt.plot(x)
+    plt.show()
+
 
     # close and terminate stream object "stream"
     stream.stop_stream()
