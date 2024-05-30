@@ -62,11 +62,12 @@ def record_and_save():
     yt = fft(x)
     plt.figure(figsize=(15,3))
     plt.plot(yt)
-    plt.show()
-
-    plt.figure(figsize=(15,3))
     plt.plot(x)
     plt.show()
+
+    # cplt.figure(figsize=(15,3))
+
+    # plt.show()
 
 
     # close and terminate stream object "stream"
