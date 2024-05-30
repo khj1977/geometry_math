@@ -112,6 +112,12 @@ def record_and_save():
     # pa.terminate()
 
 pa = pyaudio.PyAudio()
+for i in range(pa.get_device_count()):
+    print(pa.get_device_info_by_index(i))
+    print()
+pa.terminate()
+
+pa = pyaudio.PyAudio()
 # record_and_save()
 
 stream = pa.open(format   = FORMAT,
