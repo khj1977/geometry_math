@@ -89,7 +89,7 @@ def record_and_save():
 
     print("RECORDING...")
 
-    global stream
+    # global stream
     global list_frame
 
     # for i in range(NUM_OF_LOOP):
