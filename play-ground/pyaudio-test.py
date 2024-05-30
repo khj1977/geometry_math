@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 
 from scipy.fft import fft, fftfreq
 
+import math as m
+
 
 FORMAT        = pyaudio.paInt16
 TIME          = 10           # 録音時間[s]
@@ -60,9 +62,16 @@ def record_and_save():
     x = np.frombuffer(data, dtype="int16") / 32768.0
 
     yt = fft(x)
+    yt2 = []
+    for x in yt:
+        re = x.real
+        im = x.imag
+        power = m.sqrt(re*re + im*im)
+        yt2.append(power)
+
     plt.figure(figsize=(15,3))
-    plt.plot(yt)
-    plt.plot(x)
+    plt.plot(yt2)
+    # plt.plot(x)
     plt.show()
 
     # cplt.figure(figsize=(15,3))
