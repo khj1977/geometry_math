@@ -7,6 +7,7 @@ import time
 import pyaudio
 
 import numpy as np
+import math as m
 
 from scipy.fft import fft, fftfreq
 
@@ -75,7 +76,7 @@ class KAudioModule:
             yt2.append(power)
 
         glClear(GL_COLOR_BUFFER_BIT)
-        glBegin(GL_LINES)
+        glBegin(GL_LINE_STRIP)
 
         x = 0
         for power in yt2:
