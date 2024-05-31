@@ -7,6 +7,10 @@ Now, I know the power of numerical calculation and hypotheis driven. I studied a
 
 Micro-mechanics. Mid of micro molecular and macro model. Theoritically, even atom could be modelled. When I was 4th year, I joined to CFRP research group of Univ Tsukuba. In that time, Mori-Tanaka's micro mechanics and related field is assigned to me as a base for research. In that time, because of my misunderstanding, I thought, it is macro model and boaring. Professor's desiction to treat micro-mechanics by me is correct.
 
+Thermo dynamics? How to interact thermo effect with particle? Suppose thermo is transffered to a particle and that energy is partially converted to kinetic energy;i.e. $T(E) = 1/2 mv^2$. Thus, $v = \sqrt(T(E) * 2/m)$.
+
+Moreover, the author suppose that it would be possible to model CFRP or metal material by this methodology. Make strong gravity and then, each particle is bonded. It is not fluid anymore but solid state. The author supposes that this hypothesis is worth to investigate.
+
 The author thinks micro-mechanics is simple and easy to treat and can model complex system, material and fluid. Digital lagrangian is good for analysis esp. for control engineering. I think micro-mechanics is good for numerical simulation. And modelling is straight forward, concise and easy to understands as a natural extension of classical mechanics.
 
 In this report and repository, some kind of study and reserach will be taken. The methodolody is assumed to be hypothesis driven physical modelling and micro-mechanics apparoch and visualizing with numerical simulation using Python and OpenGL/GLUT.
