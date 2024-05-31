@@ -95,7 +95,11 @@ class KAudioModule:
         # for i in range(NUM_OF_LOOP):
         data = self.stream.read(FRAME_SIZE)
         # print(data)
+
+        # debug
+        # it's better to be FIFO queue.
         self.list_frame.append(data)
+        # end of debug
 
         print("RECORDING DONE!")
 
