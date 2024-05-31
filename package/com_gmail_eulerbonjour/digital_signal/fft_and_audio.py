@@ -44,7 +44,7 @@ class MicAndFFT:
 
         x = 0.0
         for power in yt2:
-            print(power)
+            print(str(x) + "," + str(power))
             glVertex3d(x, power, -2.0)
             x = x + 0.01
         glEnd()
