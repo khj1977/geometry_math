@@ -104,12 +104,12 @@ class KAudioModule:
         # %matplotlib inline
 
         x = np.frombuffer(data, dtype="int16") / 32768.0
-        doFFT(x)
+        self.doFFT(x)
 
         # close and terminate stream object "stream"
-        stream.stop_stream()
-        stream.close()
-        pa.terminate()
+        # stream.stop_stream()
+        # stream.close()
+        # pa.terminate()
 
 audioMod = KAudioModule()
 
