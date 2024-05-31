@@ -39,6 +39,7 @@ class MicAndFFT:
 
         glClear(GL_COLOR_BUFFER_BIT)
         glBegin(GL_LINE_STRIP)
+        glColor3d(0.0, 0.0, 1.0)
 
         x = 0.0
         for power in yt2:
