@@ -11,6 +11,8 @@ Thermo dynamics? How to interact thermo effect with particle? Suppose thermo is 
 
 Moreover, the author suppose that it would be possible to model CFRP or metal material by this methodology. Make strong gravity and then, each particle is bonded. It is not fluid anymore but solid state. The author supposes that this hypothesis is worth to investigate.
 
+Micro mechanics can handle gravity, ion-bonding, H2-BOnding, electric field and so on. Micro to Mesoscopic can also be handled. It seems most model of mechanical engineering can be modeled by this framework. The interesting point is to modelling micro ODE and several forces, and relation of particles, macro behaviour can be observed by computer simulation and possibly, to be analyzed if it were close to system matrix, though the author thinks computer simulation is better choice.
+
 The author thinks micro-mechanics is simple and easy to treat and can model complex system, material and fluid. Digital lagrangian is good for analysis esp. for control engineering. I think micro-mechanics is good for numerical simulation. And modelling is straight forward, concise and easy to understands as a natural extension of classical mechanics.
 
 In this report and repository, some kind of study and reserach will be taken. The methodolody is assumed to be hypothesis driven physical modelling and micro-mechanics apparoch and visualizing with numerical simulation using Python and OpenGL/GLUT.
