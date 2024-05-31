@@ -23,8 +23,6 @@ CHANNELS      = 1            # モノラルかバイラルか
 INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
 NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 
-
-
 class MicAndFFT:
     def __init__(self):
         self.pa = pyaudio.PyAudio()
