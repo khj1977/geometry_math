@@ -28,16 +28,9 @@ NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 class MicAndFFT:
     def __init__(self):
         self.pa = pyaudio.PyAudio()
-    
-        self.stream = self.pa.open(format   = FORMAT,
-                             channels = CHANNELS,
-                             rate     = SAMPLE_RATE,
-                             input    = True,
-                            input_device_index = INPUT_DEVICE_INDEX,
-                            frames_per_buffer  = FRAME_SIZE)
         self.list_frame = []
         
-    def doFFT(x):
+    def doFFT(self, x):
         yt = fft(x)
         yt2 = []
         for x in yt:
@@ -49,10 +42,11 @@ class MicAndFFT:
         glClear(GL_COLOR_BUFFER_BIT)
         glBegin(GL_LINE_STRIP)
 
-        x = 0
+        x = 0.0
         for power in yt2:
+            print(power)
             glVertex3d(x, power, -2.0)
-            x = x + 1
+            x = x + 0.01
         glEnd()
         glFlush()
 
@@ -60,7 +54,12 @@ class MicAndFFT:
 
     def readDataAndDoFFT(self):
         print("RECORDING...")
-
+        self.stream = self.pa.open(format   = FORMAT,
+                             channels = CHANNELS,
+                             rate     = SAMPLE_RATE,
+                             input    = True,
+                            input_device_index = INPUT_DEVICE_INDEX,
+                            frames_per_buffer  = FRAME_SIZE)
         # data = self.stream.read(FRAME_SIZE)
         data = self.stream.read(1024)
 
