@@ -23,38 +23,9 @@ CHANNELS      = 1            # モノラルかバイラルか
 INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
 NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 
-def my_glut_idle():
-    glutPostRedisplay()
 
-def my_glut_mouse(button, state, x, y):
-  if button == GLUT_LEFT_BUTTON:
-    if (state == GLUT_DOWN):
-      glutIdleFunc(my_glut_idle)
-    # else:
-      # glutIdleFunc(0)
-  elif button == GLUT_RIGHT_BUTTON:
-    if state == GLUT_DOWN:
-        glutPostRedisplay()
 
-def my_glut_init(minX, maxX, minY, maxY, minZ, maxZ):
-    glClearColor(1.0, 1.0, 1.0, 0.0)
-    glMatrixMode(GL_PROJECTION)
-    
-    glLoadIdentity()
-    # glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0)
-    # glOrtho(-20.0, 20.0, -20.0, 20.0, -10.0, 10.0)
-    glOrtho(minX, maxX, minY, maxY, minZ, maxZ)
-
-    # gluPerspective(30.0, 1.0, 1.0, 100.0)
-    # glTranslated(0.0, 0.0, -5.0);
-    # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
-
-def my_glut_display():
-    global audioMod
-
-    audioMod.readDataAndDoFFT()
-
-class KAudioModule:
+class MicAndFFT:
     def __init__(self):
         self.pa = pyaudio.PyAudio()
     
@@ -88,14 +59,10 @@ class KAudioModule:
    
 
     def readDataAndDoFFT(self):
-
         print("RECORDING...")
 
-        # global stream
-
-        # for i in range(NUM_OF_LOOP):
-        data = self.stream.read(FRAME_SIZE)
-        # print(data)
+        # data = self.stream.read(FRAME_SIZE)
+        data = self.stream.read(1024)
 
         # debug
         # it's better to be FIFO queue.
@@ -116,14 +83,5 @@ class KAudioModule:
         # stream.close()
         # pa.terminate()
 
-audioMod = KAudioModule()
 
-glutInit(sys.argv)
-glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
-glutInitWindowSize(600, 600)
-glutInitWindowPosition(200, 200)
-glutCreateWindow(b"FFT")
-glutMouseFunc(my_glut_mouse)
-my_glut_init(-20.0, 20.0, -20.0, 20.0, -5.0, 5.0)
-glutDisplayFunc(my_glut_display)
-glutMainLoop()
+
