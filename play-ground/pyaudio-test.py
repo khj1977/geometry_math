@@ -7,11 +7,8 @@ import time
 import pyaudio
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 from scipy.fft import fft, fftfreq
-
-import math as m
 
 from OpenGL.GLUT import *
 from OpenGL.GL import *
@@ -52,82 +49,69 @@ def my_glut_init(minX, maxX, minY, maxY, minZ, maxZ):
     # gluLookAt(0.0, 0.0, -10.0, 0.0, 0.0, 10.0, 0.0, 1.0, 0.0)
 
 def my_glut_display():
-    record_and_save()
+    global audioMod
 
-def doFFT(x):
-    yt = fft(x)
-    yt2 = []
-    for x in yt:
-        re = x.real
-        im = x.imag
-        power = m.sqrt(re*re + im*im)
-        yt2.append(power)
+    audioMod.record_and_save()
 
-    # plt.figure(figsize=(15,3))
-    # plt.plot(yt2)
-    # plt.plot(x)
-    # plt.show()
+class KAudioModule:
+    def __init__(self):
+        self.pa = pyaudio.PyAudio()
+    
+        self.pa.open(format   = FORMAT,
+                             channels = CHANNELS,
+                             rate     = SAMPLE_RATE,
+                             input    = True,
+                            input_device_index = INPUT_DEVICE_INDEX,
+                            frames_per_buffer  = FRAME_SIZE)
+        self.list_frame = []
+        
+    def doFFT(x):
+        yt = fft(x)
+        yt2 = []
+        for x in yt:
+            re = x.real
+            im = x.imag
+            power = m.sqrt(re*re + im*im)
+            yt2.append(power)
 
-    glClear(GL_COLOR_BUFFER_BIT)
-    # glBegin(GL_POINTS)
-    glBegin(GL_LINES)
+        glClear(GL_COLOR_BUFFER_BIT)
+        glBegin(GL_LINES)
 
-    x = 0
-    for power in yt2:
-        glVertex3d(x, power, -2.0)
-        x = x + 1
-    glEnd()
-    glFlush()
+        x = 0
+        for power in yt2:
+            glVertex3d(x, power, -2.0)
+            x = x + 1
+        glEnd()
+        glFlush()
 
    
 
-def record_and_save():
-    """
-    デバイスから出力される音声の録音をする
-    """
-    global pa
+    def record_and_save(self):
 
-    print("RECORDING...")
+        print("RECORDING...")
 
-    # global stream
-    global list_frame
+        # global stream
 
-    # for i in range(NUM_OF_LOOP):
-    data = stream.read(FRAME_SIZE)
-    # print(data)
-    list_frame.append(data)
+        # for i in range(NUM_OF_LOOP):
+        data = self.stream.read(FRAME_SIZE)
+        # print(data)
+        self.list_frame.append(data)
 
-    print("RECORDING DONE!")
+        print("RECORDING DONE!")
 
-    # The following part is come from the follows:
-    # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
-    # %matplotlib inline
+        # The following part is come from the follows:
+        # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
+        # %matplotlib inline
 
-    x = np.frombuffer(data, dtype="int16") / 32768.0
-    doFFT(x)
+        x = np.frombuffer(data, dtype="int16") / 32768.0
+        doFFT(x)
 
-    # close and terminate stream object "stream"
-    # stream.stop_stream()
-    # stream.close()
-    # pa.terminate()
+        # close and terminate stream object "stream"
+        stream.stop_stream()
+        stream.close()
+        pa.terminate()
 
-pa = pyaudio.PyAudio()
-for i in range(pa.get_device_count()):
-    print(pa.get_device_info_by_index(i))
-    print()
-pa.terminate()
-
-pa = pyaudio.PyAudio()
-# record_and_save()
-
-stream = pa.open(format   = FORMAT,
-                     channels = CHANNELS,
-                     rate     = SAMPLE_RATE,
-                     input    = True,
-                     input_device_index = INPUT_DEVICE_INDEX,
-                     frames_per_buffer  = FRAME_SIZE)
-
-list_frame = []
+audioMod = KAudioModule()
 
 glutInit(sys.argv)
 glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
