@@ -53,7 +53,6 @@ class MicAndFFT:
    
 
     def readDataAndDoFFT(self):
-        print("RECORDING...")
         self.stream = self.pa.open(format   = FORMAT,
                              channels = CHANNELS,
                              rate     = SAMPLE_RATE,
@@ -67,12 +66,6 @@ class MicAndFFT:
         # it's better to be FIFO queue.
         self.list_frame.append(data)
         # end of debug
-
-        print("RECORDING DONE!")
-
-        # The following part is come from the follows:
-        # https://qiita.com/mix_dvd/items/adce7636e2ab33b25208
-        # %matplotlib inline
 
         x = np.frombuffer(data, dtype="int16") / 32768.0
         self.doFFT(x)
