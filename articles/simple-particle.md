@@ -30,7 +30,7 @@ It could be said that C++ is faster than Python. However, considering educationa
 - To make method of control of fluid dynamics via micro mechanical method.
 
 ## Methodology
-- Numerical simulation based visualization of partiles and trajectry analysis using frequency domain analysis, geometry and physics.
+- Numerical simulation based visualization of particles and trajectry analysis using frequency domain analysis, geometry and physics.
 
 # Differential Equation and applications
 
