@@ -14,6 +14,7 @@ def calcZTrans(n, r, wt):
 
     return XZPartialWithN
 
+# z = r * (coswt + isinwt)
 def calcZTransOverN(r, wt, nBegin, nEnd):
     xzRe = 0.0
     xzIm = 0.0
