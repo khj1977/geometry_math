@@ -1,8 +1,10 @@
 import numpy as np
 
-v = np.array([2, 3])
+v = np.array([2, 1])
 print(v[0])
 print(v[1])
+
+print(v)
 
 rows = 2
 cols = 3
