@@ -29,7 +29,9 @@ while True:
         break
 
     xz = z.calcZTransOverN(xn, r, wt, nBegin, nEnd)
+    power = z.calcPowerOfZ(xz)
 
-    print(str(r) + "," + str(wt) + "," + str(xz[0]) + "," + str(xz[1]))
+    # print(str(r) + "," + str(wt) + "," + str(xz[0]) + "," + str(xz[1]))
+    print(str(r) + "," + str(wt) + "," + str(power))
 
     wt = wt + deltaWt
