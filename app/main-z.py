@@ -1,8 +1,6 @@
 from com_gmail_eulerbonjour.digital_signal import z_transform as z
 import math as m
 
-# def calcZTransOverN(r, wt, nBegin, nEnd)
-
 r = 1.0
 wt = 0.0
 
