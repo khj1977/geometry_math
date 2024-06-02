@@ -1,21 +1,21 @@
 import numpy as np
 import math as m
 
-def calcZTrans(n, r, wt):
+def calcZTrans(xn, n, r, wt):
     cos = m.cos(n * wt)
     sin = m.sin(n * wt)
 
     rDenom = 1.0 / (r ** n) 
 
-    zRe = rDenom * cos
-    zIm = rDenom * sin
+    zRe = xn[int(n)] * rDenom * cos
+    zIm = xn[int(n)] * rDenom * sin
 
     XZPartialWithN = np.array([zRe, zIm])
 
     return XZPartialWithN
 
 # z = r * (coswt + isinwt)
-def calcZTransOverN(r, wt, nBegin, nEnd):
+def calcZTransOverN(xn, r, wt, nBegin, nEnd):
     xzRe = 0.0
     xzIm = 0.0
 
@@ -24,10 +24,10 @@ def calcZTransOverN(r, wt, nBegin, nEnd):
         if (n > nEnd):
             break
 
-        z = calcZTrans(n, r, wt)
+        z = calcZTrans(xn, n, r, wt)
         xzRe = xzRe + z[0]
         xzIm = xzIm + z[1]
 
-        n = n + 1.0
+        n = n + 1
 
     return np.array([xzRe, xzIm])
