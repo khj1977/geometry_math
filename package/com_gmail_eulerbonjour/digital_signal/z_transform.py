@@ -31,3 +31,10 @@ def calcZTransOverN(xn, r, wt, nBegin, nEnd):
         n = n + 1
 
     return np.array([xzRe, xzIm])
+
+def calcPowerOfZ(xz):
+    re = xz[0]
+    im = xz[1]
+    power = m.sqrt(re * re + im * im)
+
+    return power
