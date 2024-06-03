@@ -6,6 +6,6 @@ It is said on text book that it is close to fourier transform for r = 1.0. Howev
 
 ![z-trans for sin t and sin 100t](/articles/img/z-trans-sin.png "z-trans for sin t and sin 100t")
 
-$x(n) = \sin t + \sin 100t$
+$x(n) = \sin n + \sin 100n$
 
 Why r > 1.0 for many r? It seems it is multiple laplace transform. It means Z(x(n)) := set of laplace transform for digital. If it were analysis, is s and $1/(s + 2)$ for instance. It could be supposed that since it is numeric, set of digital laplace transform is utilized.
