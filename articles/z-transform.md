@@ -4,6 +4,7 @@
 
 For 1 > 1.0, it seems it is close to descreate laplace transform esp. with n > 0. Thus I think it is appropriate to use z-trans to digital control.
 
+![z-trans for sin t and sin 100t](/articles/img/z-trans-sin.png "z-trans for sin t and sin 100t")
 
 $X(n) = \sin t + \sin 100t$
 
