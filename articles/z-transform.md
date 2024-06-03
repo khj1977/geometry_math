@@ -2,7 +2,7 @@
 
 ## 3D gnuplot for z-transform
 
-For 1 > 1.0, it seems it is close to descreate laplace transform esp. with n > 0. Thus I think it is appropriate to use z-trans to digital control.
+It is said on text book that it is close to fourier transform for r = 1.0. However, for 1 > 1.0, for the author, it seems it is close to descreate laplace transform esp. with n > 0. Thus, the author think it is appropriate to use z-trans to digital control.
 
 ![z-trans for sin t and sin 100t](/articles/img/z-trans-sin.png "z-trans for sin t and sin 100t")
 
