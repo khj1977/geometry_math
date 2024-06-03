@@ -18,7 +18,7 @@ while True:
     if (i > nEnd):
         break
 
-    sin = m.sin(theta)
+    sin = m.sin(theta) + m.sin(100 * theta)
     xn.append(sin)
 
     theta = theta + deltaTheta
@@ -32,6 +32,7 @@ while True:
     power = z.calcPowerOfZ(xz)
 
     # print(str(r) + "," + str(wt) + "," + str(xz[0]) + "," + str(xz[1]))
-    print(str(r) + "," + str(wt) + "," + str(power))
+    # print(str(r) + "," + str(wt) + "," + str(power))
+    print(power)
 
     wt = wt + deltaWt
