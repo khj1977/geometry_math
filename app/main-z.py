@@ -1,7 +1,7 @@
 from com_gmail_eulerbonjour.digital_signal import z_transform as z
 import math as m
 
-r = 0.5
+r = 0.1
 deltaR = 0.05
 wt = 0.0
 
@@ -36,9 +36,10 @@ while True:
 
         xz = z.calcZTransOverN(xn, r, wt, nBegin, nEnd)
         power = z.calcPowerOfZ(xz)
+        logPower = m.log10(power)
 
         # print(str(r) + "," + str(wt) + "," + str(xz[0]) + "," + str(xz[1]))
-        print(str(r) + "," + str(wt) + "," + str(power))
+        print(str(r) + "," + str(wt) + "," + str(logPower))
         # print(power)
         # print(str(wt) + "," + str(power))
 
