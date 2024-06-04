@@ -1,7 +1,8 @@
 from com_gmail_eulerbonjour.digital_signal import z_transform as z
 import math as m
 
-r = 1.0
+r = 0.5
+deltaR = 0.05
 wt = 0.0
 
 deltaWt = 0.01
@@ -27,7 +28,7 @@ while True:
     i = i + 1
 
 while True:
-    if (r > 3.0):
+    if (r > 1.0):
         break
     while wt < 6.28:
         if (wt > 6.28):
@@ -42,5 +43,5 @@ while True:
         # print(str(wt) + "," + str(power))
 
         wt = wt + deltaWt
-    r = r + 0.1
+    r = r + deltaR
     wt = 0.0
