@@ -61,18 +61,15 @@ class MicAndFFT:
         # data = self.stream.read(FRAME_SIZE)
         data = self.stream.read(1024)
 
-        # debug
         x = np.frombuffer(data, dtype="int16") / 32768.0
-        # it's better to be FIFO queue.
         for y in x:
             self.list_frame.append(y)
-            
+
         while(True):
             if (len(self.list_frame) > 8192):
                 self.list_frame.pop(0)
             else:
                 break
-        # end of debug
         
         # self.doFFT(x)
         self.doFFT(self.list_frame)
