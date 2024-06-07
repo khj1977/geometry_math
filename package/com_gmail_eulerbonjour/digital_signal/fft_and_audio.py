@@ -65,7 +65,7 @@ class MicAndFFT:
         # it's better to be FIFO queue.
         self.list_frame.append(data)
         while(True):
-            if (len(self.list_frame) > 10000):
+            if (len(self.list_frame) > 8192):
                 self.list_frame.pop(0)
             else:
                 break
