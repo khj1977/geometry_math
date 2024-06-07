@@ -74,6 +74,7 @@ class MicAndFFT:
 
         while(True):
             if (len(self.list_frame) > 8192):
+            # if (len(self.list_frame) > 1024):
             # if (len(self.list_frame) > 2**16):
                 self.list_frame.pop(0)
             else:
