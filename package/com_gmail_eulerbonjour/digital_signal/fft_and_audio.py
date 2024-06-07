@@ -42,10 +42,15 @@ class MicAndFFT:
         glColor3d(0.0, 0.0, 1.0)
 
         x = 0.0
+        i = 0
+        l = len(yt2) / 2
         for power in yt2:
+            if (i > l):
+                break
             # print(str(x) + "," + str(power))
             glVertex3d(x, power, -2.0)
             x = x + 0.01
+            i = i + 1
         glEnd()
         glFlush()
 
