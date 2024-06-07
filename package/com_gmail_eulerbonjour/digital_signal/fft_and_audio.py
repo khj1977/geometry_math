@@ -29,6 +29,13 @@ class MicAndFFT:
         self.list_frame = []
         
     def doFFT(self, x):
+        # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.
+    
+        # Actually, I understood about DFT when I was 3rd year of undergrad and has experience of making DFT by C-language. However, until now, I haven't examine relatoin of index of X(omega or i) and frequency. For undergrad student, it is recommended to study both analytically and numerically.
+
+        # According to doc of scypy, it is y[k] = np.sum(x * np.exp(-2j * np.pi * k * np.arange(n)/n)) and accoring to text book, it is c[k] = f(x) * exp(-j * pi * k * x / n) Where c[k] is k-th spectorum and n is close to sampling rate by my understanding. And thus, y[k] for scipy.fft would be omega_k of spectorum. This understanding is correct?
+
+
         yt = fft(x)
         yt2 = []
         for x in yt:
