@@ -43,7 +43,7 @@ class MicAndFFT:
 
         x = 0.0
         i = 0
-        # range of rendering of power spectrum has been changed. It is assumed that summation of FFT is -l/2 to l/2 and thus, its freq response of symmetry arond half point of x. Actually, if one thinks about imaginary plane, it would be symmetry. It is better to examine this assumption is correct or not. 
+        # range of rendering of power spectrum has been changed. It is assumed that summation of FFT is -l/2 to l/2 and thus, its freq response if symmetry arond half point of x. Actually, if one thinks about imaginary plane, it would be symmetry. It is better to examine this assumption is correct or not. 
         l = len(yt2) / 2
         for power in yt2:
             if (i > l):
