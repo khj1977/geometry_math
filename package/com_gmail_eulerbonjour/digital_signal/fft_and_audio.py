@@ -64,6 +64,8 @@ class MicAndFFT:
         # debug
         # it's better to be FIFO queue.
         self.list_frame.append(data)
+        if (len(self.list_frame) > 1000):
+            self.list_frame.pop(0)
         # end of debug
 
         x = np.frombuffer(data, dtype="int16") / 32768.0
