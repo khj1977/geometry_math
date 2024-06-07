@@ -35,7 +35,6 @@ class MicAndFFT:
 
         # According to doc of scypy, it is y[k] = np.sum(x * np.exp(-2j * np.pi * k * np.arange(n)/n)) and accoring to text book, it is c[k] = f(x) * exp(-j * pi * k * x / n) Where c[k] is k-th spectorum and n is close to sampling rate by my understanding. And thus, y[k] for scipy.fft would be omega_k of spectorum. This understanding is correct?
 
-
         yt = fft(x)
         yt2 = []
         for x in yt:
