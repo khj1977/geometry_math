@@ -41,8 +41,6 @@ class MicAndFFT:
         glBegin(GL_LINE_STRIP)
         glColor3d(0.0, 0.0, 1.0)
 
-        # print(len(yt2))
-
         x = 0.0
         i = 0
         l = len(yt2) / 2
