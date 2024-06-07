@@ -33,7 +33,7 @@ class MicAndFFT:
 
         # According to doc of scypy, it is y[k] = np.sum(x * np.exp(-2j * np.pi * k * np.arange(n)/n)) and accoring to text book, it is c[k] = \integral f(x) * exp(-j * pi * k * x / n) Where c[k] is k-th spectorum and n is close to sampling rate by my understanding. And thus, y[k] for scipy.fft would be omega_k of spectorum. This understanding is correct?
 
-        # Actually, I understood about DFT when I was 3rd year of undergrad and has experience of making DFT by C-language. However, until now, I haven't examine relatoin of index of X(omega or i) and frequency. For undergrad student, it is recommended to study both analytically and numerically.
+        # Actually, I understood about DFT when I was 3rd year of undergrad and has experience of making DFT by C-language. However, until now, I haven't examine relatoin of index of X(omega or i) and frequency. For undergrad student, it is recommended to study both analytically and numerically. And possibly, it would be better to have an application for theory.
 
         yt = fft(x)
         yt2 = []
