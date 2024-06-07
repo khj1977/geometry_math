@@ -62,8 +62,10 @@ class MicAndFFT:
         data = self.stream.read(1024)
 
         # debug
+        x = np.frombuffer(data, dtype="int16") / 32768.0
         # it's better to be FIFO queue.
-        self.list_frame.append(data)
+        for y in x:
+            self.list_frame.append(y)
         while(True):
             if (len(self.list_frame) > 8192):
                 self.list_frame.pop(0)
@@ -71,8 +73,9 @@ class MicAndFFT:
                 break
         # end of debug
 
-        x = np.frombuffer(data, dtype="int16") / 32768.0
-        self.doFFT(x)
+        
+        # self.doFFT(x)
+        self.doFFT(self.list_frame)
 
         # close and terminate stream object "stream"
         # stream.stop_stream()

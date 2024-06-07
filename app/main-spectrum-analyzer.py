@@ -43,7 +43,7 @@ glutInitWindowSize(600, 600)
 glutInitWindowPosition(200, 200)
 glutCreateWindow(b"FFT")
 glutMouseFunc(my_glut_mouse)
-my_glut_init(-1.0, 12.0, -20.0, 30.0, -5.0, 5.0)
+my_glut_init(-1.0, 100.0, -20.0, 30.0, -5.0, 5.0)
 glutDisplayFunc(my_glut_display)
 glutMainLoop()
 
