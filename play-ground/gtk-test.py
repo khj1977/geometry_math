@@ -4,6 +4,7 @@
 # brew install gtk+3
 # brew install pygobject3
 # and use python3.12. It may not work with python3.9
+# note that brew may install pygobject not regular dir of python. Thus, it is required to set PYTHONPATH appropriately. Possibly under /opt/homebrew.
 
 # The following is cited from Qiita. Sorry, forgot URL.
 
