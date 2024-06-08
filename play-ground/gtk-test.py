@@ -6,7 +6,7 @@
 # and use python3.12. It may not work with python3.9
 # Note that brew may install pygobject not regular dir of python. Thus, it is required to set PYTHONPATH appropriately. It is possibly under /opt/homebrew.
 
-# Also, dor different version, different pip module would be appropriate. Therefore, to use PyOpenGL, do the following
+# Also, for different version, different pip module would be appropriate. Therefore, to use PyOpenGL, do the following
 # python3.12 -m venv $HOME/py312
 # source $HOME/py312/bin/activate
 # The above makes python ver 3.12 as default.
