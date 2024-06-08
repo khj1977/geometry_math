@@ -1,6 +1,6 @@
 # This code use gtk which is window tool-kit not
 # default with mac.
-# For mac, install the following:
+# To use GTK with python, for mac, install the following:
 # brew install gtk+3
 # brew install pygobject3
 # and use python3.12. It may not work with python3.9
