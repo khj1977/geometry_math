@@ -5,13 +5,15 @@
 # brew install pygobject3
 # and use python3.12. It may not work with python3.9
 
+# The following is cited from Qiita. Sorry, forgot URL.
+
 # gtk3
 import gi
 
-gi.require_version("Gtk", "3.0") # 👈
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 win = Gtk.Window()
-win.connect("destroy", Gtk.main_quit) # 👈
-win.show_all() # 👈
-Gtk.main() # 👈
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()
