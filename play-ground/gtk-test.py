@@ -21,9 +21,12 @@ class MyWindow(Gtk.Window):
         super().__init__()
         # self.area = Gtk.GLArea()
         self.glView = MyGLView()
-        # self.glView = Gtk.GLArea()
+        # self.glView = Gtk.GLArea()\
+
+        button = Gtk.Button.new_with_label("Test")
 
         self.add(self.glView)
+        # self.add(button)
 
 class MyGLView(Gtk.GLArea):
     def __init__(self):
