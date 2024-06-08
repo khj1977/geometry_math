@@ -19,12 +19,13 @@ class MyWindow(Gtk.Window):
     def __init__(self):
         super().__init__()
         self.area = Gtk.GLArea()
-        self.area.connect('render', self.on_render)
 
         self.area.connect('render', self.on_render)
         self.area.connect('realize', self.on_realize)
                           
         self.add(self.area)
+
+        
 
     def on_render(self, area, context):  
         area.make_current()
