@@ -25,7 +25,7 @@ class MyWindow(Gtk.Window):
                           
         self.add(self.area)
 
-    def on_render(self, area, context):  
+    def on_render(self, area, context):
         area.make_current()
 
         w = area.get_allocated_width()
