@@ -6,7 +6,7 @@
 # and use python3.12. It may not work with python3.9
 # Note that brew may install pygobject not regular dir of python. Thus, it is required to set PYTHONPATH appropriately. It is possibly under /opt/homebrew.
 
-# The following is cited from Qiita. Sorry, I forgot a URL.
+# The following is partially cited from Qiita. Sorry, I forgot a URL.
 
 # GTK related code, esp, GLArea is come from the following URL: https://athenajc.gitbooks.io/python-gtk-3-api/content/
 
