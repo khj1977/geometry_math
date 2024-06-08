@@ -25,8 +25,6 @@ class MyWindow(Gtk.Window):
                           
         self.add(self.area)
 
-        
-
     def on_render(self, area, context):  
         area.make_current()
 
