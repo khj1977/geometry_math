@@ -20,9 +20,10 @@ class MyWindow(Gtk.Window):
     def __init__(self):
         super().__init__()
         # self.area = Gtk.GLArea()
-        self.area = MyGLView()
-                          
-        self.add(self.area)
+        self.glView = MyGLView()
+        # self.glView = Gtk.GLArea()
+
+        self.add(self.glView)
 
 class MyGLView(Gtk.GLArea):
     def __init__(self):
