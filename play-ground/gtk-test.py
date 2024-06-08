@@ -8,7 +8,7 @@
 
 # Also, dor different version, different pip module would be appropriate. Therefore, to use PyOpenGL, do the following
 # python3.12 -m venv $HOME/py312
-# source py312/bin/activate
+# source $HOME/py312/bin/activate
 # The above makes python ver 3.12 as default.
 # Then, run the following for opengl for python 3.12.
 # pip install pyopengl
