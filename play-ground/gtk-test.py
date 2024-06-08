@@ -15,6 +15,14 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+class MyWindow(Gtk.Window):
+    def __init__(self):
+        super().__init__()
+        # self.area = Gtk.GLArea()
+        self.area = MyGLView()
+                          
+        self.add(self.area)
+
 class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
@@ -71,14 +79,6 @@ class MyGLView(Gtk.GLArea):
 
         # self.init_buffers()
         # self.init_shaders()
-
-class MyWindow(Gtk.Window):
-    def __init__(self):
-        super().__init__()
-        # self.area = Gtk.GLArea()
-        self.area = MyGLView()
-                          
-        self.add(self.area)
 
 # win = Gtk.Window()
 win = MyWindow()
