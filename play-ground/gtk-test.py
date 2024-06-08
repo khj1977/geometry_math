@@ -15,18 +15,18 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-class MyWindow(Gtk.Window):
+class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
-        self.area = Gtk.GLArea()
-
-        self.area.connect('render', self.on_render)
-        self.area.connect('realize', self.on_realize)
-                          
-        self.add(self.area)
+        self.connect('render', self.on_render)
+        self.connect('realize', self.on_realize)
 
     def on_render(self, area, context):
         area.make_current()
+
+        # debug
+        print("render")
+        # end of debug
 
         w = area.get_allocated_width()
         h = area.get_allocated_height()
@@ -57,7 +57,11 @@ class MyWindow(Gtk.Window):
     def on_realize(self, area):        
         # We need to make the context current if we want to
         # call GL API
-        area.make_current()            
+        area.make_current()    
+
+        # debug
+        print("realize")
+        # end of debug        
 
         # If there were errors during the initialization or
         # when trying to make the context current, this
@@ -67,6 +71,14 @@ class MyWindow(Gtk.Window):
 
         # self.init_buffers()
         # self.init_shaders()
+
+class MyWindow(Gtk.Window):
+    def __init__(self):
+        super().__init__()
+        # self.area = Gtk.GLArea()
+        self.area = MyGLView()
+                          
+        self.add(self.area)
 
 # win = Gtk.Window()
 win = MyWindow()
