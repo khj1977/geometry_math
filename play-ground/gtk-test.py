@@ -16,6 +16,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+from OpenGL.GL import *
+from OpenGL.GLU import *
+
 class MyWindow(Gtk.Window):
     def __init__(self):
         super().__init__()
