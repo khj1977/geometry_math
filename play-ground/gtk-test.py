@@ -41,10 +41,17 @@ class MyWindow(Gtk.Window):
 class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
+
+        self.set_vexpand(True)
+        self.set_hexpand(True)
+        self.set_visible(True)
+
         # self.connect('renderp', self.on_render)
         self.connect('render', self.on_render)
         self.connect('realize', self.on_realize)
         self.connect('resize', self.on_resize)
+
+        print(self.get_preferred_height())
 
     def on_resize(self, area, width, height, user_data):
         print("resize")
