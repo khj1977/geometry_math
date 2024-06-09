@@ -103,6 +103,7 @@ class MyGLView(Gtk.GLArea):
         # self.init_shaders()
 
 # win = Gtk.Window()
+# glViewport(0, 0, 100, 100)
 win = MyWindow()
 win.connect("destroy", Gtk.main_quit)
 
