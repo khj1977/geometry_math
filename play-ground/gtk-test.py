@@ -51,16 +51,12 @@ class MyGLView(Gtk.GLArea):
         print("render")
         # end of debug
 
-        w = area.get_allocated_width()
-        h = area.get_allocated_height()
-        glViewport(0, 0, w, h)
-
         # inside this function it's safe to use GL; the given
         # Gdk.GLContext has been made current to the drawable
         # surface used by the Gtk.GLArea and the viewport has
         # already been set to be the size of the allocation
         # we can start by clearing the buffer        
-        glClearColor(0, 0, 0, 0)
+        # glClearColor(0, 0, 0, 0)
         glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
@@ -91,6 +87,17 @@ class MyGLView(Gtk.GLArea):
         # function will return a Gio.Error for you to catch
         if (area.get_error() != None):
           return      
+
+        w = area.get_allocated_width()
+        h = area.get_allocated_height()
+        glViewport(0, 0, w, h)
+
+        glClearColor(1.0, 0, 0, 0)
+        # glClear(GL_COLOR_BUFFER_BIT)
+
+        print(self.get_auto_render())
+
+        self.set_auto_render(True)
 
         # self.init_buffers()
         # self.init_shaders()
