@@ -44,6 +44,26 @@ class MyGLView(Gtk.GLArea):
         # self.connect('renderp', self.on_render)
         self.connect('render', self.on_render)
         self.connect('realize', self.on_realize)
+        self.connect('resize', self.on_resize)
+
+    def on_resize(self, area, width, height, user_data):
+        print("resize")
+        
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        # draw your object  
+        glColor3f(0, 0, 1)           
+        glBegin(GL_TRIANGLES)
+        glVertex3f ( 0.0, 1.0, 0.0)
+        glVertex3f (-1.0,-1.0, 0.0)
+        glVertex3f ( 1.0,-1.0, 0.0)
+        glEnd()
+        glFlush()
+
+        # we completed our drawing; the draw commands will be
+        # flushed at the end of the signal emission chain, and
+        # the buffers will be drawn on the window
+        return True
 
     def on_render(self, area, context):
         area.make_current()
