@@ -41,6 +41,7 @@ class MyWindow(Gtk.Window):
 class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
+        # self.connect('renderp', self.on_render)
         self.connect('render', self.on_render)
         self.connect('realize', self.on_realize)
 
