@@ -133,4 +133,5 @@ win = MyWindow()
 win.connect("destroy", Gtk.main_quit)
 
 win.show_all()
+# win.show()
 Gtk.main()
