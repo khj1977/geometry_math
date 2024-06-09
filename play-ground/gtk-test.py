@@ -126,6 +126,10 @@ class MyGLView(Gtk.GLArea):
 # win = Gtk.Window()
 # glViewport(0, 0, 100, 100)
 win = MyWindow()
+
+# The following does not work. This is because it is supposed that event propagation problem for render problem would be there.
+# win = MyGLView()
+
 win.connect("destroy", Gtk.main_quit)
 
 win.show_all()
