@@ -26,22 +26,24 @@ from gi.repository import Gtk
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-class MyWindow(Gtk.Window):
+class MyWindow(Gtk.ApplicationWindow):
     def __init__(self):
         super().__init__()
         # self.area = Gtk.GLArea()
         self.glView = MyGLView()
         # self.glView = Gtk.GLArea()
 
+        self.set_size_request(400, 400)
         button = Gtk.Button.new_with_label("Test")
 
-        self.add(self.glView)
+        self.glView.show()
         # self.add(button)
 
 class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
 
+        self.set_size_request(400, 400)
         self.set_vexpand(True)
         self.set_hexpand(True)
         self.set_visible(True)
