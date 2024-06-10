@@ -136,6 +136,8 @@ class MyGLView(Gtk.GLArea):
 # win = Gtk.Window()
 # glViewport(0, 0, 100, 100)
 win = MyWindow()
+# win = Gtk.ComboBox()
+# win = Gtk.Button()
 
 # The following does not work. This is because it is supposed that event propagation problem for render problem would be there.
 # win = MyGLView()
