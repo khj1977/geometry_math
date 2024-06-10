@@ -54,6 +54,7 @@ class MyGLView(Gtk.GLArea):
         self.connect('resize', self.on_resize)
 
         print(self.get_preferred_height())
+        print(self.get_preferred_width())
 
     def on_resize(self, area, width, height, user_data):
         print("resize")
