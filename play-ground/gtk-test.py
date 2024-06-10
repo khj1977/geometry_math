@@ -34,7 +34,7 @@ class MyWindow(Gtk.ApplicationWindow):
         # self.glView = Gtk.GLArea()
 
         self.set_size_request(400, 400)
-        button = Gtk.Button.new_with_label("Test")
+        # button = Gtk.Button.new_with_label("Test")
 
         self.glView.show()
         # self.add(button)
