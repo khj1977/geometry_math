@@ -116,6 +116,7 @@ class MyGLView(Gtk.GLArea):
         # We need to make the context current if we want to
         # call GL API
         area.make_current()    
+        # self.attach_buffers()
 
         # debug
         print("realize")
