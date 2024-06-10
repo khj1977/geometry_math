@@ -151,7 +151,7 @@ win = MyWindow()
 # win = MyGLView()
 
 win.connect("destroy", Gtk.main_quit)
-
 win.show_all()
+win.present()
 # win.show()
 Gtk.main()
