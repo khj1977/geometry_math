@@ -91,6 +91,14 @@ class MyGLView(Gtk.GLArea):
         print("on_render")
         # end of debug
 
+        # debug
+        glDeleteTextures (1, 0)
+        glBindTexture(GL_TEXTURE_2D, 0)
+        glDeleteTextures (1, 1)
+        glBindTexture(GL_TEXTURE_2D, 1)
+        
+        # enf of debug
+
         # inside this function it's safe to use GL; the given
         # Gdk.GLContext has been made current to the drawable
         # surface used by the Gtk.GLArea and the viewport has
