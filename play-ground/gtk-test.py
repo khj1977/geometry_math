@@ -1,7 +1,7 @@
 # This code use gtk which is window tool-kit not
 # default with mac.
 # To use GTK with python, for mac, install the following:
-# brew install gtk+3
+# brew install gtk4
 # brew install pygobject3
 # and use python3.12. It may not work with python3.9
 # Note that brew may install pygobject not regular dir of python. Thus, it is required to set PYTHONPATH appropriately. It is possibly under /opt/homebrew.
