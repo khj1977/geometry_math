@@ -20,7 +20,7 @@
 # gtk3
 import gi
 
-gi.require_version("Gtk", "3.0")
+gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk
 
 from OpenGL.GL import *
@@ -36,7 +36,7 @@ class MyWindow(Gtk.ApplicationWindow):
         # self.glView = Gtk.GLArea()
 
         self.stack = Gtk.Stack()
-        self.add(self.stack)
+        self.set_child(self.stack)
         self.stack.add_named(self.glView, "GL")
 
         self.set_size_request(400, 400)
@@ -61,8 +61,8 @@ class MyGLView(Gtk.GLArea):
         self.connect('realize', self.on_realize)
         self.connect('resize', self.on_resize)
 
-        print(self.get_preferred_height())
-        print(self.get_preferred_width())
+        # print(self.get_preferred_height())
+        # print(self.get_preferred_width())
 
     def on_resize(self, area, width, height, user_data):
         print("resize")
@@ -142,6 +142,9 @@ class MyGLView(Gtk.GLArea):
         # self.init_buffers()
         # self.init_shaders()
 
+def on_app_activate(app):
+    return True
+
 # win = Gtk.Window()
 # glViewport(0, 0, 100, 100)
 win = MyWindow()
@@ -151,8 +154,12 @@ win = MyWindow()
 # The following does not work. This is because it is supposed that event propagation problem for render problem would be there.
 # win = MyGLView()
 
-win.connect("destroy", Gtk.main_quit)
-win.show_all()
+# win.connect("destroy", Gtk.main_quit)
+win.show()
 win.present()
 # win.show()
-Gtk.main()
+# Gtk.main()
+
+app = Gtk.Application()
+app.connect('activate', on_app_activate)
+app.run()
