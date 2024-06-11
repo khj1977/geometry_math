@@ -99,7 +99,7 @@ class MyGLView(Gtk.GLArea):
         glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
-        glColor3f(0, 0, 1)           
+        glColor3f(0.0, 0.0, 1.0)           
         glBegin(GL_TRIANGLES)
         glVertex3f ( 0.0, 1.0, 0.0)
         glVertex3f (-1.0,-1.0, 0.0)
