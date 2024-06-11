@@ -88,7 +88,7 @@ class MyGLView(Gtk.GLArea):
         context.make_current()
 
         # debug
-        print("render")
+        print("on_render")
         # end of debug
 
         # inside this function it's safe to use GL; the given
