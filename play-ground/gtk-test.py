@@ -96,7 +96,6 @@ class MyGLView(Gtk.GLArea):
         glBindTexture(GL_TEXTURE_2D, 0)
         glDeleteTextures (1, 1)
         glBindTexture(GL_TEXTURE_2D, 1)
-        
         # enf of debug
 
         # inside this function it's safe to use GL; the given
