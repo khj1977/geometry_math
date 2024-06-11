@@ -97,16 +97,16 @@ class MyGLView(Gtk.GLArea):
         # already been set to be the size of the allocation
         # we can start by clearing the buffer        
         # glClearColor(0, 0, 0, 0)
-        # glClear(GL_COLOR_BUFFER_BIT)
+        glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
-        # glColor3f(0.0, 0.0, 1.0)           
-        # glBegin(GL_TRIANGLES)
-        # glVertex3f ( 0.0, 1.0, 0.0)
-        # glVertex3f (-1.0,-1.0, 0.0)
-        # glVertex3f ( 1.0,-1.0, 0.0)
-        # glEnd()
-        # glFlush()
+        glColor3f(0.0, 0.0, 1.0)           
+        glBegin(GL_TRIANGLES)
+        glVertex3f ( 0.0, 1.0, 0.0)
+        glVertex3f (-1.0,-1.0, 0.0)
+        glVertex3f ( 1.0,-1.0, 0.0)
+        glEnd()
+        glFlush()
 
         # we completed our drawing; the draw commands will be
         # flushed at the end of the signal emission chain, and
