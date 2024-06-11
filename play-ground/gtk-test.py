@@ -84,7 +84,8 @@ class MyGLView(Gtk.GLArea):
         return True
 
     def on_render(self, area, context):
-        area.make_current()
+        # area.make_current()
+        context.make_current()
 
         # debug
         print("render")
@@ -99,7 +100,7 @@ class MyGLView(Gtk.GLArea):
         glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
-        glColor3f(0.0, 0.0, 1.0)           
+        # glColor3f(0.0, 0.0, 1.0)           
         glBegin(GL_TRIANGLES)
         glVertex3f ( 0.0, 1.0, 0.0)
         glVertex3f (-1.0,-1.0, 0.0)
@@ -132,7 +133,7 @@ class MyGLView(Gtk.GLArea):
         h = area.get_allocated_height()
         glViewport(0, 0, w, h)
 
-        glClearColor(1.0, 0, 0, 0)
+        glClearColor(1.0, 0.0, 0.0, 0.0)
         # glClear(GL_COLOR_BUFFER_BIT)
 
         print(self.get_auto_render())
