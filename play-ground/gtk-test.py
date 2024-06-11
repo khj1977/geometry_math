@@ -59,7 +59,7 @@ class MyGLView(Gtk.GLArea):
         # self.connect('renderp', self.on_render)
         self.connect('render', self.on_render)
         self.connect('realize', self.on_realize)
-        self.connect('resize', self.on_resize)
+        # self.connect('resize', self.on_resize)
 
         # print(self.get_preferred_height())
         # print(self.get_preferred_width())
