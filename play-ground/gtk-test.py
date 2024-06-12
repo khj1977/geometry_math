@@ -204,8 +204,8 @@ class MyGLView(Gtk.GLArea):
         # self.vertex_array_object = glGenVertexArrays(1, self.vertex_array_object)
         # glBindVertexArray(self.vertex_array_object)
 
-        self.vao = array("b")
-        self.vao = glGenVertexArrays(1, self.vao)
+        self.vao = GLuint(0)
+        glGenVertexArrays(1, self.vao)
         glBindVertexArray(self.vao)
 
         self.vbo = glGenBuffers(1)
