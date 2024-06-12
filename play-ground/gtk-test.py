@@ -53,6 +53,10 @@ class MyGLView(Gtk.GLArea):
     def __init__(self):
         super().__init__()
 
+        print("GL ver set")
+        err = self.set_required_version(2, 0)
+        print(err)
+
         self.set_size_request(400, 400)
         self.set_vexpand(True)
         self.set_hexpand(True)
