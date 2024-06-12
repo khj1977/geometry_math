@@ -194,20 +194,15 @@ class MyGLView(Gtk.GLArea):
 
         self.vertices = np.array(_vertices, dtype=np.float32)
 
-        print("init 1")
         self.vertex_array_object = glGenVertexArrays(1)
-        print("init 2")
         glBindVertexArray(self.vertex_array_object)
 
         # Generate buffers to hold our vertices
-        print("init 3")
         self.vertex_buffer = glGenBuffers(1)
 
-        print("init 4")
         glBindBuffer(GL_ARRAY_BUFFER, self.vertex_buffer)
 
         # Send the data over to the buffer
-        print("init 5")
         glBufferData(GL_ARRAY_BUFFER, 48, self.vertices, GL_STATIC_DRAW)
 
         return self
