@@ -161,6 +161,31 @@ class MyGLView(Gtk.GLArea):
         print("on_realize")
         # end of debug        
 
+        self.initOpenGL(area)
+
+        print("after init OpenGL")
+
+        # If there were errors during the initialization or
+        # when trying to make the context current, this
+        # function will return a Gio.Error for you to catch
+        if (area.get_error() != None):
+          return      
+
+        w = area.get_allocated_width()
+        h = area.get_allocated_height()
+        glViewport(0, 0, w, h)
+
+        glClearColor(1.0, 0.0, 0.0, 0.0)
+        # glClear(GL_COLOR_BUFFER_BIT)
+
+        print(self.get_auto_render())
+
+        self.set_auto_render(True)
+
+        # self.init_buffers()
+        # self.init_shaders()
+
+    def initOpenGL(self, area):
         # For modern OpenGL
         _vertices = [
             0.6, 0.6, 0.0, 1.0,
@@ -185,25 +210,7 @@ class MyGLView(Gtk.GLArea):
         print("init 5")
         glBufferData(GL_ARRAY_BUFFER, 48, self.vertices, GL_STATIC_DRAW)
 
-        # If there were errors during the initialization or
-        # when trying to make the context current, this
-        # function will return a Gio.Error for you to catch
-        if (area.get_error() != None):
-          return      
-
-        w = area.get_allocated_width()
-        h = area.get_allocated_height()
-        glViewport(0, 0, w, h)
-
-        glClearColor(1.0, 0.0, 0.0, 0.0)
-        # glClear(GL_COLOR_BUFFER_BIT)
-
-        print(self.get_auto_render())
-
-        self.set_auto_render(True)
-
-        # self.init_buffers()
-        # self.init_shaders()
+        return self
 
 def on_app_activate(app):
     return True
