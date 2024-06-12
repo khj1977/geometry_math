@@ -21,7 +21,9 @@
 import gi
 
 gi.require_version("Gtk", "4.0")
+gi.require_version("Gdk", "4.0")
 from gi.repository import Gtk
+from gi.repository import Gdk
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -66,7 +68,6 @@ class MyGLView(Gtk.GLArea):
 
     def on_resize(self, area, width, height, user_data):
         print("resize")
-        
         glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
@@ -88,14 +89,16 @@ class MyGLView(Gtk.GLArea):
         context.make_current()
 
         # debug
+        print("legacy")
+        print(Gdk.GLContext.is_legacy(context))
         print("on_render")
         # end of debug
 
         # debug
-        glDeleteTextures (1, 0)
-        glBindTexture(GL_TEXTURE_2D, 0)
-        glDeleteTextures (1, 1)
-        glBindTexture(GL_TEXTURE_2D, 1)
+        # glDeleteTextures (1, 0)
+        # glBindTexture(GL_TEXTURE_2D, 0)
+        # glDeleteTextures (1, 1)
+        # glBindTexture(GL_TEXTURE_2D, 1)
         # enf of debug
 
         # inside this function it's safe to use GL; the given
@@ -103,11 +106,11 @@ class MyGLView(Gtk.GLArea):
         # surface used by the Gtk.GLArea and the viewport has
         # already been set to be the size of the allocation
         # we can start by clearing the buffer        
-        # glClearColor(0, 0, 0, 0)
+        glClearColor(0, 0, 0, 0)
         glClear(GL_COLOR_BUFFER_BIT)
 
         # draw your object  
-        glColor3f(0.0, 0.0, 1.0)           
+        # glColor3f(0.0, 0.0, 1.0)           
         glBegin(GL_TRIANGLES)
         glVertex3f ( 0.0, 1.0, 0.0)
         glVertex3f (-1.0,-1.0, 0.0)
@@ -123,11 +126,15 @@ class MyGLView(Gtk.GLArea):
     def on_realize(self, area):        
         # We need to make the context current if we want to
         # call GL API
-        area.make_current()    
+        # area.make_current()   
+        context = area.get_context()
+        # context.require_version(3, 3)
+        # context.set_profile(Gtk.GLArea.Profile.CORE)
+        context.make_current()
         # self.attach_buffers()
 
         # debug
-        print("realize")
+        print("on_realize")
         # end of debug        
 
         # If there were errors during the initialization or
