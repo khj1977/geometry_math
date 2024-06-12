@@ -134,17 +134,18 @@ class MyGLView(Gtk.GLArea):
 
     # Modern OpenGL ver of render signal.
     def on_render_new(self, widget, context):
+        context.make_current()
         widget.attach_buffers()
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         # glUseProgram(self.shader)
 
         glBindVertexArray(self.vertex_array_object)
-        glDrawArrays(GL_TRIANGLES, 0, 3)
-        glBindVertexArray(0)
+        # glDrawArrays(GL_TRIANGLES, 0, 3)
+        # glBindVertexArray(0)
 
-        glUseProgram(0)
-        glFlush()
+        # glUseProgram(0)
+        # glFlush()
 
     def on_realize(self, area):        
         # We need to make the context current if we want to
