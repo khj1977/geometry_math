@@ -17,6 +17,10 @@
 
 # GTK related code, esp, GLArea is come from the following URL: https://athenajc.gitbooks.io/python-gtk-3-api/content/
 
+# Note that some modern OpenGL code is come from
+# https://gist.github.com/TurBoss/78dd883ba045d311695d7b30eab8a5be
+# for sample purpose.
+
 # gtk3
 import gi
 
@@ -27,6 +31,8 @@ from gi.repository import Gdk
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
+
+import numpy as np
 
 class MyWindow(Gtk.ApplicationWindow):
     def __init__(self):
@@ -54,8 +60,7 @@ class MyGLView(Gtk.GLArea):
         super().__init__()
 
         print("GL ver set")
-        err = self.set_required_version(2, 0)
-        print(err)
+        self.set_required_version(3, 3)
 
         self.set_size_request(400, 400)
         self.set_vexpand(True)
@@ -63,7 +68,7 @@ class MyGLView(Gtk.GLArea):
         self.set_visible(True)
 
         # self.connect('renderp', self.on_render)
-        self.connect('render', self.on_render)
+        self.connect('render', self.on_render_new)
         self.connect('realize', self.on_realize)
         # self.connect('resize', self.on_resize)
 
@@ -127,6 +132,19 @@ class MyGLView(Gtk.GLArea):
         # the buffers will be drawn on the window
         return True
 
+    def on_render_new(self, widget, context):
+        widget.attach_buffers()
+
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+        # glUseProgram(self.shader)
+
+        glBindVertexArray(self.vertex_array_object)
+        glDrawArrays(GL_TRIANGLES, 0, 3)
+        glBindVertexArray(0)
+
+        glUseProgram(0)
+        glFlush()
+
     def on_realize(self, area):        
         # We need to make the context current if we want to
         # call GL API
@@ -140,6 +158,29 @@ class MyGLView(Gtk.GLArea):
         # debug
         print("on_realize")
         # end of debug        
+
+        self.vertices = [
+            0.6, 0.6, 0.0, 1.0,
+            -0.6, 0.6, 0.0, 1.0,
+            0.0, -0.6, 0.0, 1.0]
+
+        self.vertices = np.array(self.vertices, dtype=np.float32)
+
+        print("init 1")
+        self.vertex_array_object = glGenVertexArrays(1)
+        print("init 2")
+        glBindVertexArray(self.vertex_array_object)
+
+        # Generate buffers to hold our vertices
+        print("init 3")
+        self.vertex_buffer = glGenBuffers(1)
+
+        print("init 4")
+        glBindBuffer(GL_ARRAY_BUFFER, self.vertex_buffer)
+
+        # Send the data over to the buffer
+        print("init 5")
+        glBufferData(GL_ARRAY_BUFFER, 48, self.vertices, GL_STATIC_DRAW)
 
         # If there were errors during the initialization or
         # when trying to make the context current, this
