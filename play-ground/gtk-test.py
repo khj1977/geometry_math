@@ -224,6 +224,39 @@ class MyGLView(Gtk.GLArea):
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0)
         glEnableVertexAttribArray(0)
 
+        vertex_shader_source = """
+        #version 330
+
+        layout (location = 0) in vec3 a_position;
+
+        void main() {
+            gl_Position = vec4(a_position, 1.0);
+        }
+        """
+
+        vertex_shader = glCreateShader(GL_VERTEX_SHADER)
+        glShaderSource(vertex_shader, vertex_shader_source)
+        glCompileShader(vertex_shader)
+
+        fragment_shader_source = """
+        #version 330
+
+        out vec4 FragColor;
+
+        void main() {
+        FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+        """
+
+        fragment_shader = glCreateShader(GL_FRAGMENT_SHADER)
+        glShaderSource(fragment_shader, fragment_shader_source)
+        glCompileShader(fragment_shader)
+
+        shader_program = glCreateProgram()
+        glAttachShader(shader_program, vertex_shader)
+        glAttachShader(shader_program, fragment_shader)
+        glLinkProgram(shader_program)
+
         return self
     
     def test_features(self):
