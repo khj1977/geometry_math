@@ -141,11 +141,11 @@ class MyGLView(Gtk.GLArea):
         # glUseProgram(self.shader)
 
         glBindVertexArray(self.vertex_array_object)
-        # glDrawArrays(GL_TRIANGLES, 0, 3)
-        # glBindVertexArray(0)
+        glDrawArrays(GL_TRIANGLES, 0, 3)
+        glBindVertexArray(0)
 
         # glUseProgram(0)
-        # glFlush()
+        glFlush()
 
     def on_realize(self, area):        
         # We need to make the context current if we want to
