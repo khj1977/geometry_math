@@ -213,7 +213,8 @@ class MyGLView(Gtk.GLArea):
         glBufferData(GL_ARRAY_BUFFER, len(self.vertices) * sizeof(GLfloat), self.vertices, GL_STATIC_DRAW)
 
 
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride=0, offset=0)
+        # glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride=0, offset=0)
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0)
         glEnableVertexAttribArray(0)
 
         return self
