@@ -204,17 +204,17 @@ class MyGLView(Gtk.GLArea):
         # self.vertex_array_object = glGenVertexArrays(1, self.vertex_array_object)
         # glBindVertexArray(self.vertex_array_object)
 
-        self.vao = array("B")
+        self.vao = array("b")
         self.vao = glGenVertexArrays(1, self.vao)
         glBindVertexArray(self.vao)
 
-        # Generate buffers to hold our vertices
-        self.vertex_buffer = glGenBuffers(1)
+        self.vbo = glGenBuffers(1)
+        glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
+        glBufferData(GL_ARRAY_BUFFER, len(self.vertices) * sizeof(GLfloat), self.vertices, GL_STATIC_DRAW)
 
-        glBindBuffer(GL_ARRAY_BUFFER, self.vertex_buffer)
 
-        # Send the data over to the buffer
-        glBufferData(GL_ARRAY_BUFFER, 48, self.vertices, GL_STATIC_DRAW)
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride=0, offset=0)
+        glEnableVertexAttribArray(0)
 
         return self
     
