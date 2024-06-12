@@ -161,12 +161,12 @@ class MyGLView(Gtk.GLArea):
         # end of debug        
 
         # For modern OpenGL
-        self.vertices = [
+        _vertices = [
             0.6, 0.6, 0.0, 1.0,
             -0.6, 0.6, 0.0, 1.0,
             0.0, -0.6, 0.0, 1.0]
 
-        self.vertices = np.array(self.vertices, dtype=np.float32)
+        self.vertices = np.array(_vertices, dtype=np.float32)
 
         print("init 1")
         self.vertex_array_object = glGenVertexArrays(1)
