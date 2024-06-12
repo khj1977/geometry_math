@@ -144,6 +144,13 @@ class MyGLView(Gtk.GLArea):
         context.make_current()
         widget.attach_buffers()
 
+        # debug
+        # glDeleteTextures (1, 0)
+        # glBindTexture(GL_TEXTURE_2D, 0)
+        # glDeleteTextures (1, 1)
+        # glBindTexture(GL_TEXTURE_2D, 1)
+        # enf of debug
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         # glUseProgram(self.shader)
 
