@@ -132,6 +132,7 @@ class MyGLView(Gtk.GLArea):
         # the buffers will be drawn on the window
         return True
 
+    # Modern OpenGL ver of render signal.
     def on_render_new(self, widget, context):
         widget.attach_buffers()
 
@@ -159,6 +160,7 @@ class MyGLView(Gtk.GLArea):
         print("on_realize")
         # end of debug        
 
+        # For modern OpenGL
         self.vertices = [
             0.6, 0.6, 0.0, 1.0,
             -0.6, 0.6, 0.0, 1.0,
