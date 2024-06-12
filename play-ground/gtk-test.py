@@ -32,6 +32,11 @@ from gi.repository import Gdk
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
+from OpenGL.arrays import vbo
+from OpenGL.GL import shaders
+from OpenGL.raw.GL.ARB.vertex_array_object import glGenVertexArrays, glBindVertexArray
+
+from numpy import array
 import numpy as np
 
 class MyWindow(Gtk.ApplicationWindow):
@@ -61,6 +66,8 @@ class MyGLView(Gtk.GLArea):
 
         print("GL ver set")
         self.set_required_version(3, 3)
+
+        # self.test_features()
 
         self.set_size_request(400, 400)
         self.set_vexpand(True)
@@ -140,7 +147,7 @@ class MyGLView(Gtk.GLArea):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         # glUseProgram(self.shader)
 
-        glBindVertexArray(self.vertex_array_object)
+        glBindVertexArray(self.vao)
         glDrawArrays(GL_TRIANGLES, 0, 3)
         glBindVertexArray(0)
 
@@ -194,8 +201,12 @@ class MyGLView(Gtk.GLArea):
 
         self.vertices = np.array(_vertices, dtype=np.float32)
 
-        self.vertex_array_object = glGenVertexArrays(1)
-        glBindVertexArray(self.vertex_array_object)
+        # self.vertex_array_object = glGenVertexArrays(1, self.vertex_array_object)
+        # glBindVertexArray(self.vertex_array_object)
+
+        self.vao = array("d")
+        self.vao = glGenVertexArrays(1, self.vao)
+        glBindVertexArray(self.vao)
 
         # Generate buffers to hold our vertices
         self.vertex_buffer = glGenBuffers(1)
@@ -206,9 +217,32 @@ class MyGLView(Gtk.GLArea):
         glBufferData(GL_ARRAY_BUFFER, 48, self.vertices, GL_STATIC_DRAW)
 
         return self
+    
+    def test_features(self):
+        print('Testing features')
+        print('glGenVertexArrays Available %s' % bool(glGenVertexArrays))
+        print('Alpha Available %s' % bool(self.get_has_alpha()))
+        print('Depth buffer Available %s' % bool(self.get_has_depth_buffer()))
 
 def on_app_activate(app):
     return True
+
+VERTEX_SHADER = """
+    #version 330
+    in vec4 position;
+    void main()
+    {
+        gl_Position = position;
+    }"""
+
+FRAGMENT_SHADER = """
+    #version 330
+    out vec4 fragColor;
+    void main()
+    {
+        fragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+    """
 
 # win = Gtk.Window()
 # glViewport(0, 0, 100, 100)
