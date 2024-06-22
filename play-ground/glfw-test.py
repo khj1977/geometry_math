@@ -17,20 +17,13 @@ class MyWindow(Gtk.ApplicationWindow):
     def __init__(self):
         super().__init__()
 
-        # self.area = Gtk.GLArea()
-        # self.glView = MyGLView()
-        # self.add(self.glView)
-        # self.glView = Gtk.GLArea()
-
         self.stack = Gtk.Stack()
         self.set_child(self.stack)
-        # self.stack.add_named(self.glView, "GL")
 
         self.set_size_request(400, 400)
         print(self.stack.get_visible_child())
         button = Gtk.Button.new_with_label("Test")
-
-        # self.glView.show()
+        
         self.stack.add_named(button, "Button")
         print(self.stack.get_visible_child())
 
