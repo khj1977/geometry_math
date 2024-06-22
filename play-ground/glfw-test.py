@@ -13,6 +13,10 @@ from OpenGL.GL import *
 def on_activate(app):
     return None
 
+def on_idle(user_data):
+    # glfw.wait_events()
+    return None
+
 class MyWindow(Gtk.ApplicationWindow):
     def __init__(self):
         super().__init__()
@@ -75,7 +79,8 @@ win.present()
 
 app = Gtk.Application()
 app.connect('activate', on_activate)
-# app.run()
+GLib.idle_add(on_idle, None)
+app.run()
 
 while not glfw.window_should_close(window):
     # g_main_context_iteration (NULL, TRUE);
