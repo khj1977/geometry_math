@@ -65,17 +65,10 @@ init()
 
 # GTK
 win = MyWindow()
-# win = Gtk.ComboBox()
-# win = Gtk.Button()
-
-# The following does not work. This is because it is supposed that event propagation problem for render problem would be there.
-# win = MyGLView()
 
 # win.connect("destroy", Gtk.main_quit)
 win.show()
 win.present()
-# win.show()
-# Gtk.main()
 
 app = Gtk.Application()
 app.connect('activate', on_activate)
