@@ -89,6 +89,5 @@ while not glfw.window_should_close(window):
     # it is dangerous to comment out wait_events() and enable i = 1 with idle_func for wait event.
     glfw.wait_events()
     glib.iteration(False)
-    # i = 1
 
 glfw.terminate()
