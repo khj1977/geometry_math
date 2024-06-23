@@ -28,13 +28,13 @@ class MyWindow(Gtk.ApplicationWindow):
         self.set_child(self.stack)
 
         self.set_size_request(400, 400)
-        print(self.stack.get_visible_child())
+        # print(self.stack.get_visible_child())
         button = Gtk.Button.new_with_label("Test")
         
         button.connect("clicked", button_clicked)
 
         self.stack.add_named(button, "Button")
-        print(self.stack.get_visible_child())
+        # print(self.stack.get_visible_child())
 
 def display():
     glClear(GL_COLOR_BUFFER_BIT)
