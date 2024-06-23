@@ -5,7 +5,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk
-from gi.repository import GLib
+from gi.repository import GLib as G
 
 import glfw
 from OpenGL.GL import *
@@ -77,12 +77,12 @@ win.present()
 
 app = Gtk.Application()
 app.connect('activate', on_activate)
-GLib.idle_add(on_idle, None)
-app.run()
+# GLib.idle_add(on_idle, None)
+# app.run()
 
 while not glfw.window_should_close(window):
     # g_main_context_iteration (NULL, TRUE);
-    # GLib.MainContext.iteration(None, True)
+    G.MainContext.iteration(None, True)
     # it is dangerous to comment out wait_events() and enable i = 1 with idle_func for wait event.
     glfw.wait_events()
     # i = 1
