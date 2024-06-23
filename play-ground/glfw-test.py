@@ -17,6 +17,9 @@ def on_idle(user_data):
     # glfw.wait_events()
     return None
 
+def button_clicked(button, user_data):
+    print("clicked")
+
 class MyWindow(Gtk.ApplicationWindow):
     def __init__(self):
         super().__init__()
@@ -28,6 +31,8 @@ class MyWindow(Gtk.ApplicationWindow):
         print(self.stack.get_visible_child())
         button = Gtk.Button.new_with_label("Test")
         
+        button.connect("clicked", button_clicked)
+
         self.stack.add_named(button, "Button")
         print(self.stack.get_visible_child())
 
