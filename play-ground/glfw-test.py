@@ -82,6 +82,7 @@ app.connect('activate', on_activate)
 
 while not glfw.window_should_close(window):
     # g_main_context_iteration (NULL, TRUE);
+    # It may be better to put the following glib method to be under idle func of glfw if there exists.
     G.MainContext.iteration(None, True)
     # it is dangerous to comment out wait_events() and enable i = 1 with idle_func for wait event.
     glfw.wait_events()
