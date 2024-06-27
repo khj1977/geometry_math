@@ -29,11 +29,11 @@ class MyWindow(Gtk.ApplicationWindow):
 
         self.set_size_request(400, 400)
         # print(self.stack.get_visible_child())
-        button = Gtk.Button.new_with_label("Test")
+        self.button = Gtk.Button.new_with_label("Test")
         
-        button.connect("clicked", button_clicked)
+        self.button.connect("clicked", button_clicked)
 
-        self.stack.add_named(button, "Button")
+        self.stack.add_named(self.button, "Button")
         # print(self.stack.get_visible_child())
 
 def display():
