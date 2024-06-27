@@ -36,6 +36,9 @@ class MyWindow(Gtk.ApplicationWindow):
         self.stack.add_named(self.button, "Button")
         # print(self.stack.get_visible_child())
 
+        self.button.show()
+        self.stack.show()
+
 def display():
     glClear(GL_COLOR_BUFFER_BIT)
 
