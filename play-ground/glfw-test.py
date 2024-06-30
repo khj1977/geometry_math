@@ -3,7 +3,7 @@
 
 import gi
 
-gi.require_version("Gtk", "4.0")
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GLib as G
 
@@ -25,7 +25,7 @@ class MyWindow(Gtk.ApplicationWindow):
         super().__init__()
 
         self.stack = Gtk.Stack()
-        self.set_child(self.stack)
+        self.add(self.stack)
 
         self.set_size_request(400, 400)
         # print(self.stack.get_visible_child())
@@ -79,7 +79,7 @@ win.show()
 win.present()
 
 app = Gtk.Application()
-app.connect('activate', on_activate)
+# app.connect('activate', on_activate)
 # GLib.idle_add(on_idle, None)
 # app.run()
 
