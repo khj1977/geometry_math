@@ -14,10 +14,11 @@ def on_activate(app):
     return None
 
 def on_idle(user_data):
-    # glfw.wait_events()
-    return None
+    glfw.wait_events()
+    # print("on_idle")
+    return True
 
-def button_clicked(button, user_data):
+def button_clicked(a_data):
     print("clicked")
 
 class MyWindow(Gtk.ApplicationWindow):
@@ -80,19 +81,21 @@ win.present()
 
 app = Gtk.Application()
 # app.connect('activate', on_activate)
-# GLib.idle_add(on_idle, None)
+G.idle_add(on_idle, None)
 # app.run()
 
-mainContext = G.MainContext()
-while not glfw.window_should_close(window):
+# mainContext = G.MainContext()
+
+Gtk.main()
+# while not glfw.window_should_close(window):
     # g_main_context_iteration (NULL, TRUE);
     # It may be better to put the following glib method to be under idle func of glfw if there exists.
     # G.MainContext.iteration(None, True)
     
     # it is dangerous to comment out wait_events() and enable i = 1 with idle_func for wait event.
-    glfw.wait_events()
-    mainContext.iteration(False)
+    # glfw.wait_events()
+    # mainContext.iteration(False)
     # It is test purpose. Another iteration like method may be exist for gtk3.
-    Gtk.main()
+    #Gtk.main()
 
 glfw.terminate()
