@@ -92,5 +92,7 @@ while not glfw.window_should_close(window):
     # it is dangerous to comment out wait_events() and enable i = 1 with idle_func for wait event.
     glfw.wait_events()
     mainContext.iteration(False)
+    # It is test purpose. Another iteration like method may be exist for gtk3.
+    Gtk.main()
 
 glfw.terminate()
