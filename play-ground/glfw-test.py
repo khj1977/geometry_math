@@ -14,7 +14,7 @@ def on_activate(app):
     return None
 
 def on_idle(user_data):
-    glfw.wait_events()
+    # glfw.wait_events()
     # print("on_idle")
     return True
 
