@@ -16,6 +16,7 @@ def on_activate(app):
 def on_idle(user_data):
     # glfw.wait_events()
     # print("on_idle")
+    # glfw.poll_events()
     return True
 
 def button_clicked(a_data):
