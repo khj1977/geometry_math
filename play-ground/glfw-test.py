@@ -57,6 +57,7 @@ def init():
     display()   # necessary only on Windows
 
 def window_refresh(window):
+    print("window refresh is called.")
     display()
 
 if not glfw.init():
