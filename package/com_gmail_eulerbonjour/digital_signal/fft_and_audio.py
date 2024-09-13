@@ -56,10 +56,15 @@ class MicAndFFT:
                 break
             # print(str(x) + "," + str(power))
             glVertex3d(x, power, -2.0)
-            x = x + 0.01
+            # debug
+            # find out better deltaX
+            # x = x + 0.01
+            x = x + 0.05
+            # end of debug
             i = i + 1
         glEnd()
         glFlush()
+        print(x)
 
    
 
@@ -71,7 +76,8 @@ class MicAndFFT:
                             input_device_index = INPUT_DEVICE_INDEX,
                             frames_per_buffer  = FRAME_SIZE)
         # data = self.stream.read(FRAME_SIZE)
-        data = self.stream.read(1024)
+        # data = self.stream.read(1024)
+        data = self.stream.read(8192)
 
         x = np.frombuffer(data, dtype="int16") / 32768.0
         for y in x:
