@@ -68,6 +68,9 @@ class MicAndFFT:
    
 
     def readDataAndDoFFT(self):
+        # open the following stream every time by
+        # this method call since it seems there 
+        # are bug of autiod lib.
         self.stream = self.pa.open(format   = FORMAT,
                              channels = CHANNELS,
                              rate     = SAMPLE_RATE,
