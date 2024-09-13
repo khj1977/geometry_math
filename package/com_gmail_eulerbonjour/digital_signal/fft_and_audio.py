@@ -64,7 +64,6 @@ class MicAndFFT:
             i = i + 1
         glEnd()
         glFlush()
-        print(x)
 
    
 
