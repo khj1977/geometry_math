@@ -3,6 +3,7 @@
 import sys, gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+import cairo as c
  
 class Win(Gtk.ApplicationWindow):
     '''
@@ -11,6 +12,7 @@ class Win(Gtk.ApplicationWindow):
     def __init__(self, app):
         Gtk.ApplicationWindow.__init__(self, application=app, title='Py')
         area = Gtk.DrawingArea()
+        self.cont = c.Context
         area.connect('draw', self.on_draw)
         self.add(area)
         self.resize(300, 100)
@@ -18,12 +20,13 @@ class Win(Gtk.ApplicationWindow):
  
     def on_draw(self, widget, cr):
         # サイズ取得
+        cr = self.cont
         aw = widget.get_allocated_width()
         ah = widget.get_allocated_height()
         # 黒で全体を塗りつぶす、RGB を 0.0 から 1.0 の範囲で指定
-        cr.set_source_rgb(0, 0, 0)
-        cr.rectangle(0, 0, aw, ah)
-        cr.fill()
+        # cr.set_source_rgb(0.1, 0.1, 0.1)
+        # cr.rectangle(0, 0, aw, ah)
+        # cr.fill()
         # グレーで線を引く
         cr.set_source_rgb(0.5, 0.5, 0.5)
         cr.set_line_width(5.0)
