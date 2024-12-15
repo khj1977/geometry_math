@@ -12,6 +12,7 @@ class Win(Gtk.ApplicationWindow):
     def __init__(self, app):
         Gtk.ApplicationWindow.__init__(self, application=app, title='Py')
         area = Gtk.DrawingArea()
+        # How to obtain context is not match with on_draw() for ignal of area of Gtk.DrawingArea.
         self.cont = c.Context
         area.connect('draw', self.on_draw)
         self.add(area)
