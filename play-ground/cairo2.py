@@ -20,8 +20,10 @@ class Win(Gtk.ApplicationWindow):
         self.show_all()
  
     def on_draw(self, widget, cr):
+    # def on_draw(self, cr):
         # サイズ取得
-        cr = self.cont
+        # cr = self.cont        
+        # cr = cr.Context
         aw = widget.get_allocated_width()
         ah = widget.get_allocated_height()
         # 黒で全体を塗りつぶす、RGB を 0.0 から 1.0 の範囲で指定
