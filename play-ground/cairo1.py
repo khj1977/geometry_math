@@ -11,6 +11,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
 from math import pi
+import math as m
 
 width = 256
 height = 256
@@ -36,7 +37,7 @@ def draw(ctx: cairo.Context, width, height):
     angle1 = angle  * (pi/180)
     angle2 = 180 * (pi/180)
 
-    ctx.set_line_width(10.0)
+    ctx.set_line_width(10.0 * m.sin(angle * 0.01))
     ctx.arc(xc, yc, radius, angle1, angle2)
     ctx.stroke()
 
