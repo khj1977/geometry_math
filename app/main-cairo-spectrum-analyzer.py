@@ -10,10 +10,10 @@ from com_gmail_eulerbonjour.digital_signal import fft_and_audio as mic
 
 audioMod = mic.MicAndFFT()
 
-def drawFFT():
+def drawFFT(ctx):
     global audioMod
 
-    audioMod.readDataAndDoFFT()
+    audioMod.readDataAndDoFFT(ctx)
 
 # Mainly but not all, the GTK part of following code is come from https://gist.github.com/ritobanrc/cf61e574ffb89eae2b3837d8dc2328c6 for test purpose.
 
@@ -70,6 +70,8 @@ def on_draw(da: Gtk.DrawingArea, ctx: cairo.Context):
     alloc = da.get_allocation()
     width = alloc.width
     height = alloc.height
+
+    app.drawFFT(ctx)
 
     # draw(ctx, width, height)
 

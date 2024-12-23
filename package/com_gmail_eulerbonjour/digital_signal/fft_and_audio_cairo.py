@@ -69,7 +69,7 @@ class MicAndFFT:
 
    
 
-    def readDataAndDoFFT(self):
+    def readDataAndDoFFT(self, ctx):
         # open the following stream every time by
         # this method call since it seems there 
         # are bug of autiod lib.
@@ -95,7 +95,7 @@ class MicAndFFT:
                 break
         
         # self.doFFT(x)
-        self.doFFT(self.list_frame)
+        self.doFFT(self.list_frame, ctx)
 
         # close and terminate stream object "stream"
         # stream.stop_stream()
