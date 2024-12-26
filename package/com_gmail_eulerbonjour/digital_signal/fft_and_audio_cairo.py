@@ -20,9 +20,11 @@ INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
 NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 
 class MicAndFFT:
-    def __init__(self):
+    def __init__(self, height, width):
         self.pa = pyaudio.PyAudio()
         self.list_frame = []
+        self.height = height
+        self.width = width
         
     def doFFT(self, x, ctx):
         # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.    
@@ -56,8 +58,8 @@ class MicAndFFT:
             # print(str(x) + "," + str(power))
             # glVertex3d(x, power, -2.0)
 
-            ctx.line_to(x, power)
-            ctx.move_to(x, power)
+            ctx.line_to(x, self.height - 20.0 + power * -1.0)
+            ctx.move_to(x, self.height - 20.0 + power * -1.0)
 
             # debug
             # find out better deltaX

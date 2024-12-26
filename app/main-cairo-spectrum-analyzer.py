@@ -8,7 +8,7 @@ import math as m
 
 from com_gmail_eulerbonjour.digital_signal import fft_and_audio_cairo as mic
 
-audioMod = mic.MicAndFFT()
+# audioMod = mic.MicAndFFT()
 
 def drawFFT(ctx):
     global audioMod
@@ -128,5 +128,5 @@ def main():
     Gtk.main()
 
 if __name__ == '__main__':
-    audioMod = mic.MicAndFFT()
+    audioMod = mic.MicAndFFT(height, width)
     main()
