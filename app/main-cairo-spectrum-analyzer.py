@@ -1,6 +1,6 @@
 # To use this app, cairo on OS and pycairo for python is required to be installed.
 # It may be:
-# brew install cairo
+# brew install cairo (if it were mac)
 # pip install pycairo
 # Check actual install command by yourself.
 
