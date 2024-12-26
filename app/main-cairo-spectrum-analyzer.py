@@ -26,48 +26,6 @@ def drawFFT(ctx):
 width = 256
 height = 256
 
-angle = 45
-
-def draw(ctx: cairo.Context, width, height):
-    """
-    This is the draw function, that will be called every time `queue_draw` is
-    called on the drawing area. Currently, this is setup to be every frame, 60
-    times per second, but you can change that by changing line 95. 
-    
-    Ported from the first example here, with minimal changes:
-    https://www.cairographics.org/samples/
-    """
-
-    global angle
-    angle += 1
-
-    xc = 128
-    yc = 128
-    radius = 100
-    angle1 = angle  * (pi/180)
-    angle2 = 180 * (pi/180)
-
-    ctx.set_line_width(10.0 * m.sin(angle * 0.01))
-    ctx.arc(xc, yc, radius, angle1, angle2)
-    ctx.stroke()
-
-    # draw helping lines
-    ctx.set_source_rgba (1, 0.2, 0.2, 0.6)
-    ctx.set_line_width (6.0)
-
-    ctx.arc(xc, yc, 10.0, 0, 2*pi)
-    ctx.fill()
-
-    ctx.arc(xc, yc, radius, angle1, angle1)
-    ctx.line_to(xc, yc)
-    
-    # Adding this fixes a subtle bug where when the two hands would overlap. 
-    # This just makes them two separate strokes. 
-    ctx.stroke() 
-    ctx.arc(xc, yc, radius, angle2, angle2)
-    ctx.line_to(xc, yc)
-    ctx.stroke()
-
 
 def on_draw(da: Gtk.DrawingArea, ctx: cairo.Context):
     """
