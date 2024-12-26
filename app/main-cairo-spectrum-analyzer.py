@@ -1,3 +1,9 @@
+# To use this app, cairo on OS and pycairo for python is required to be installed.
+# It may be:
+# brew install cairo
+# pip install pycairo
+# Check actual install command by yourself.
+
 import cairo
 import gi
 gi.require_version('Gtk', '3.0')
