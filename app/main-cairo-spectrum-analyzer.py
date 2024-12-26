@@ -71,7 +71,7 @@ def on_draw(da: Gtk.DrawingArea, ctx: cairo.Context):
     width = alloc.width
     height = alloc.height
 
-    app.drawFFT(ctx)
+    audioMod.readDataAndDoFFT(ctx)
 
     # draw(ctx, width, height)
 
@@ -85,6 +85,8 @@ def main():
     """
     The main function
     """
+
+    global audioMod
 
     # Create a window, set it up to quit on close
     win = Gtk.Window()
@@ -126,4 +128,5 @@ def main():
     Gtk.main()
 
 if __name__ == '__main__':
+    audioMod = mic.MicAndFFT()
     main()
