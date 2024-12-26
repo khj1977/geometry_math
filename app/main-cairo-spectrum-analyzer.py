@@ -6,7 +6,7 @@ from gi.repository import Gtk, Gdk, GLib
 from math import pi
 import math as m
 
-from com_gmail_eulerbonjour.digital_signal import fft_and_audio as mic
+from com_gmail_eulerbonjour.digital_signal import fft_and_audio_cairo as mic
 
 audioMod = mic.MicAndFFT()
 
