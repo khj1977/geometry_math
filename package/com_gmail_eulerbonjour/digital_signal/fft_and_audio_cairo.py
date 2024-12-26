@@ -25,7 +25,8 @@ class MicAndFFT:
         self.list_frame = []
         self.height = height
         self.width = width
-        self.margin = 20.0
+        self.marginY = 20.0
+        self.marginX = 10.0
         
     def doFFT(self, x, ctx):
         # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.    
@@ -46,8 +47,8 @@ class MicAndFFT:
         ## glBegin(GL_LINE_STRIP)
         ## glColor3d(0.0, 0.0, 1.0)
 
-        ctx.set_line_width(5.0)
-        ctx.move_to(0.0, 0.0)
+        ctx.set_line_width(1.0)
+        ctx.move_to(0.0 + self.marginX, 0.0 - self.marginY)
 
         x = 0.0
         i = 0
@@ -59,8 +60,8 @@ class MicAndFFT:
             # print(str(x) + "," + str(power))
             # glVertex3d(x, power, -2.0)
 
-            ctx.line_to(x, self.height - self.margin + power * -1.0)
-            ctx.move_to(x, self.height - self.margin + power * -1.0)
+            ctx.line_to(x + self.marginX, self.height - self.marginY + power * -1.0)
+            ctx.move_to(x + self.marginX, self.height - self.marginY + power * -1.0)
 
             # debug
             # find out better deltaX
