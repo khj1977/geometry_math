@@ -14,9 +14,17 @@
 # code of middle ware or even required to hack it.
 # Moreover it seems cairo is derivative of 
 # PostScript and share some base with 
-# CoreGraphics. Python seems better than 
-# Objective-C for my case. Thus, I determined to 
-# use python and cairo.
+# CoreGraphics. 
+# 
+# Python or Objective-C? Objective-C is compile 
+# lang, inherit good things from Smalltalk as well
+# as Foundation, AppKit and other libs as Cocoa or
+# other framework. However, in addtion to good 
+# manner as programming lang, libs with python is 
+# still good for practical use, esp, scipy/numpy.
+# Moreover, python is open source. Python seems
+# better than Objective-C for my case. Thus, 
+# I determined to use python and cairo.
 
 import cairo
 import gi
