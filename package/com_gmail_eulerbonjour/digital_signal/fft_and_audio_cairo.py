@@ -60,13 +60,15 @@ class MicAndFFT:
             # print(str(x) + "," + str(power))
             # glVertex3d(x, power, -2.0)
 
-            ctx.line_to(x + self.marginX, self.height - self.marginY + power * -1.0)
-            ctx.move_to(x + self.marginX, self.height - self.marginY + power * -1.0)
+            xx = x + self.marginX
+            yy = self.height - self.marginY + power * -1.0
+            ctx.line_to(xx, yy)
+            ctx.move_to(xx, yy)
 
             # debug
             # find out better deltaX
             # x = x + 0.01
-            x = x + 0.05
+            x = x + 0.1
             # end of debug
             i = i + 1
         ctx.stroke()
