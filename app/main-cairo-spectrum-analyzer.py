@@ -19,9 +19,11 @@
 # Python or Objective-C? Objective-C is compile 
 # lang, inherit good things from Smalltalk as well
 # as Foundation, AppKit and other libs as Cocoa or
-# other framework. However, in addtion to good 
-# manner as programming lang, libs with python is 
-# still good for practical use, esp, scipy/numpy.
+# other framework. However, python is compact and 
+# elegant and clean as it behave as pseudo 
+# code In addtion to good manner as programming 
+# lang, libs with python is still good for 
+# practical use, esp, scipy/numpy.
 # Moreover, python is open source. Python seems
 # better than Objective-C for my case. Thus, 
 # I determined to use python and cairo.
