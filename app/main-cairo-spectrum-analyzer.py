@@ -4,6 +4,20 @@
 # pip install pycairo
 # Check actual install command by yourself.
 
+# Every time open source stack to make program?
+# Actually, I checked specification of
+# CoreGraphics of mac and Objective-C and that 
+# seems impressive. However, it would be 
+# derivative of PostScript. Commercial code
+# or middle ware is better than open source?
+# For ultimate case, we need to mentenance 
+# code of middle ware or even required to hack it.
+# Moreover it seems cairo is derivative of 
+# PostScript and share some base with 
+# CoreGraphics. Python seems better than 
+# Objective-C for my case. Thus, I determined to 
+# use python and cairo.
+
 import cairo
 import gi
 gi.require_version('Gtk', '3.0')
