@@ -110,5 +110,6 @@ class MicAndFFT:
         # stream.close()
         # pa.terminate()
 
-
+    def getTimeSeriesData(self):
+        return self.list_frame
 
