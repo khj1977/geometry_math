@@ -51,7 +51,10 @@ width = 512
 height = 256
 
 def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
-    pass
+    ctx.set_line_width(3.0)
+    ctx.move_to(100, 100)
+    ctx.line_to(100, 200)
+    ctx.stroke()
 
 def on_draw_fft(da: Gtk.DrawingArea, ctx: cairo.Context):
     """
