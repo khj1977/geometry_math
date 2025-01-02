@@ -35,7 +35,7 @@ class MicAndFFT:
 
         # Actually, I understood about DFT when I was 3rd year of undergrad and has experience of making DFT by C-language. However, until now, I haven't examine relatoin of index of X(omega or i) and frequency. For undergrad student, it is recommended to study both analytically and numerically. And possibly, it would be better to have an application for theory.
 
-        stepX = 0.3
+        stepX = 0.1
 
         yt = fft(x)
         yt2 = []
@@ -77,6 +77,33 @@ class MicAndFFT:
 
         # debug
         # render freq for x-axis.
+        # quick hack. better code
+        xx = 100 * stepX
+        yy = self.height - self.marginY - 10 * -1.0
+        ctx.move_to(xx, yy)
+        ctx.show_text("100")
+
+        xx = 1000 * stepX
+        yy = self.height - self.marginY - 10 * -1.0
+        ctx.move_to(xx, yy)
+        ctx.show_text("1k")
+
+        xx = 2000 * stepX
+        yy = self.height - self.marginY - 10 * -1.0
+        ctx.move_to(xx, yy)
+        ctx.show_text("2k")
+
+        xx = 4000 * stepX
+        yy = self.height - self.marginY - 10 * -1.0
+        ctx.move_to(xx, yy)
+        ctx.show_text("4k")
+
+        xx = 4150 * stepX
+        yy = self.height - self.marginY - 10 * -1.0
+        ctx.move_to(xx, yy)
+        ctx.show_text("Hz")
+
+        ctx.stroke()
         # end of debug
 
    

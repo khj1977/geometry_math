@@ -76,9 +76,9 @@ def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
 
     ctx.stroke()
 
-    ctx.move_to(100, 100)
-    ctx.show_text("Hello!")
-    ctx.stroke
+    # ctx.move_to(100, 100)
+    # ctx.show_text("Hello!")
+    # ctx.stroke
 
 def on_draw_fft(da: Gtk.DrawingArea, ctx: cairo.Context):
     """
