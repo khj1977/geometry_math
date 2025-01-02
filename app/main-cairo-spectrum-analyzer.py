@@ -61,10 +61,11 @@ def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
     yy = 0.0
     stepX = 0.3
     multipleY = -30.0
+    centreY = 100
     for y in data:
         
         xx = x + 10.0
-        yy = (height - 20.0 * y * multipleY) * 1.0
+        yy = (height - 20.0 * y * multipleY) * 1.0 - centreY
         ctx.line_to(xx, yy)
         ctx.move_to(xx, yy)
 
