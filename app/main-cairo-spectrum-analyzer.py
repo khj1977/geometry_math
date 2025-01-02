@@ -51,11 +51,6 @@ width = 512
 height = 256
 
 def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
-    # ctx.set_line_width(3.0)
-    # ctx.move_to(100, 100)
-    # ctx.line_to(100, 200)
-    # ctx.stroke()
-
     data = audioMod.getTimeSeriesData()
 
     ctx.set_line_width(1.0)
@@ -65,14 +60,13 @@ def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
     xx = 0.0
     yy = 0.0
     stepX = 0.03
+    multipleY = -30.0
     for y in data:
         
         xx = x + 10.0
-        yy = (height - 20.0 * y * -30.0) * 1.0
+        yy = (height - 20.0 * y * multipleY) * 1.0
         ctx.line_to(xx, yy)
         ctx.move_to(xx, yy)
-
-        print(xx, yy)
 
         x = x + stepX
 
