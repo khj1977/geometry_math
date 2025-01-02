@@ -59,7 +59,7 @@ def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
     x = 0.0
     xx = 0.0
     yy = 0.0
-    stepX = 0.03
+    stepX = 0.3
     multipleY = -30.0
     for y in data:
         
