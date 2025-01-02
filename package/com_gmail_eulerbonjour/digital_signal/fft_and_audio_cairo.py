@@ -75,6 +75,10 @@ class MicAndFFT:
             i = i + 1
         ctx.stroke()
 
+        # debug
+        # render freq for x-axis.
+        # end of debug
+
    
 
     def readDataAndDoFFT(self, ctx):
