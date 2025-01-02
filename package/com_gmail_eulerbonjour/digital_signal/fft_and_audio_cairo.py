@@ -35,6 +35,8 @@ class MicAndFFT:
 
         # Actually, I understood about DFT when I was 3rd year of undergrad and has experience of making DFT by C-language. However, until now, I haven't examine relatoin of index of X(omega or i) and frequency. For undergrad student, it is recommended to study both analytically and numerically. And possibly, it would be better to have an application for theory.
 
+        stepX = 0.3
+
         yt = fft(x)
         yt2 = []
         for x in yt:
@@ -68,7 +70,7 @@ class MicAndFFT:
             # debug
             # find out better deltaX
             # x = x + 0.01
-            x = x + 0.1
+            x = x + stepX
             # end of debug
             i = i + 1
         ctx.stroke()

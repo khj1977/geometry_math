@@ -47,11 +47,13 @@ def drawFFT(ctx):
 
 # Mainly but not all, the GTK part of following code is come from https://gist.github.com/ritobanrc/cf61e574ffb89eae2b3837d8dc2328c6 for test purpose.
 
-width = 256
+width = 512
 height = 256
 
+def on_draw_time(da: Gtk.DrawingArea, ctx: cairo.Context):
+    pass
 
-def on_draw(da: Gtk.DrawingArea, ctx: cairo.Context):
+def on_draw_fft(da: Gtk.DrawingArea, ctx: cairo.Context):
     """
     A callback called every time `drawingarea.queue_draw` is called.
     """
@@ -82,10 +84,14 @@ def main():
     win.set_default_size(width, height)
 
     # Create a DrawingArea, add it to the window, and connect it to the `on_draw` function
+
+    drawingarea2 = Gtk.DrawingArea()
+    # win.add(drawingarea2)
+    drawingarea2.connect('draw', on_draw_time)
+
     drawingarea = Gtk.DrawingArea()
     win.add(drawingarea)
-    drawingarea.connect('draw', on_draw)
-
+    drawingarea.connect('draw', on_draw_fft)
 
     # Add a button pressed event, and connect it to the `on_mouse_pressed` callback
     drawingarea.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
