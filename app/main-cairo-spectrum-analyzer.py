@@ -81,16 +81,19 @@ def main():
     # Create a window, set it up to quit on close
     win = Gtk.Window()
     win.connect('destroy', Gtk.main_quit)
-    win.set_default_size(width, height)
+    win.set_default_size(width, height*2)
+
+    box = Gtk.VBox()
+    win.add(box)
 
     # Create a DrawingArea, add it to the window, and connect it to the `on_draw` function
 
-    drawingarea2 = Gtk.DrawingArea()
-    # win.add(drawingarea2)
-    drawingarea2.connect('draw', on_draw_time)
+    drawingareaTime = Gtk.DrawingArea()
+    box.add(drawingareaTime)
+    drawingareaTime.connect('draw', on_draw_time)
 
     drawingarea = Gtk.DrawingArea()
-    win.add(drawingarea)
+    box.add(drawingarea)
     drawingarea.connect('draw', on_draw_fft)
 
     # Add a button pressed event, and connect it to the `on_mouse_pressed` callback
@@ -99,9 +102,11 @@ def main():
 
     # Tell the drawing area to render
     drawingarea.queue_draw()
+    drawingareaTime.queue_draw()
 
     def refresh_screen():
         drawingarea.queue_draw()
+        drawingareaTime.queue_draw()
         GLib.timeout_add(1000 / 60, refresh_screen)
 
     # Normally, GUI Libraries don't automatically redraw the screen every
