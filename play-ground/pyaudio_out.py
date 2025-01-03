@@ -12,6 +12,11 @@ RATE = 44100  # サンプリングレート
 # PyAudioオブジェクトの作成
 p = pyaudio.PyAudio()
 
+# debug
+print(p.get_device_count())
+print(p.get_device_info_by_index(4))
+# end of debug
+
 # ストリームのオープン
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,

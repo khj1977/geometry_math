@@ -44,6 +44,7 @@ class MicAndFFT:
                 channels=OUT_CHANNELS,
                 rate=OUT_RATE,
                 output=True,
+                output_device_index = 3,
                 frames_per_buffer=OUT_CHUNK)
         
     def doFFT(self, x, ctx):
