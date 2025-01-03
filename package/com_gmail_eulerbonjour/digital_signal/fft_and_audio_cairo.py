@@ -1,4 +1,4 @@
-# sample code from https://qiita.com/KENTAROSZK/items/8d82a495b7cffec69862 to understand pyaudio.
+# Some API calling part is come from sample code from https://qiita.com/KENTAROSZK/items/8d82a495b7cffec69862.
 
 from datetime import datetime
 import wave
