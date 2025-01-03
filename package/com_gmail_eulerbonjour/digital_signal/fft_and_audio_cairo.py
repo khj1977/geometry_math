@@ -27,6 +27,13 @@ class MicAndFFT:
         self.width = width
         self.marginY = 20.0
         self.marginX = 10.0
+
+        self.stream = self.pa.open(format   = FORMAT,
+                             channels = CHANNELS,
+                             rate     = SAMPLE_RATE,
+                             input    = True,
+                            input_device_index = INPUT_DEVICE_INDEX,
+                            frames_per_buffer  = FRAME_SIZE)
         
     def doFFT(self, x, ctx):
         # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.    
@@ -112,12 +119,12 @@ class MicAndFFT:
         # open the following stream every time by
         # this method call since it seems there 
         # are bug of autiod lib.
-        self.stream = self.pa.open(format   = FORMAT,
-                             channels = CHANNELS,
-                             rate     = SAMPLE_RATE,
-                             input    = True,
-                            input_device_index = INPUT_DEVICE_INDEX,
-                            frames_per_buffer  = FRAME_SIZE)
+        # self.stream = self.pa.open(format   = FORMAT,
+        #                      channels = CHANNELS,
+        #                     rate     = SAMPLE_RATE,
+        #                     input    = True,
+        #                    input_device_index = INPUT_DEVICE_INDEX,
+        #                    frames_per_buffer  = FRAME_SIZE)
         # data = self.stream.read(FRAME_SIZE)
         # data = self.stream.read(1024)
         data = self.stream.read(8192)
