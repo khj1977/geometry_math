@@ -19,6 +19,11 @@ CHANNELS      = 1            # モノラルかバイラルか
 INPUT_DEVICE_INDEX = 0       # マイクのチャンネル
 NUM_OF_LOOP   = int(SAMPLE_RATE / FRAME_SIZE * TIME)
 
+OUT_CHUNK = 1024  # 一度に処理するサンプル数
+OUT_FORMAT = pyaudio.paFloat32  # 音声データのフォーマット
+OUT_CHANNELS = 2  # チャンネル数 (ステレオ)
+OUT_RATE = 44100  # サンプリングレート
+
 class MicAndFFT:
     def __init__(self, height, width):
         self.pa = pyaudio.PyAudio()
@@ -34,6 +39,12 @@ class MicAndFFT:
                              input    = True,
                             input_device_index = INPUT_DEVICE_INDEX,
                             frames_per_buffer  = FRAME_SIZE)
+        
+        self.outStream = self.pa.open(format=OUT_FORMAT,
+                channels=OUT_CHANNELS,
+                rate=OUT_RATE,
+                output=True,
+                frames_per_buffer=OUT_CHUNK)
         
     def doFFT(self, x, ctx):
         # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.    
@@ -149,5 +160,10 @@ class MicAndFFT:
         # pa.terminate()
 
     def getTimeSeriesData(self):
+        # debug
+        # test to output to output of mac.
+        # byteData = np.array(self.list_frame).astype(np.float32)
+        # self.outStream.write(byteData.tobytes())
+        # end of debug
         return self.list_frame
 
