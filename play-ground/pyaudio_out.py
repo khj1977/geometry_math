@@ -8,13 +8,14 @@ CHUNK = 1024  # 一度に処理するサンプル数
 FORMAT = pyaudio.paFloat32  # 音声データのフォーマット
 CHANNELS = 2  # チャンネル数 (ステレオ)
 RATE = 44100  # サンプリングレート
+DEVICE_INDEX = 1
 
 # PyAudioオブジェクトの作成
 p = pyaudio.PyAudio()
 
 # debug
 print(p.get_device_count())
-print(p.get_device_info_by_index(4))
+print(p.get_device_info_by_index(1))
 # end of debug
 
 # ストリームのオープン
@@ -22,6 +23,7 @@ stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 output=True,
+                output_device_index=DEVICE_INDEX,
                 frames_per_buffer=CHUNK)
 
 # 任意の波形データを生成 (ここではサイン波)

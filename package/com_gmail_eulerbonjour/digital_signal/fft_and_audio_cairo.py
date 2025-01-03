@@ -41,12 +41,12 @@ class MicAndFFT:
                             input_device_index = INPUT_DEVICE_INDEX,
                             frames_per_buffer  = FRAME_SIZE)
         
-        # self.outStream = self.pa.open (format=OUT_FORMAT,
-        #        channels=OUT_CHANNELS,
-        #        rate=OUT_RATE,
-        #        output=True,
-        #        output_device_index = OUT_DEVICE_INDEX,
-        #        frames_per_buffer=OUT_CHUNK)
+        self.outStream = self.pa.open (format=OUT_FORMAT,
+                channels=OUT_CHANNELS,
+                rate=OUT_RATE,
+                output=True,
+                output_device_index = OUT_DEVICE_INDEX,
+                frames_per_buffer=OUT_CHUNK)
         
     def doFFT(self, x, ctx):
         # Now testing x-axis and frequency. Although original doc of scipy or source code has not been examined, changing elements of x(t) changes range of frequency. Thus, it might be F(x(t)) := X(omega) and i .. N - 1 represents omega or frequency. This assumption is required to be examined by doc or src code or even definition of FFT.    
