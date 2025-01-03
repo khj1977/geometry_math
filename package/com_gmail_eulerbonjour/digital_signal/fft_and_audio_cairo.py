@@ -162,6 +162,7 @@ class MicAndFFT:
     def getTimeSeriesData(self):
         # debug
         # test to output to output of mac.
+        # quick test of howling only not via ifft.
         # byteData = np.array(self.list_frame).astype(np.float32)
         # self.outStream.write(byteData.tobytes())
         # end of debug
