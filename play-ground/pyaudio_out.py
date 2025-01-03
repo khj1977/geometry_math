@@ -21,8 +21,8 @@ stream = p.open(format=FORMAT,
 
 # 任意の波形データを生成 (ここではサイン波)
 t = np.linspace(0, 2, RATE*2)  # 2秒分の時間軸
-freq = 440  # 周波数
-data = np.sin(2*np.pi*freq*t).astype(np.float32)
+freq = 40  # 周波数
+data = (np.sin(2*np.pi*freq*t) + np.sin(10.0 * t)).astype(np.float32)
 
 # 音声出力
 stream.write(data.tobytes())
